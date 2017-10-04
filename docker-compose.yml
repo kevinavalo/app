@@ -16,4 +16,4 @@ exp:
       - "8002:8000"
    volumes:
       - ./febay:/app
-   command: "mod_wsgi-express start-server --working-directory /app --reload-on-changes app/febay/wsgi.py"
+   command: "mod_wsgi-express start-server --working-directory /app --reload-on-changes /app/febay/wsgi.py"
