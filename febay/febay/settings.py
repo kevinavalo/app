@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ItemManager',
     'UserManager',
     'CommentManager',
+    'ExperienceManager'
 ]
 
 MIDDLEWARE = [
