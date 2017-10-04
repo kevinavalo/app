@@ -1,7 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ade5cfc6-83a7-4cec-85eb-26bfd5b050e9" name="Default" comment="" />
+    <list default="true" id="ade5cfc6-83a7-4cec-85eb-26bfd5b050e9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/fonts/Roboto-Bold-webfont.woff" afterPath="$PROJECT_DIR$/febay/static/admin/fonts/Roboto-Bold-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/fonts/Roboto-Light-webfont.woff" afterPath="$PROJECT_DIR$/febay/static/admin/fonts/Roboto-Light-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/fonts/Roboto-Regular-webfont.woff" afterPath="$PROJECT_DIR$/febay/static/admin/fonts/Roboto-Regular-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/ExperienceManager/templates/index.html" afterPath="$PROJECT_DIR$/febay/ExperienceManager/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/ExperienceManager/urls.py" afterPath="$PROJECT_DIR$/febay/ExperienceManager/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/.gitignore" afterPath="$PROJECT_DIR$/febay/static/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/.travis.yml" afterPath="$PROJECT_DIR$/febay/static/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/LICENSE" afterPath="$PROJECT_DIR$/febay/static/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/README.md" afterPath="$PROJECT_DIR$/febay/static/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/css/base.css" afterPath="$PROJECT_DIR$/febay/static/admin/css/base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/css/changelists.css" afterPath="$PROJECT_DIR$/febay/static/admin/css/changelists.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/css/dashboard.css" afterPath="$PROJECT_DIR$/febay/static/admin/css/dashboard.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/css/fonts.css" afterPath="$PROJECT_DIR$/febay/static/admin/css/fonts.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/css/forms.css" afterPath="$PROJECT_DIR$/febay/static/admin/css/forms.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/css/login.css" afterPath="$PROJECT_DIR$/febay/static/admin/css/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/css/rtl.css" afterPath="$PROJECT_DIR$/febay/static/admin/css/rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/css/widgets.css" afterPath="$PROJECT_DIR$/febay/static/admin/css/widgets.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/fonts/LICENSE.txt" afterPath="$PROJECT_DIR$/febay/static/admin/fonts/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/fonts/README.txt" afterPath="$PROJECT_DIR$/febay/static/admin/fonts/README.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/LICENSE" afterPath="$PROJECT_DIR$/febay/static/admin/img/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/README.txt" afterPath="$PROJECT_DIR$/febay/static/admin/img/README.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/calendar-icons.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/calendar-icons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/gis/move_vertex_off.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/gis/move_vertex_off.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/gis/move_vertex_on.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/gis/move_vertex_on.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/icon-addlink.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/icon-addlink.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/icon-alert.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/icon-alert.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/icon-calendar.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/icon-calendar.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/icon-changelink.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/icon-changelink.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/icon-clock.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/icon-clock.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/icon-deletelink.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/icon-deletelink.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/icon-no.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/icon-no.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/icon-unknown-alt.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/icon-unknown-alt.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/icon-unknown.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/icon-unknown.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/icon-yes.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/icon-yes.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/inline-delete.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/inline-delete.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/search.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/search.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/selector-icons.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/selector-icons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/sorting-icons.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/sorting-icons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/tooltag-add.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/tooltag-add.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/img/tooltag-arrowright.svg" afterPath="$PROJECT_DIR$/febay/static/admin/img/tooltag-arrowright.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/SelectBox.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/SelectBox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/SelectFilter2.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/SelectFilter2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/actions.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/actions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/actions.min.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/actions.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/admin/DateTimeShortcuts.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/admin/DateTimeShortcuts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/admin/RelatedObjectLookups.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/admin/RelatedObjectLookups.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/calendar.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/calendar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/cancel.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/cancel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/change_form.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/change_form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/collapse.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/collapse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/collapse.min.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/collapse.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/core.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/inlines.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/inlines.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/inlines.min.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/inlines.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/jquery.init.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/jquery.init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/popup_response.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/popup_response.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/prepopulate.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/prepopulate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/prepopulate.min.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/prepopulate.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/prepopulate_init.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/prepopulate_init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/timeparse.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/timeparse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/urlify.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/urlify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" afterPath="$PROJECT_DIR$/febay/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/vendor/jquery/jquery.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/vendor/jquery/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/vendor/jquery/jquery.min.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/vendor/jquery/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" afterPath="$PROJECT_DIR$/febay/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/vendor/xregexp/xregexp.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/vendor/xregexp/xregexp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/admin/js/vendor/xregexp/xregexp.min.js" afterPath="$PROJECT_DIR$/febay/static/admin/js/vendor/xregexp/xregexp.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/css/shop-homepage.css" afterPath="$PROJECT_DIR$/febay/static/css/shop-homepage.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/gulpfile.js" afterPath="$PROJECT_DIR$/febay/static/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/package.json" afterPath="$PROJECT_DIR$/febay/static/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/vendor/bootstrap/css/bootstrap-grid.css" afterPath="$PROJECT_DIR$/febay/static/vendor/bootstrap/css/bootstrap-grid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/vendor/bootstrap/css/bootstrap-grid.min.css" afterPath="$PROJECT_DIR$/febay/static/vendor/bootstrap/css/bootstrap-grid.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/vendor/bootstrap/css/bootstrap-reboot.css" afterPath="$PROJECT_DIR$/febay/static/vendor/bootstrap/css/bootstrap-reboot.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/vendor/bootstrap/css/bootstrap-reboot.min.css" afterPath="$PROJECT_DIR$/febay/static/vendor/bootstrap/css/bootstrap-reboot.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/vendor/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/febay/static/vendor/bootstrap/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/vendor/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/febay/static/vendor/bootstrap/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/vendor/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/febay/static/vendor/bootstrap/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/vendor/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/febay/static/vendor/bootstrap/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/vendor/jquery/jquery.js" afterPath="$PROJECT_DIR$/febay/static/vendor/jquery/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/vendor/jquery/jquery.min.js" afterPath="$PROJECT_DIR$/febay/static/vendor/jquery/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/vendor/popper/popper.js" afterPath="$PROJECT_DIR$/febay/static/vendor/popper/popper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/static/vendor/popper/popper.min.js" afterPath="$PROJECT_DIR$/febay/static/vendor/popper/popper.min.js" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +106,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/frontend/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -67,17 +162,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/exp/services/views.py" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/web/web/urls.py" />
         <option value="$PROJECT_DIR$/web/frontend/views.py" />
         <option value="$PROJECT_DIR$/web/frontend/templates/home.html" />
         <option value="$PROJECT_DIR$/web/web/settings.py" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="76" />
-    <option name="y" value="131" />
+    <option name="x" value="108" />
+    <option name="y" value="86" />
     <option name="width" value="1400" />
     <option name="height" value="869" />
   </component>
@@ -179,7 +274,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="76" y="131" width="1400" height="869" extended-state="0" />
+    <frame x="108" y="86" width="1400" height="869" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27357143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -240,14 +335,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/web/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -291,7 +378,15 @@
     <entry file="file://$PROJECT_DIR$/web/frontend/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
