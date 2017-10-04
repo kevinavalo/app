@@ -10,6 +10,8 @@ models:
 
 exp:
    image: tp33/django
+   external_links:
+      -  mysql:db
    links:
       - models:models-api
    ports:
