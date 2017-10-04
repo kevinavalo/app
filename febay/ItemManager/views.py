@@ -14,11 +14,13 @@ from django.views.decorators.csrf import csrf_exempt
 def getItemList(request):
     items = Item.objects.all()
     response = {}
+    results = {}
     # response['status'] = request.status
     for item in items:
-        response[item.pk] = {'title':item.title, 'description':item.description, 'price':item.price, 'date-posted': item.date_posted,
+        results[item.pk] = {'title':item.title, 'description':item.description, 'price':item.price, 'date-posted': item.date_posted,
                              'category':item.category, 'owner':item.owner.username}
     response['status'] = 'success'
+    response['results'] = results
     return JsonResponse(response)
 
 
