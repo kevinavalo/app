@@ -1,0 +1,6 @@
+<h1>Items for sale!!!</h1>
+{% for item in items %}
+    <h3>{{item.title}}</h3>
+    <h3>{{item.price}}</h3>
+    <p>{{item.description}}</p>
+{% endfor %}

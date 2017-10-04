@@ -15,7 +15,6 @@ exp:
    ports:
       - "8002:8000"
    volumes:
-<<<<<<< a7e110aa169c0fff6d3305ca14a2efbcb503cdc9
       - ./exp:/app
    command: "mod_wsgi-express start-server --reload-on-changes /app/exp/wsgi.py"
 
