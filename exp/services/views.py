@@ -8,8 +8,6 @@ from django.http import JsonResponse
 
 # make a GET request and parse the returned JSON
 # note, no timeouts, error handling or all the other things needed to do this for real
-
-
 def getItemList(request):
 
     req = urllib.request.Request('http://models-api:8000/api/v1/item/get/')

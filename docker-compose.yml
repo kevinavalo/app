@@ -7,3 +7,23 @@ models:
     ports:
       - "8001:8000"
     command: bash -c "python /app/manage.py makemigrations UserManager && python /app/manage.py makemigrations ItemManager && python /app/manage.py makemigrations CommentManager && python /app/manage.py migrate && python /app/manage.py loaddata /app/db.json && mod_wsgi-express start-server --working-directory /app --reload-on-changes /app/febay/wsgi.py"
+
+exp:
+   image: tp33/django
+   links:
+      - models:models-api
+   ports:
+      - "8002:8000"
+   volumes:
+      - ./exp:/app
+   command: "mod_wsgi-express start-server --reload-on-changes /app/exp/wsgi.py"
+
+web:
+   image: tp33/django
+   links:
+      - exp:exp-api
+   ports:
+      - "8000:8000"
+   volumes:
+      - ./web:/app
+   command: "mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"

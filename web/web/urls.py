@@ -22,4 +22,6 @@ urlpatterns = [
     url(r'^item_detail/(?P<id>\d+)/$', views.itemDetail, name='itemDetail'),
     url(r'^home/$', views.home, name='home'),
 
+
+
 ]
