@@ -22,5 +22,6 @@ urlpatterns = [
    url(r'^', include('UserManager.urls')),
    url(r'^',  include('ItemManager.urls')),
    url(r'^', include('CommentManager.urls')),
+   url(r'^', include('ExperienceManager.urls')),
 ]
 

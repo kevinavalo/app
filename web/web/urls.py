@@ -20,4 +20,6 @@ from frontend import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^item_detail/(?P<id>\d+)/$', views.itemDetail, name='itemDetail'),
+    url(r'^home/$', views.home, name='home'),
+
 ]
