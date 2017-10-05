@@ -33,6 +33,7 @@ class CommentManagerTestCase(TestCase):
 		self.assertEquals(response['response'], "no object found")
 
 	def test_create_comment_success(self):
+		preCommentTotalNum = len(Comment.objects.all())
 		comment = {
 			'username': 'kevinavalo',
 			'item': 'Chair',
@@ -43,9 +44,13 @@ class CommentManagerTestCase(TestCase):
 
 		response = json.loads(url.content.decode('utf-8'))
 
+		postCommentTotalNum = len(Comment.objects.all())
+
+		self.assertEquals(preCommentTotalNum, postCommentTotalNum-1)
 		self.assertEquals(response['response']['status'], "success")
 
 	def test_create_comment_message_failure(self):
+		preCommentTotalNum = len(Comment.objects.all())
 		comment = {
 			'username': 'kevinavalo',
 			'item': 'Chair',
@@ -55,9 +60,13 @@ class CommentManagerTestCase(TestCase):
 
 		response = json.loads(url.content.decode('utf-8'))
 
+		postCommentTotalNum = len(Comment.objects.all())
+
+		self.assertEquals(preCommentTotalNum, postCommentTotalNum)
 		self.assertEquals(response['response'], "There needs to be a message")
 
 	def test_create_comment_username_failure(self):
+		preCommentTotalNum = len(Comment.objects.all())
 		comment = {
 			'item': 'Chair',
 			'message': 'hello this is a new message',
@@ -67,10 +76,13 @@ class CommentManagerTestCase(TestCase):
 
 		response = json.loads(url.content.decode('utf-8'))
 
+		postCommentTotalNum = len(Comment.objects.all())
 
+		self.assertEquals(preCommentTotalNum, postCommentTotalNum)
 		self.assertEquals(response['response'], "User does not exist, or you have entered an invalid username")
 
 	def test_create_comment_item_failure(self):
+		preCommentTotalNum = len(Comment.objects.all())
 		comment = {
 			'username': 'kevinavalo',
 			'message': 'hello this is a new message',
@@ -80,6 +92,9 @@ class CommentManagerTestCase(TestCase):
 
 		response = json.loads(url.content.decode('utf-8'))
 
+		postCommentTotalNum = len(Comment.objects.all())
+
+		self.assertEquals(preCommentTotalNum, postCommentTotalNum)
 		self.assertEquals(response['response'], "Item does not exit, or you have entered an invalid item name")
 
 	def test_update_comment_success(self):
@@ -91,6 +106,9 @@ class CommentManagerTestCase(TestCase):
 		url = self.client.post(reverse('updateComment', args=[1]), newMessage)
 		response = json.loads(url.content.decode('utf-8'))
 
+		commentUpdatedMessage = Comment.objects.get(id=1).message
+
+		self.assertEquals(newMessage['message'], commentUpdatedMessage)
 		self.assertEquals(response['status'], 'success')
 		self.assertEquals(response['response']['newMessage'], newMessage['message'])
 
@@ -103,20 +121,28 @@ class CommentManagerTestCase(TestCase):
 		url = self.client.post(reverse('updateComment', args=[1]), newMessage)
 		response = json.loads(url.content.decode('utf-8'))
 
+		self.assertEquals(Comment.objects.get(id=1).message, oldMessage)
 		self.assertEquals(response['response'], 'this is an invalid message')
 
 	def test_delete_comment_success(self):
+		preCommentNumber = len(Comment.objects.all())
 		url = self.client.post(reverse('deleteComment', args=[1]), {})
 		response = json.loads(url.content.decode('utf-8'))
 
+		postCommentNumber = len(Comment.objects.all())
 		self.assertEquals(response['status'], 'success')
+		self.assertEquals(len(Comment.objects.all()), postCommentNumber)
 
 	def test_delete_comment_failure(self):
+		preCommentNumber = len(Comment.objects.all())
 		url = self.client.post(reverse('deleteComment', args=[17]), {})
 		response = json.loads(url.content.decode('utf-8'))
 
+		postCommentNumber = len(Comment.objects.all())
+
 		self.assertEquals(response['status'], 'error')
 		self.assertEquals(response['response'], 'Comment was not found')
+		self.assertEquals(preCommentNumber, postCommentNumber)
 
 	def test_get_comment_list_success(self):
 		comments = Comment.objects.all().filter(item=2)

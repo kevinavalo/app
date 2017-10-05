@@ -109,10 +109,7 @@ def getCommentList(request, pk):
 		comment_list = []
 		if id:
 			try:
-				try:
-					comments = Comment.objects.all().filter(item=id)
-				except:
-					return JsonResponse({'status': 'error', 'response': 'That item id does not exist'})
+				comments = Comment.objects.all().filter(item=id)
 				if not comments:
 					return JsonResponse({'status': 'error', 'response': 'There are no comments associated with this id.'})
 				for comment in comments:
