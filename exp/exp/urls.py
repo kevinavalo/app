@@ -20,4 +20,6 @@ from services import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
    	url(r'^api/v1/getListings/$', views.getItemList, name='itemList'),
+    url(r'^api/v1/getSorted/$', views.getSortedListings, name='sortedList'),
+
 ]
