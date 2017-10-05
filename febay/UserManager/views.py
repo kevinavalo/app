@@ -91,7 +91,10 @@ def delete_user(request):
 	status = {}
 	if request.method == 'POST':
 		username = request.POST.get('username')
-		u = customer.objects.get(username = username)
+		try:
+			u = customer.objects.get(username = username)
+		except ObjectDoesNotExist:
+			return JsonResponse({'response': {'status': 'user not found'}})
 		if u is not None:
 			u.delete()
 			status = {'status': 'successfully deleted user'}
@@ -102,12 +105,15 @@ def delete_user(request):
 	return JsonResponse({'response':status})
 
 @csrf_exempt
-def update_user(request):
+def update_user(request, id):
 	status = {}
 	response = {}
 	if request.method == 'POST':
 		try:
-			user = customer.objects.get(id = id)
+			try:
+				user = customer.objects.get(id = id)
+			except ObjectDoesNotExist:
+				return JsonResponse({'status': 'error: user does not exist'})
 			if request.POST.get('new_email') != None:
 				user.email = request.POST.get('new_email')
 			if request.POST.get('new_password') != None and request.POST.get('password_confirmation') != None and request.POST.get('new_password') == request.POST.get('password_confirmation'):
