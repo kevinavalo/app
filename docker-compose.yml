@@ -10,6 +10,8 @@ models:
 
 exp:
    image: tp33/django
+   external_links:
+      -  mysql:db
    links:
       - models:models-api
    ports:
@@ -23,7 +25,7 @@ web:
    links:
       - exp:exp-api
    ports:
-      - "8000:8000"
+      - "8004:8000"
    volumes:
       - ./web:/app
    command: "mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"

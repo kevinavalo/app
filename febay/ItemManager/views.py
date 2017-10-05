@@ -21,6 +21,7 @@ def getItemList(request):
                              'category':item.category, 'owner':item.owner.username}
     response['status'] = 'success'
     response['results'] = results
+    response['count'] = len(results)
     return JsonResponse(response)
 
 
@@ -32,8 +33,8 @@ def getItem(request, id):
         response[item.pk] = {'title': item.title, 'description': item.description, 'price':item.price, 'date-posted': item.date_posted,
                              'category': item.category, 'owner': item.owner.username}
         response['status'] = 'success'
-    except ObjectDoesNotExist:
-                return JsonResponse({'status': 'error', 'response': 'no object found'})
+    except Exception as e:
+        return JsonResponse({'status': str(e)})
     return JsonResponse(response)
 
 @csrf_exempt
@@ -53,13 +54,15 @@ def create(request):
                 date_posted = date_posted
             )
             item.save()
-            response['item-added'] = {'title':item.title, 'description':item.description, 'price':item.price, 'date-posted': item.date_posted,
+            response['item-added'] = {'id':item.id, 'title':item.title, 'description':item.description, 'price':item.price, 'date-posted': item.date_posted,
                              'category':item.category, 'owner':item.owner.username}
             response['status'] = 'success'
-        except():
-            response['status'] = "error: Could not add item"
+            return JsonResponse(response)
+        except Exception as e:
+            return JsonResponse({'status': str(e)})
+    else:
+        return
 
-    return JsonResponse(response)
 
 @csrf_exempt
 def update(request, id):
@@ -79,8 +82,8 @@ def update(request, id):
             response['item-updated'] = {'title': item.title, 'description': item.description, 'price': item.price,
                                   'date-posted': item.date_posted, 'category': item.category, 'owner': item.owner.username}
             response['status'] = 'success'
-        except():
-            response['status'] = 'error: Could not update item'
+        except Exception as e:
+            return JsonResponse({'status': str(e)})
     return JsonResponse(response)
 
 @csrf_exempt
@@ -93,7 +96,7 @@ def delete(request, id):
             item.delete()
             response['item-deleted'] = {'title': title}
             response['status'] = 'success'
-        except():
-            response['status'] = 'error: Could not delete item'
+        except Exception as e:
+            return JsonResponse({'status': str(e)})
 
     return JsonResponse(response)

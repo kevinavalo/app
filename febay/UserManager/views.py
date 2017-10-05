@@ -102,21 +102,31 @@ def delete_user(request):
 	return JsonResponse({'response':status})
 
 @csrf_exempt
-def update_user_email(request):
+def update_user(request):
 	status = {}
 	response = {}
 	if request.method == 'POST':
-		username = request.POST.get('username')
-		new_email = request.POST.get('new_email')
-		user = customer.objects.get(username = username)
-		user.email = new_email
-		user.save()
-		response = {'first name': user.first_name,'last name': user.last_name, 
-			'username': user.username, 'email': user.email, 'state':user.state, 
-			'city':user.city, 'phone number': user.phone_number,'id':user.id}
-		status = {'status': 'success'}
+		try:
+			user = customer.objects.get(id = id)
+			if request.POST.get('new_email') != None:
+				user.email = request.POST.get('new_email')
+			if request.POST.get('new_password') != None and request.POST.get('password_confirmation') != None and request.POST.get('new_password') == request.POST.get('password_confirmation'):
+				user.password = request.POST.get('new_password')
+			if request.POST.get('new_phone_number') != None:
+				user.phone_number = request.POST.get('new_phone_number')
+			if request.POST.get('new_state') != None:
+				user.state = request.POST.get('new_state')
+			if request.POST.get('new_city') != None:
+				user.city = request.POST.get('new_city')
+			user.save()
+			response = {'first name': user.first_name,'last name': user.last_name, 
+				'username': user.username, 'email': user.email, 'state':user.state, 
+				'city':user.city, 'phone number': user.phone_number,'id':user.id}
+			status = {'status': 'success'}
+		except():
+			status = {'status': 'error: could not update user'}
 	else:
-		status = {'status': 'error updating user email'}
+		status = {'status': 'error: could not update user'}
 	return JsonResponse({'status': status, 'response':response})
-    	
+
 
