@@ -26,4 +26,4 @@ def home(request):
    items = []
    for item in itemList:
 	   items.append(itemList[item])
-   return render(request, 'home.html', {'items':items})
+   return render(request, 'index.html', {'items':items})
