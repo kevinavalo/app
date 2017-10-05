@@ -1,40 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-
-	<style type="text/css">
-		/* CSS used here will be applied after bootstrap.css */
-		.badge-notify{
-			background:red;
-			position:relative;
-			top: -20px;
-			left: -35px;
-		}
-
-	</style>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	
-    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand"><span class="glyphicon glyphicon-piggy-bank"></span> Febay</a>
-			</div>
-			<ul class="nav navbar-nav navbar-right">
-
-				<li><a><span class="glyphicon glyphicon-user"></span>Profile</a></li>
-
-				<li><a><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> 
-			</ul>
-		</div>
-	</nav>
-
-
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
 	<div class="well">
 		<div class="table-responsive">
 		<table class="table">
@@ -44,7 +9,6 @@
 		</table>
 		</div>
 	</div>
-</body>
-</html>
+{% endblock %}
 
 

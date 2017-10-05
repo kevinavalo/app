@@ -2,22 +2,131 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9311f8-7da8-44cd-8d97-f4e6b916fc48" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/febay/ExperienceManager/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/febay/ExperienceManager/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/febay/ExperienceManager/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/febay/ExperienceManager/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/febay/ExperienceManager/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/febay/ExperienceManager/templates/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/febay/ExperienceManager/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/febay/ExperienceManager/urls.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/febay/ExperienceManager/views.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/app.iml" afterPath="$PROJECT_DIR$/.idea/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project1/db.sqlite3" afterPath="$PROJECT_DIR$/project1/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/fonts/Roboto-Bold-webfont.woff" afterPath="$PROJECT_DIR$/web/static/admin/fonts/Roboto-Bold-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/fonts/Roboto-Light-webfont.woff" afterPath="$PROJECT_DIR$/web/static/admin/fonts/Roboto-Light-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/fonts/Roboto-Regular-webfont.woff" afterPath="$PROJECT_DIR$/web/static/admin/fonts/Roboto-Regular-webfont.woff" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/.idea/febay.iml" afterPath="$PROJECT_DIR$/febay/.idea/febay.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/.idea/misc.xml" afterPath="$PROJECT_DIR$/febay/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/.idea/modules.xml" afterPath="$PROJECT_DIR$/febay/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/.idea/workspace.xml" afterPath="$PROJECT_DIR$/febay/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/CommentManager/__init__.py" afterPath="$PROJECT_DIR$/febay/CommentManager/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/CommentManager/admin.py" afterPath="$PROJECT_DIR$/febay/CommentManager/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/CommentManager/apps.py" afterPath="$PROJECT_DIR$/febay/CommentManager/apps.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/CommentManager/models.py" afterPath="$PROJECT_DIR$/febay/CommentManager/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/CommentManager/tests.py" afterPath="$PROJECT_DIR$/febay/CommentManager/tests.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/CommentManager/urls.py" afterPath="$PROJECT_DIR$/febay/CommentManager/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/CommentManager/views.py" afterPath="$PROJECT_DIR$/febay/CommentManager/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/ItemManager/__init__.py" afterPath="$PROJECT_DIR$/febay/ItemManager/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/ItemManager/admin.py" afterPath="$PROJECT_DIR$/febay/ItemManager/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/ItemManager/apps.py" afterPath="$PROJECT_DIR$/febay/ItemManager/apps.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/ItemManager/models.py" afterPath="$PROJECT_DIR$/febay/ItemManager/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/ItemManager/tests.py" afterPath="$PROJECT_DIR$/febay/ItemManager/tests.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/ItemManager/urls.py" afterPath="$PROJECT_DIR$/febay/ItemManager/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/ItemManager/views.py" afterPath="$PROJECT_DIR$/febay/ItemManager/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/UserManager/__init__.py" afterPath="$PROJECT_DIR$/febay/UserManager/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/UserManager/admin.py" afterPath="$PROJECT_DIR$/febay/UserManager/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/UserManager/apps.py" afterPath="$PROJECT_DIR$/febay/UserManager/apps.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/UserManager/models.py" afterPath="$PROJECT_DIR$/febay/UserManager/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/UserManager/tests.py" afterPath="$PROJECT_DIR$/febay/UserManager/tests.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/UserManager/urls.py" afterPath="$PROJECT_DIR$/febay/UserManager/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/UserManager/views.py" afterPath="$PROJECT_DIR$/febay/UserManager/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/db.json" afterPath="$PROJECT_DIR$/febay/db.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/febay/__init__.py" afterPath="$PROJECT_DIR$/febay/febay/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/febay/settings.py" afterPath="$PROJECT_DIR$/febay/febay/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/febay/urls.py" afterPath="$PROJECT_DIR$/febay/febay/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/febay/wsgi.py" afterPath="$PROJECT_DIR$/febay/febay/wsgi.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/manage.py" afterPath="$PROJECT_DIR$/febay/manage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/febay/wsgi.py" afterPath="$PROJECT_DIR$/febay/wsgi.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project1/manage.py" afterPath="$PROJECT_DIR$/project1/manage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project1/project1/__init__.py" afterPath="$PROJECT_DIR$/project1/project1/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project1/project1/home.py" afterPath="$PROJECT_DIR$/project1/project1/home.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project1/project1/settings.py" afterPath="$PROJECT_DIR$/project1/project1/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project1/project1/urls.py" afterPath="$PROJECT_DIR$/project1/project1/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project1/project1/wsgi.py" afterPath="$PROJECT_DIR$/project1/project1/wsgi.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/frontend/templates/home.html" afterPath="$PROJECT_DIR$/web/frontend/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/frontend/templates/index.html" afterPath="$PROJECT_DIR$/web/frontend/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/frontend/templates/itemDetail.html" afterPath="$PROJECT_DIR$/web/frontend/templates/itemDetail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/frontend/views.py" afterPath="$PROJECT_DIR$/web/frontend/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/web/urls.py" afterPath="$PROJECT_DIR$/web/web/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/css/base.css" afterPath="$PROJECT_DIR$/web/static/admin/css/base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/css/changelists.css" afterPath="$PROJECT_DIR$/web/static/admin/css/changelists.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/css/dashboard.css" afterPath="$PROJECT_DIR$/web/static/admin/css/dashboard.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/css/fonts.css" afterPath="$PROJECT_DIR$/web/static/admin/css/fonts.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/css/forms.css" afterPath="$PROJECT_DIR$/web/static/admin/css/forms.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/css/login.css" afterPath="$PROJECT_DIR$/web/static/admin/css/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/css/rtl.css" afterPath="$PROJECT_DIR$/web/static/admin/css/rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/css/widgets.css" afterPath="$PROJECT_DIR$/web/static/admin/css/widgets.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/fonts/LICENSE.txt" afterPath="$PROJECT_DIR$/web/static/admin/fonts/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/fonts/README.txt" afterPath="$PROJECT_DIR$/web/static/admin/fonts/README.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/LICENSE" afterPath="$PROJECT_DIR$/web/static/admin/img/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/README.txt" afterPath="$PROJECT_DIR$/web/static/admin/img/README.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/calendar-icons.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/calendar-icons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/gis/move_vertex_off.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/gis/move_vertex_off.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/gis/move_vertex_on.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/gis/move_vertex_on.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/icon-addlink.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/icon-addlink.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/icon-alert.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/icon-alert.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/icon-calendar.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/icon-calendar.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/icon-changelink.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/icon-changelink.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/icon-clock.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/icon-clock.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/icon-deletelink.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/icon-deletelink.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/icon-no.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/icon-no.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/icon-unknown-alt.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/icon-unknown-alt.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/icon-unknown.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/icon-unknown.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/icon-yes.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/icon-yes.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/inline-delete.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/inline-delete.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/search.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/search.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/selector-icons.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/selector-icons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/sorting-icons.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/sorting-icons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/tooltag-add.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/tooltag-add.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/img/tooltag-arrowright.svg" afterPath="$PROJECT_DIR$/web/static/admin/img/tooltag-arrowright.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/SelectBox.js" afterPath="$PROJECT_DIR$/web/static/admin/js/SelectBox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/SelectFilter2.js" afterPath="$PROJECT_DIR$/web/static/admin/js/SelectFilter2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/actions.js" afterPath="$PROJECT_DIR$/web/static/admin/js/actions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/actions.min.js" afterPath="$PROJECT_DIR$/web/static/admin/js/actions.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/admin/DateTimeShortcuts.js" afterPath="$PROJECT_DIR$/web/static/admin/js/admin/DateTimeShortcuts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/admin/RelatedObjectLookups.js" afterPath="$PROJECT_DIR$/web/static/admin/js/admin/RelatedObjectLookups.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/calendar.js" afterPath="$PROJECT_DIR$/web/static/admin/js/calendar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/cancel.js" afterPath="$PROJECT_DIR$/web/static/admin/js/cancel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/change_form.js" afterPath="$PROJECT_DIR$/web/static/admin/js/change_form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/collapse.js" afterPath="$PROJECT_DIR$/web/static/admin/js/collapse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/collapse.min.js" afterPath="$PROJECT_DIR$/web/static/admin/js/collapse.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/core.js" afterPath="$PROJECT_DIR$/web/static/admin/js/core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/inlines.js" afterPath="$PROJECT_DIR$/web/static/admin/js/inlines.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/inlines.min.js" afterPath="$PROJECT_DIR$/web/static/admin/js/inlines.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/jquery.init.js" afterPath="$PROJECT_DIR$/web/static/admin/js/jquery.init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/popup_response.js" afterPath="$PROJECT_DIR$/web/static/admin/js/popup_response.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/prepopulate.js" afterPath="$PROJECT_DIR$/web/static/admin/js/prepopulate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/prepopulate.min.js" afterPath="$PROJECT_DIR$/web/static/admin/js/prepopulate.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/prepopulate_init.js" afterPath="$PROJECT_DIR$/web/static/admin/js/prepopulate_init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/timeparse.js" afterPath="$PROJECT_DIR$/web/static/admin/js/timeparse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/urlify.js" afterPath="$PROJECT_DIR$/web/static/admin/js/urlify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" afterPath="$PROJECT_DIR$/web/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/vendor/jquery/jquery.js" afterPath="$PROJECT_DIR$/web/static/admin/js/vendor/jquery/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/vendor/jquery/jquery.min.js" afterPath="$PROJECT_DIR$/web/static/admin/js/vendor/jquery/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" afterPath="$PROJECT_DIR$/web/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/vendor/xregexp/xregexp.js" afterPath="$PROJECT_DIR$/web/static/admin/js/vendor/xregexp/xregexp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/admin/js/vendor/xregexp/xregexp.min.js" afterPath="$PROJECT_DIR$/web/static/admin/js/vendor/xregexp/xregexp.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/.gitignore" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/.travis.yml" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/LICENSE" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/README.md" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/css/shop-homepage.css" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/css/shop-homepage.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/gulpfile.js" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/package.json" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap-grid.css" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap-grid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap-grid.min.css" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap-grid.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap-reboot.css" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap-reboot.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap-reboot.min.css" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap-reboot.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/jquery/jquery.js" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/jquery/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/jquery/jquery.min.js" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/jquery/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/popper/popper.js" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/popper/popper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/popper/popper.min.js" afterPath="$PROJECT_DIR$/web/static/startbootstrap-shop-homepage-gh-pages/vendor/popper/popper.min.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,24 +136,42 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exp/services/views.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="itemDetail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/frontend/templates/itemDetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="10" column="10" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="10" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exp/services/tests.py">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/frontend/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/frontend/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/web/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -53,25 +180,15 @@
       <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="8" column="177" lean-forward="false" selection-start-line="8" selection-start-column="177" selection-end-line="8" selection-end-column="177" />
+            <state relative-caret-position="144">
+              <caret line="8" column="355" lean-forward="false" selection-start-line="8" selection-start-column="355" selection-end-line="8" selection-end-column="355" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/web/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exp/services/__init__.py">
+      <file leaf-file-name="wsgi.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/web/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -90,40 +207,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/febay/febay/urls.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/frontend/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="486">
+              <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/febay/febay/settings.py">
+        <entry file="file://$PROJECT_DIR$/web/web/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wsgi.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/febay/febay/wsgi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-486">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apps.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exp/services/apps.py">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exp/exp/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-216">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -131,6 +240,13 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -143,19 +259,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/frontend/views.py" />
         <option value="$PROJECT_DIR$/web/web/urls.py" />
         <option value="$PROJECT_DIR$/febay/febay/urls.py" />
         <option value="$PROJECT_DIR$/febay/febay/settings.py" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/web/frontend/templates/itemDetail.html" />
+        <option value="$PROJECT_DIR$/web/frontend/views.py" />
+        <option value="$PROJECT_DIR$/web/frontend/templates/home.html" />
+        <option value="$PROJECT_DIR$/web/frontend/templates/base.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="238" />
-    <option name="y" value="49" />
-    <option name="width" value="1224" />
-    <option name="height" value="869" />
+    <option name="x" value="248" />
+    <option name="y" value="37" />
+    <option name="width" value="1223" />
+    <option name="height" value="868" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -190,6 +309,12 @@
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="exp" type="462c0819:PsiDirectoryNode" />
+              <item name="exp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="febay" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -202,6 +327,25 @@
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
@@ -217,6 +361,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -290,10 +435,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="238" y="49" width="1224" height="869" extended-state="0" />
+    <frame x="248" y="37" width="1223" height="868" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2502044" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -312,6 +457,26 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -321,13 +486,131 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/frontend/views.py">
+    <entry file="file://$PROJECT_DIR$/exp/services/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exp/services/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="177" lean-forward="false" selection-start-line="8" selection-start-column="177" selection-end-line="8" selection-end-column="177" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exp/services/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exp/exp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/febay/febay/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/febay/febay/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/febay/febay/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exp/services/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/web/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/febay/CommentManager/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/febay/ExperienceManager/views.py" />
+    <entry file="file://$PROJECT_DIR$/febay/ItemManager/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1070">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/febay/UserManager/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1268">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/febay/febay/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/febay/febay/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/febay/febay/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -371,33 +654,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/febay/CommentManager/views.py">
+    <entry file="file://$PROJECT_DIR$/exp/services/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/febay/ExperienceManager/views.py">
+    <entry file="file://$PROJECT_DIR$/exp/services/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/febay/ItemManager/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1070">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/febay/UserManager/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1268">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -419,17 +688,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exp/services/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exp/services/tests.py">
+    <entry file="file://$PROJECT_DIR$/exp/services/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -437,7 +696,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exp/services/__init__.py">
+    <entry file="file://$PROJECT_DIR$/exp/services/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exp/exp/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -453,7 +720,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/febay/febay/wsgi.py">
+    <entry file="file://$PROJECT_DIR$/exp/exp/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/web/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-486">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/web/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/web/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -461,34 +752,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/febay/febay/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/febay/febay/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="8" column="177" lean-forward="false" selection-start-line="8" selection-start-column="177" selection-end-line="8" selection-end-column="177" />
+        <state relative-caret-position="144">
+          <caret line="8" column="355" lean-forward="false" selection-start-line="8" selection-start-column="355" selection-end-line="8" selection-end-column="355" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/web/urls.py">
+    <entry file="file://$PROJECT_DIR$/web/frontend/templates/itemDetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/frontend/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/frontend/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/frontend/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
           <folding />
         </state>
       </provider>

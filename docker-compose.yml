@@ -7,6 +7,7 @@ models:
     ports:
       - "8001:8000"
     command: bash -c "python /app/manage.py makemigrations UserManager && python /app/manage.py makemigrations ItemManager && python /app/manage.py makemigrations CommentManager && python /app/manage.py migrate && python /app/manage.py loaddata /app/db.json && mod_wsgi-express start-server --working-directory /app --reload-on-changes /app/febay/wsgi.py"
+    tty: true
 
 exp:
    image: tp33/django

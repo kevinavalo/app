@@ -23,5 +23,8 @@ def home(request):
 	resp_json = urllib.request.urlopen(req).read().decode('utf-8')
 	resp = json.loads(resp_json)
 	itemList = resp['results']
+	items = {}
+	for item in itemList:
+		items[item] = (itemList[item])
 
-	return render(request, 'home.html', {'items':itemList})
+	return render(request, 'home.html', {'items':items})

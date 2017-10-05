@@ -1,6 +1,20 @@
-<h1>Items for sale!!!</h1>
-{% for item in items %}
-    <h3>{{item.title}}</h3>
-    <h3>{{item.price}}</h3>
-    <p>{{item.description}}</p>
-{% endfor %}
+{% extends 'base.html' %}
+{% block content %}
+    <h1 align="center">Items for sale!!!</h1>
+    <div class="well" align="center">
+		<div class="table-responsive" align="center">
+		<table class="table" align="center">
+            {% for id, item in items.items %}
+                <tr>
+                    <td><a href="/item_detail/{{id}}"><h3>{{item.title}}</h3></a></td>
+                    <td><h3>{{item.price}}</h3></td>
+                </tr>
+                <tr>
+                    <td><p>{{item.description}}</p></td>
+                </tr>
+            {% endfor %}
+		</table>
+		</div>
+	</div>
+
+{% endblock %}
