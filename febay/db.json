@@ -1,1 +1,285 @@
-[{"model": "auth.permission", "pk": 1, "fields": {"name": "Can add log entry", "content_type": 1, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change log entry", "content_type": 1, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete log entry", "content_type": 1, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can add user", "content_type": 2, "codename": "add_user"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can change user", "content_type": 2, "codename": "change_user"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can delete user", "content_type": 2, "codename": "delete_user"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can add group", "content_type": 3, "codename": "add_group"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can change group", "content_type": 3, "codename": "change_group"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can delete group", "content_type": 3, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can add permission", "content_type": 4, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can change permission", "content_type": 4, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can delete permission", "content_type": 4, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add content type", "content_type": 5, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change content type", "content_type": 5, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete content type", "content_type": 5, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can add session", "content_type": 6, "codename": "add_session"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can change session", "content_type": 6, "codename": "change_session"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can delete session", "content_type": 6, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can add item", "content_type": 7, "codename": "add_item"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can change item", "content_type": 7, "codename": "change_item"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can delete item", "content_type": 7, "codename": "delete_item"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can add user", "content_type": 8, "codename": "add_customer"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can change user", "content_type": 8, "codename": "change_customer"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can delete user", "content_type": 8, "codename": "delete_customer"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add comment", "content_type": 9, "codename": "add_comment"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change comment", "content_type": 9, "codename": "change_comment"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete comment", "content_type": 9, "codename": "delete_comment"}}, {"model": "auth.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$30000$xYsYp67F0QJE$v1amI87+mM4vq9L4OCR56URAo2fdKFz+IvB3ELvEXEc=", "last_login": null, "is_superuser": false, "username": "kevinavalo", "first_name": "Kevin", "last_name": "Avalo", "email": "kevinavalo@example.com", "is_staff": false, "is_active": true, "date_joined": "2017-09-21T03:51:43.428Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 4, "fields": {"password": "pbkdf2_sha256$30000$cQyoWt9wM72a$YLS6jAx26dqVKuCE6OBNp2+Fa2z0KQQ5hD8iZkcycoM=", "last_login": null, "is_superuser": false, "username": "katz", "first_name": "Rachel", "last_name": "Katz", "email": "katz@example.com", "is_staff": false, "is_active": true, "date_joined": "2017-09-21T04:32:03.600Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 5, "fields": {"password": "pbkdf2_sha256$30000$iIIlSIZnAmuH$lSa6/rv2wVoToCCb1nWF9kLkcuVEgjzogHAEIF7h67M=", "last_login": "2017-09-21T04:44:10.322Z", "is_superuser": false, "username": "ross", "first_name": "Kat", "last_name": "Ross", "email": "ross@example.com", "is_staff": false, "is_active": true, "date_joined": "2017-09-21T04:32:27.885Z", "groups": [], "user_permissions": []}}, {"model": "sessions.session", "pk": "zemk725palmvv5pm40801t9nzpoy5wvc", "fields": {"session_data": "N2EzNDdkZTc3ODM3MmE3MmMyNzY3MDEyNTBhZWQ3ZTVjMDNjOTY4ZDp7fQ==", "expire_date": "2017-10-05T04:44:10.311Z"}}, {"model": "UserManager.customer", "pk": 1, "fields": {"phone_number": "7039459905", "city": "Charlottesville", "state": "VA", "groups": [], "user_permissions": []}}, {"model": "UserManager.customer", "pk": 4, "fields": {"phone_number": "7039459903", "city": "Charlottesville", "state": "VA", "groups": [], "user_permissions": []}}, {"model": "UserManager.customer", "pk": 5, "fields": {"phone_number": "7039459902", "city": "Charlottesville", "state": "VA", "groups": [], "user_permissions": []}}, {"model": "CommentManager.comment", "pk": 1, "fields": {"user": 1, "item": 2, "message": "wow, nice chair!", "date_posted": "2017-09-21T05:19:29.463Z"}}, {"model": "CommentManager.comment", "pk": 2, "fields": {"user": 1, "item": 2, "message": "wow, nice chair!", "date_posted": "2017-09-21T05:22:55.439Z"}}, {"model": "CommentManager.comment", "pk": 3, "fields": {"user": 1, "item": 2, "message": "wow, nice chair!", "date_posted": "2017-09-21T05:23:31.104Z"}}, {"model": "CommentManager.comment", "pk": 4, "fields": {"user": 1, "item": 2, "message": "is it still available?", "date_posted": "2017-09-21T05:25:32.219Z"}}, {"model": "CommentManager.comment", "pk": 5, "fields": {"user": 1, "item": 2, "message": "wow, nice chair!", "date_posted": "2017-09-21T05:26:31.280Z"}}, {"model": "CommentManager.comment", "pk": 6, "fields": {"user": 1, "item": 2, "message": "wow, nice chair!", "date_posted": "2017-09-21T05:26:49.351Z"}}, {"model": "CommentManager.comment", "pk": 7, "fields": {"user": 1, "item": 2, "message": "wow, nice chair!", "date_posted": "2017-09-21T05:27:36.246Z"}}, {"model": "CommentManager.comment", "pk": 9, "fields": {"user": 5, "item": 5, "message": "cool couch!", "date_posted": "2017-09-21T05:28:22.174Z"}}, {"model": "CommentManager.comment", "pk": 10, "fields": {"user": 4, "item": 5, "message": "nice!", "date_posted": "2017-09-21T05:28:32.648Z"}}, {"model": "CommentManager.comment", "pk": 11, "fields": {"user": 4, "item": 4, "message": "ugly frame", "date_posted": "2017-09-21T05:28:58.775Z"}}, {"model": "CommentManager.comment", "pk": 12, "fields": {"user": 1, "item": 4, "message": "omg", "date_posted": "2017-09-21T05:29:07.475Z"}}, {"model": "ItemManager.item", "pk": 1, "fields": {"owner": 1, "title": "Desk", "description": "new", "price": 5.99, "category": "furniture", "date_posted": "2017-09-21T05:06:50.199Z"}}, {"model": "ItemManager.item", "pk": 2, "fields": {"owner": 4, "title": "Chair", "description": "new", "price": 5.99, "category": "furniture", "date_posted": "2017-09-21T05:07:10.759Z"}}, {"model": "ItemManager.item", "pk": 4, "fields": {"owner": 5, "title": "Bed frame", "description": "new", "price": 5.99, "category": "furniture", "date_posted": "2017-09-21T05:07:29.196Z"}}, {"model": "ItemManager.item", "pk": 5, "fields": {"owner": 1, "title": "Couch", "description": "new", "price": 5.99, "category": "furniture", "date_posted": "2017-09-21T05:07:39.020Z"}}]
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$xYsYp67F0QJE$v1amI87+mM4vq9L4OCR56URAo2fdKFz+IvB3ELvEXEc=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "kevinavalo",
+        "first_name": "Kevin",
+        "last_name": "Avalo",
+        "email": "kevinavalo@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-09-21T03:51:43.428Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$cQyoWt9wM72a$YLS6jAx26dqVKuCE6OBNp2+Fa2z0KQQ5hD8iZkcycoM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "katz",
+        "first_name": "Rachel",
+        "last_name": "Katz",
+        "email": "katz@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-09-21T04:32:03.600Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$iIIlSIZnAmuH$lSa6/rv2wVoToCCb1nWF9kLkcuVEgjzogHAEIF7h67M=",
+        "last_login": "2017-09-21T04:44:10.322Z",
+        "is_superuser": false,
+        "username": "ross",
+        "first_name": "Kat",
+        "last_name": "Ross",
+        "email": "ross@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-09-21T04:32:27.885Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "zemk725palmvv5pm40801t9nzpoy5wvc",
+    "fields": {
+        "session_data": "N2EzNDdkZTc3ODM3MmE3MmMyNzY3MDEyNTBhZWQ3ZTVjMDNjOTY4ZDp7fQ==",
+        "expire_date": "2017-10-05T04:44:10.311Z"
+    }
+},
+{
+    "model": "UserManager.customer",
+    "pk": 1,
+    "fields": {
+        "phone_number": "7039459905",
+        "city": "Charlottesville",
+        "state": "VA",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "UserManager.customer",
+    "pk": 4,
+    "fields": {
+        "phone_number": "7039459903",
+        "city": "Charlottesville",
+        "state": "VA",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "UserManager.customer",
+    "pk": 5,
+    "fields": {
+        "phone_number": "7039459902",
+        "city": "Charlottesville",
+        "state": "VA",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "kevinavalo"
+        ],
+        "item": 2,
+        "message": "wow, nice chair!",
+        "date_posted": "2017-09-21T05:19:29.463Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 2,
+    "fields": {
+        "user": [
+            "kevinavalo"
+        ],
+        "item": 2,
+        "message": "wow, nice chair!",
+        "date_posted": "2017-09-21T05:22:55.439Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 3,
+    "fields": {
+        "user": [
+            "kevinavalo"
+        ],
+        "item": 2,
+        "message": "wow, nice chair!",
+        "date_posted": "2017-09-21T05:23:31.104Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 4,
+    "fields": {
+        "user": [
+            "kevinavalo"
+        ],
+        "item": 2,
+        "message": "is it still available?",
+        "date_posted": "2017-09-21T05:25:32.219Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 5,
+    "fields": {
+        "user": [
+            "kevinavalo"
+        ],
+        "item": 2,
+        "message": "wow, nice chair!",
+        "date_posted": "2017-09-21T05:26:31.280Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 6,
+    "fields": {
+        "user": [
+            "kevinavalo"
+        ],
+        "item": 2,
+        "message": "wow, nice chair!",
+        "date_posted": "2017-09-21T05:26:49.351Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 7,
+    "fields": {
+        "user": [
+            "kevinavalo"
+        ],
+        "item": 2,
+        "message": "wow, nice chair!",
+        "date_posted": "2017-09-21T05:27:36.246Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 9,
+    "fields": {
+        "user": [
+            "ross"
+        ],
+        "item": 5,
+        "message": "cool couch!",
+        "date_posted": "2017-09-21T05:28:22.174Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 10,
+    "fields": {
+        "user": [
+            "katz"
+        ],
+        "item": 5,
+        "message": "nice!",
+        "date_posted": "2017-09-21T05:28:32.648Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 11,
+    "fields": {
+        "user": [
+            "katz"
+        ],
+        "item": 4,
+        "message": "ugly frame",
+        "date_posted": "2017-09-21T05:28:58.775Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 12,
+    "fields": {
+        "user": [
+            "kevinavalo"
+        ],
+        "item": 4,
+        "message": "omg",
+        "date_posted": "2017-09-21T05:29:07.475Z"
+    }
+},
+{
+    "model": "ItemManager.item",
+    "pk": 1,
+    "fields": {
+        "owner": [
+            "kevinavalo"
+        ],
+        "title": "Desk",
+        "description": "new",
+        "price": 5.99,
+        "category": "furniture",
+        "date_posted": "2017-09-21T05:06:50.199Z"
+    }
+},
+{
+    "model": "ItemManager.item",
+    "pk": 2,
+    "fields": {
+        "owner": [
+            "katz"
+        ],
+        "title": "Chair",
+        "description": "new",
+        "price": 5.99,
+        "category": "furniture",
+        "date_posted": "2017-09-21T05:07:10.759Z"
+    }
+},
+{
+    "model": "ItemManager.item",
+    "pk": 4,
+    "fields": {
+        "owner": [
+            "ross"
+        ],
+        "title": "Bed frame",
+        "description": "new",
+        "price": 5.99,
+        "category": "furniture",
+        "date_posted": "2017-09-21T05:07:29.196Z"
+    }
+},
+{
+    "model": "ItemManager.item",
+    "pk": 5,
+    "fields": {
+        "owner": [
+            "kevinavalo"
+        ],
+        "title": "Couch",
+        "description": "new",
+        "price": 5.99,
+        "category": "furniture",
+        "date_posted": "2017-09-21T05:07:39.020Z"
+    }
+}
+]
