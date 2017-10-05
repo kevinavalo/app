@@ -14,11 +14,11 @@ from django.views.decorators.csrf import csrf_exempt
 def getItemList(request):
     items = Item.objects.all()
     response = {}
-    results = {}
+    results = []
     # response['status'] = request.status
     for item in items:
-        results[item.pk] = {'title':item.title, 'description':item.description, 'price':item.price, 'date-posted': item.date_posted,
-                             'category':item.category, 'owner':item.owner.username}
+        results.append({'id':item.id, 'title':item.title, 'description':item.description, 'price':item.price, 'date-posted': item.date_posted,
+                             'category':item.category, 'owner':item.owner.username})
     response['status'] = 'success'
     response['results'] = results
     response['count'] = len(results)

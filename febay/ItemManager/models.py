@@ -5,6 +5,7 @@ from django.utils import timezone
 
 from django.db import models
 from UserManager.models import customer
+from datetime import datetime
 
 # Create your models here.
 class Item(models.Model):

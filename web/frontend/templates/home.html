@@ -3,10 +3,11 @@
     <h1 align="center">Items for sale!!!</h1>
     <div class="well" align="center">
 		<div class="table-responsive" align="center">
+
 		<table class="table" align="center">
-            {% for id, item in items.items %}
+            {% for item in items %}
                 <tr>
-                    <td><a href="/item_detail/{{id}}"><h3>{{item.title}}</h3></a></td>
+                    <td><a href="/item_detail/{{item.id}}"><h3>{{item.title}}</h3></a></td>
                     <td><h3>{{item.price}}</h3></td>
                 </tr>
                 <tr>

@@ -26,7 +26,7 @@ web:
    links:
       - exp:exp-api
    ports:
-      - "8004:8000"
+      - "8000:8000"
    volumes:
       - ./web:/app
    command: "mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"

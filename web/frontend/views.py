@@ -12,9 +12,11 @@ def itemDetail(request, id):
 	req = urllib.request.Request('http://exp-api:8000/api/v1/getListings')
 	resp_json = urllib.request.urlopen(req).read().decode('utf-8')
 	resp = json.loads(resp_json)
-	itemList = resp['results']
-	item = itemList[id]
-
+	itemList = (resp['results'])
+	item = {}
+	for i in itemList:
+		if (i['id']) == int(id):
+		 	item = i
 	#return JsonResponse(item)
 	return render(request, 'itemDetail.html', {'item': item})
 
@@ -22,9 +24,12 @@ def home(request):
 	req = urllib.request.Request('http://exp-api:8000/api/v1/getSorted/')
 	resp_json = urllib.request.urlopen(req).read().decode('utf-8')
 	resp = json.loads(resp_json)
-	# itemList = resp['results']
-	# items = {}
-	# for item in itemList:
-	# 	items[item] = (itemList[item])
+	items = json.loads(resp)
+	list = []
 
-	return render(request, 'home.html', {'items':resp})
+	# itemList = resp['results']
+	# items = []
+	# for item in resp:
+	# 	items.append(item)
+
+	return render(request, 'home.html', {'items':items})
