@@ -95,7 +95,50 @@ class UserManagerTestCase(TestCase):
 		self.assertEquals(0, len(response)-1)
 
 	def test_delete_user_success(self):
+		preUserTotal = len(customer.objects.all())
 		url = self.client.post(reverse('delete_user'), {'username': 'kevinavalo'})
 		response = json.loads(url.content.decode('utf-8'))
 
+		postUserTotal = len(customer.objects.all())
+
+		self.assertEquals(preUserTotal-1, postUserTotal)		
 		self.assertEquals(response['response']['status'], 'successfully deleted user')
+
+	def test_delete_user_failure(self):
+		preUserTotal = len(customer.objects.all())
+		url = self.client.post(reverse('delete_user'), {'username': 'nonexistent'})
+		response = json.loads(url.content.decode('utf-8'))
+
+		postUserTotal = len(customer.objects.all())
+
+		self.assertEquals(preUserTotal, postUserTotal)
+		self.assertEquals(response['response']['status'], 'user not found')
+
+	def test_update_user_success(self):
+		user = customer.objects.get(id=1)
+
+		oldEmail = user.email
+		newEmail = {'new_email': 'kevinavalo@yahoo.com'}
+
+		url = self.client.post(reverse('update_user', args=[1]), newEmail)
+		response = json.loads(url.content.decode('utf-8'))
+
+		self.assertEquals(response['status']['status'], 'success')
+		self.assertEquals(customer.objects.get(id=1).email, newEmail['new_email'])
+
+	def test_update_user_no_updates(self):
+		user = customer.objects.get(id=1)
+
+		oldEmail = user.email
+
+		url = self.client.post(reverse('update_user', args=[1]), {})
+		response = json.loads(url.content.decode('utf-8'))
+
+		self.assertEquals(response['status']['status'], 'success')
+		self.assertEquals(customer.objects.get(id=1).email, oldEmail)
+
+	def test_update_user_invalid_id(self):
+		url = self.client.post(reverse('update_user', args=[88]), {})
+		response = json.loads(url.content.decode('utf-8'))
+
+		self.assertEquals(response['status'], 'error: user does not exist')
