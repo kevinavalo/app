@@ -1,73 +1,101 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 from django.test import TestCase
-from django.core.urlresolvers import reverse
 from .models import User, customer
+from django.urls import reverse
 
-class UpdateProfile(TestCase):
-	#setUp method is called before each test in this class
-	def setUp(self):
-		self.user = customer.objects.create_user(
-			first_name = 'Jane',
-			last_name = 'Doe',
-			username = 'janedoe123',
-			email = 'jane@doe.com',
-			city = 'South Orange',
-			state = 'NEW JERSEY',
-			phone_number = +19739021648,
-			password = 'helloworld'
-			)
-		pass #nothing to set up
+import json
+
+# Create your tests here.
+
+class UserManagerTestCase(TestCase):
+
+	fixtures = ["db.json"]
+
+	def setup(self):
+		pass
+
+	def test_register_user_success(self):
+		newUser = {
+			'first_name': 'test',
+			'last_name': 'user',
+			'username': 'testuser',
+			'email': 'test@gmail.com',
+			'city': 'Charlottesville',
+			'state': 'VA',
+			'phone_number': '1234567890',
+			'password': 'password'
+		}
+
+		preUserTotal = len(customer.objects.all())
+		url = self.client.post(reverse('registration'), newUser)
+		postUserTotal = len(customer.objects.all())
+
+		response = json.loads(url.content.decode('utf-8'))
+
+		self.assertEquals(response['status'], 'success')
+		self.assertEquals(response['Response']['first name'], newUser['first_name'])
+		self.assertEquals(preUserTotal, postUserTotal-1)
 
 
-    # def success_update_password(self):
-    # 	#assumes user with id 1 is stored in db
-    # 	response = self.client.get(reverse('all_orders_list', kwargs={'user_id':1}))
+	def test_register_user_failure(self):
+		newUser = {
+			'first_name': 'test',
+			'last_name': 'user',
+			'email': 'test@gmail.com',
+			'city': 'Charlottesville',
+			'state': 'VA',
+			'phone_number': '1234567890',
+			'password': 'password'
+		}
 
-    # 	#checks that response contains parameter order list & implicitly
-    # 	# checks that the HTTP status code is 200
-    # 	self.assertContains(response, 'order_list')
-    # 	#user_id not given in url, so error
+		preUserTotal = len(customer.objects.all())
+		url = self.client.post(reverse('registration'), newUser)
+		postUserTotal = len(customer.objects.all())
 
-    def success_update_email(self):
-    	self.user.email = 'doe@jane.com'
-    	self.assertEquals(self.user.email, 'doe@jane.com')
-    	self.user.email = 'jane@doe.com'
+		response = json.loads(url.content.decode('utf-8'))
 
-    def invalid_update_email(self):
-    	self.user.email = 'doejane.com'
-    	self.assertEquals(self.user.email, 'jane@doe.com')
+		self.assertEquals(response['status'], 'error')
+		self.assertEquals(response['Response'], 'There was an error creating the user, invalid input')
+		self.assertEquals(preUserTotal, postUserTotal)
 
-    def success_update_state(self):
-    	self.user.state = 'CALIFORNIA'
-    	self.assertEquals(self.user.state, 'CALIFORNIA')
+	def test_get_user_success(self):
+		user = customer.objects.get(id=1)
 
-    def success_update_city(self):
-    	self.user.city = 'Maplewood'
-    	self.assertEquals(self.user.state, 'Maplewood')
+		url = self.client.get(reverse('get_user', args=[1]))
+		response = json.loads(url.content.decode('utf-8'))
 
-    def success_update_phone_number(self):
-    	self.user.phone_number = +1234567891
-    	self.assertEquals(self.user.phone_number, +1234567891)
-    	self.user.phone_number = +19739021648
+		self.assertEquals(response['status'], 'success')
+		self.assertEquals(response[user.username]['first name'], user.first_name)
+		self.assertEquals(response[user.username]['username'], user.username)
 
-    def invalid_update_phone_number(self):
-    	self.user.phone_number = 1
-    	self.assertEquals(self.user.phone_number, +19739021648)
+	def test_get_user_failure(self):
+		url = self.client.get(reverse('get_user', args=[18]))
+		response = json.loads(url.content.decode('utf-8'))
 
-    def success_update_first_name(self):
-    	self.user.first_name = 'John'
-    	self.assertEquals(self.user.first_name, 'John')
+		self.assertEquals(response['status'], 'error: user does not exist')
 
-    def success_update_last_name(self):
-    	self.user.last_name = 'Dow'
-    	self.assertEquals(self.user.last_name, 'Dow')
+	def test_get_users_success(self):
+		url = self.client.get(reverse('get_users'))
+		response = json.loads(url.content.decode('utf-8'))
 
-    # def fails_invalid(self):
-    # 	response = self.client.get(reverse('all_orders_list'))
-    # 	self.assertEquals(response.status_code, 404)
-    # 	#tearDown method is called after each test
+		users = customer.objects.all().values('username', 'first_name', 'last_name')
+		users_list = list(users)
 
-    def tearDown(self):
-    	self.user.delete()
-    	pass #nothing to tear down
+		self.assertEquals(users_list[1]['username'], response[1]['username'])
+		self.assertEquals(len(users_list), len(response)-1)
+
+	def test_get_users_empty_list(self):
+		customer.objects.all().delete()
+
+		url = self.client.get(reverse('get_users'))
+		response = json.loads(url.content.decode('utf-8'))
+
+		self.assertEquals(0, len(response)-1)
+
+	def test_delete_user_success(self):
+		url = self.client.post(reverse('delete_user'), {'username': 'kevinavalo'})
+		response = json.loads(url.content.decode('utf-8'))
+
+		self.assertEquals(response['response']['status'], 'successfully deleted user')
