@@ -8,6 +8,6 @@ urlpatterns = [
     # url(r'^api/v1/user/login/$', views.login, name='login'),
     # url(r'^api/v1/user/logout/$', views.logout, name='logout'),
     url(r'^api/v1/user/delete_user/$', views.delete_user, name='delete_user'),
-    url(r'^api/v1/user/update_user_email/$', views.update_user_email, name='update_user_email'),
+    url(r'^api/v1/user/update/(?P<id>\d*)/$', views.update_user, name='update_user'),
 
 ]
