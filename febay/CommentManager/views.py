@@ -46,6 +46,7 @@ def createComment(request):
 	else:
 		return JsonResponse({'status': 'error', 'response': 'Not a POST method'})
 
+@csrf_exempt
 def getComment(request, pk):
 	if request.method == 'GET':
 		id = pk
