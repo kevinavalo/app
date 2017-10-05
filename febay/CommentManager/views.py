@@ -18,12 +18,18 @@ def createComment(request):
 	if request.method == 'POST':
 		try:
 			username = request.POST.get('username')
-			user = customer.objects.get(username=username)
+			try:
+				user = customer.objects.get(username=username)
+			except ObjectDoesNotExist:
+				return JsonResponse({'response': 'User does not exist, or you have entered an invalid username'})
 			if not user:
 				return JsonResponse({'response': 'User must be authenticated to create comment'})
 
 			itemTitle = request.POST.get('item')
-			item = Item.objects.get(title=itemTitle)
+			try:
+				item = Item.objects.get(title=itemTitle)
+			except ObjectDoesNotExist:
+				return JsonResponse({'response': 'Item does not exit, or you have entered an invalid item name'})
 			if not item:
 				return JsonResponse({'response': 'Comments must be associated with an item'})
 
