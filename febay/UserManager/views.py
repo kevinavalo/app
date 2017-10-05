@@ -20,16 +20,19 @@ from django.core.exceptions import ObjectDoesNotExist
 @csrf_exempt
 def register_user(request):
 	if request.method == 'POST':
-		user = customer.objects.create_user(
-			first_name = request.POST.get('first_name'),
-			last_name = request.POST.get('last_name'),
-			username = request.POST.get('username'),
-			email = request.POST.get('email'),
-			city = request.POST.get('city'),
-			state = request.POST.get('state'),
-			phone_number = request.POST.get('phone_number'),
-			password = request.POST.get('password')
-			)
+		try:
+			user = customer.objects.create_user(
+				first_name = request.POST.get('first_name'),
+				last_name = request.POST.get('last_name'),
+				username = request.POST.get('username'),
+				email = request.POST.get('email'),
+				city = request.POST.get('city'),
+				state = request.POST.get('state'),
+				phone_number = request.POST.get('phone_number'),
+				password = request.POST.get('password')
+				)
+		except:
+			return JsonResponse({'status': 'error', 'Response': 'There was an error creating the user, invalid input'})
 		return JsonResponse({'status': 'success', 'Response':{'first name': user.first_name,'last name': user.last_name, 'username': user.username, 'email': user.email, 'state':user.state, 'city':user.city, 'phone number': user.phone_number,'id':user.id}})
 	else:
 		return JsonResponse({'status': 'error', 'Response': 'Could not register user'})
