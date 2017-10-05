@@ -94,7 +94,7 @@ def delete_user(request):
 		u = customer.objects.get(username = username)
 		if u is not None:
 			u.delete()
-			status = {'status': 'sucessfully deleted user'}
+			status = {'status': 'successfully deleted user'}
 		else:
 			status = {'status': 'user not found'}
 	else:
