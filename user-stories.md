@@ -3,6 +3,33 @@
 ## General User
 1. As a general user, I would like to update my profile information so that it can always be up-to-date despite possible changes.
 
+*Acceptance Criteria*:
+
+**PASSWORD**
+1. When a user inputs an empty string into the new_password field and a user inputs an empty string into the confirm_password field (i.e. the password is not changed) the current user's password is not changed.
+2. When a user inputs a string into the new_password field and a different string the confirm_password field, the current user's password is not changed and an error is returned, saying 'passwords must match'
+3. When a user inputs a valid string into the new_password field and the same valid string the confirm_password field, the current user's password is changed and the user is redirected to login.
+
+**EMAIL**
+1. When a user inputs an empty string into the new_email field (i.e. the email is not changed) the current user's email is not changed.
+2. When a user inputs an invalid email into the new_email field, the current user's email is not changed and an error message is returned, saying, 'you must enter a valid email address'
+3. When a user inputs a valid email that has already been used by another user into the new_email field, the current user's email is not changed and an error message is returned, saying, 'email address already in use'
+4. When a user inputs a valid email address that has not been used by another user, the current user's email is updated.
+
+**FIRST NAME/LAST NAME**
+1. When a user inputs an empty string into the new_first_name/new_last_name field (i.e. the user's first name/last name is not changed) the current user's first name/last name is not changed.
+2. When a user inputs a valid string into the new_first_name/new_last_name field the current user's first name/last name is changed.
+
+**PHONE NUMBER**
+1. When a user inputs an empty string into the new_phone_number field (i.e. the phone number is not changed) the current user's phone number is not changed.
+2. When a user inputs an invalid phone_number into the new_phone_number field, the current user's phone_number is not changed and an error message is returned, saying, 'you must enter a valid phone number'
+3. When a user inputs a valid phone number that has already been used by another user into the new_phone_number field, the current user's phone number is not changed and an error message is returned, saying, 'phone number already in use'
+4. When a user inputs a valid phone number that has not been used by another user, the current user's phone number is updated.
+
+**STATE**
+
+**CITY**
+
 ## Buyer
 1. As a buyer, I would like to pay for the item with my credit card.
 
