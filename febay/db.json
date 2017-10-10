@@ -65,42 +65,49 @@
     "model": "UserManager.customer",
     "pk": 1,
     "fields": {
+        "username": "kev",
+        "password": "kev",
+        "first_name": "kevin",
+        "last_name": "avalo",
+        "email": "kev@avalo.com",
         "phone_number": "7039459905",
         "city": "Charlottesville",
-        "state": "VA",
-        "groups": [],
-        "user_permissions": []
+        "state": "VA"
     }
 },
 {
     "model": "UserManager.customer",
     "pk": 4,
     "fields": {
+        "username": "kat",
+        "password": "kat",
+        "first_name": "kat",
+        "last_name": "ross",
+        "email": "kat@me.com",
         "phone_number": "7039459903",
         "city": "Charlottesville",
-        "state": "VA",
-        "groups": [],
-        "user_permissions": []
+        "state": "VA"
     }
 },
 {
     "model": "UserManager.customer",
     "pk": 5,
     "fields": {
+        "username": "rach",
+        "password": "rach",
+        "first_name": "rachel",
+        "last_name": "katz",
+        "email": "rach@katz.com",
         "phone_number": "7039459902",
         "city": "Charlottesville",
-        "state": "VA",
-        "groups": [],
-        "user_permissions": []
+        "state": "VA"
     }
 },
 {
     "model": "CommentManager.comment",
     "pk": 1,
     "fields": {
-        "user": [
-            "kevinavalo"
-        ],
+        "user": 1,
         "item": 2,
         "message": "wow, nice chair!",
         "date_posted": "2017-09-21T05:19:29.463Z"
@@ -110,9 +117,7 @@
     "model": "CommentManager.comment",
     "pk": 2,
     "fields": {
-        "user": [
-            "kevinavalo"
-        ],
+        "user": 1,
         "item": 2,
         "message": "wow, nice chair!",
         "date_posted": "2017-09-21T05:22:55.439Z"
@@ -122,9 +127,7 @@
     "model": "CommentManager.comment",
     "pk": 3,
     "fields": {
-        "user": [
-            "kevinavalo"
-        ],
+        "user": 1,
         "item": 2,
         "message": "wow, nice chair!",
         "date_posted": "2017-09-21T05:23:31.104Z"
@@ -134,9 +137,7 @@
     "model": "CommentManager.comment",
     "pk": 4,
     "fields": {
-        "user": [
-            "kevinavalo"
-        ],
+        "user": 1,
         "item": 2,
         "message": "is it still available?",
         "date_posted": "2017-09-21T05:25:32.219Z"
@@ -146,9 +147,7 @@
     "model": "CommentManager.comment",
     "pk": 5,
     "fields": {
-        "user": [
-            "kevinavalo"
-        ],
+        "user": 1,
         "item": 2,
         "message": "wow, nice chair!",
         "date_posted": "2017-09-21T05:26:31.280Z"
@@ -158,9 +157,7 @@
     "model": "CommentManager.comment",
     "pk": 6,
     "fields": {
-        "user": [
-            "kevinavalo"
-        ],
+        "user": 1,
         "item": 2,
         "message": "wow, nice chair!",
         "date_posted": "2017-09-21T05:26:49.351Z"
@@ -170,9 +167,7 @@
     "model": "CommentManager.comment",
     "pk": 7,
     "fields": {
-        "user": [
-            "kevinavalo"
-        ],
+        "user": 1,
         "item": 2,
         "message": "wow, nice chair!",
         "date_posted": "2017-09-21T05:27:36.246Z"
@@ -182,9 +177,7 @@
     "model": "CommentManager.comment",
     "pk": 9,
     "fields": {
-        "user": [
-            "ross"
-        ],
+        "user": 4,
         "item": 5,
         "message": "cool couch!",
         "date_posted": "2017-09-21T05:28:22.174Z"
@@ -194,9 +187,7 @@
     "model": "CommentManager.comment",
     "pk": 10,
     "fields": {
-        "user": [
-            "katz"
-        ],
+        "user": 5,
         "item": 5,
         "message": "nice!",
         "date_posted": "2017-09-21T05:28:32.648Z"
@@ -206,9 +197,7 @@
     "model": "CommentManager.comment",
     "pk": 11,
     "fields": {
-        "user": [
-            "katz"
-        ],
+        "user": 5,
         "item": 4,
         "message": "ugly frame",
         "date_posted": "2017-09-21T05:28:58.775Z"
@@ -218,9 +207,7 @@
     "model": "CommentManager.comment",
     "pk": 12,
     "fields": {
-        "user": [
-            "kevinavalo"
-        ],
+        "user": 1,
         "item": 4,
         "message": "omg",
         "date_posted": "2017-09-21T05:29:07.475Z"
@@ -230,9 +217,7 @@
     "model": "ItemManager.item",
     "pk": 1,
     "fields": {
-        "owner": [
-            "kevinavalo"
-        ],
+        "owner": 1,
         "title": "Desk",
         "description": "new",
         "price": 5.99,
@@ -244,9 +229,7 @@
     "model": "ItemManager.item",
     "pk": 2,
     "fields": {
-        "owner": [
-            "katz"
-        ],
+        "owner": 5,
         "title": "Chair",
         "description": "new",
         "price": 5.99,
@@ -258,9 +241,7 @@
     "model": "ItemManager.item",
     "pk": 4,
     "fields": {
-        "owner": [
-            "ross"
-        ],
+        "owner": 4,
         "title": "Bed frame",
         "description": "new",
         "price": 5.99,
@@ -272,9 +253,7 @@
     "model": "ItemManager.item",
     "pk": 5,
     "fields": {
-        "owner": [
-            "kevinavalo"
-        ],
+        "owner": 1,
         "title": "Couch",
         "description": "new",
         "price": 5.99,

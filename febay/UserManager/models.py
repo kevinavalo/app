@@ -1,12 +1,11 @@
 
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from django.db import models
-
+from django.utils import timezone
 # Create your models here.
-class customer(User):
+class customer(models.Model):
 	STATE_CHOICES = (
 		('ALABAMA','AL'),
 		('ALASKA','AK'),
@@ -59,7 +58,12 @@ class customer(User):
 		('WISCONSIN','WI'),
 		('WYOMING','WY')
 		)
-
+	# id = models.IntegerField(primary_key=True, default=None)
+	username = models.CharField(max_length=30, unique=True, default=None)
+	first_name = models.CharField(max_length=30, default=None)
+	last_name = models.CharField(max_length=30, default=None)
+	email = models.EmailField(default=None)
+	password = models.CharField(max_length=30,default=None)
 	phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
 	phone_number = models.CharField(validators=[phone_regex], max_length=15, blank=True)
 	city = models.CharField(max_length=22)
@@ -68,4 +72,7 @@ class customer(User):
     	choices = STATE_CHOICES,
     	)
 
-
+class Authenticator(models.Model):
+	user = models.ForeignKey(customer)
+	authenticator = models.CharField(max_length=100, primary_key=True)
+	timestamp = models.DateTimeField(default=timezone.now)
