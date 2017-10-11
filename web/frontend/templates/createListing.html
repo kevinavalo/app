@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>New Listing</h1>
+    <form action="{{ action }}" method="POST">
+    	{% if form.non_field_errors %}
+    		<ul>
+    			{% for error in form.non_field_errors %}
+    				<li>{{ error }}</li>
+    			{% endfor %}
+    		</ul>
+    	{% endif %}
+
+    	{% for field in form %}
+    	<div>
+    		{{ field.label_tag }} {{ field }}
+    	</div>
+    	<div id="{{ field.auto_id }}_errors">
+    		{{ field.errors }}
+    	</div>
+    	{% endfor %}
+
+    	<button type="submit" class="save btn btn-default">Create</button>
+    </form>
+{% endblock %}
