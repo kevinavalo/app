@@ -64,7 +64,6 @@ def register(request):
 	else:
 		return render(request, 'register.html', {'form':form})
 
-
 def login(request):
 	login_form = forms.LoginForm
 	if request.method == 'GET':
@@ -139,8 +138,6 @@ def createListing(request):
 	    else:
 	    	return JsonResponse({'status':'error', 'response':f.errors})
 
-
-
     # ...
 
     #WILL HAVE TO CHANGE THIS AFTER CREATING EXP API
@@ -155,7 +152,6 @@ def createListing(request):
             #return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
 
     # ...
-
     return render(request, 'index.html')
 
 def getPopularUsers(request):
@@ -180,3 +176,4 @@ def getItemCategory(request):
 		return render(request, 'home.html', {'items': items})
 	else:
 		return home(request)
+    return render(request, 'index.html')
