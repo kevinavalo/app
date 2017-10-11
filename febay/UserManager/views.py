@@ -1,27 +1,22 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.contrib.auth import authenticate, login as auth_login
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
-from django.contrib import auth
-from django.http import HttpResponse
-from django.shortcuts import render_to_response
-from django.template import RequestContext
-from django.contrib.auth import logout as auth_logout
-from django.contrib.auth import update_session_auth_hash
-from django.contrib.auth.forms import PasswordChangeForm
-from .models import User, customer
+from .models import customer, Authenticator
 from django.contrib.auth.decorators import user_passes_test
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth import hashers
+import os
+import hmac
+from febay import settings
+from django.forms.models import model_to_dict
+# import django settings file
 
 @csrf_exempt
 def register_user(request):
 	if request.method == 'POST':
 		try:
-			user = customer.objects.create_user(
+			user = customer(
 				first_name = request.POST.get('first_name'),
 				last_name = request.POST.get('last_name'),
 				username = request.POST.get('username'),
@@ -29,7 +24,7 @@ def register_user(request):
 				city = request.POST.get('city'),
 				state = request.POST.get('state'),
 				phone_number = request.POST.get('phone_number'),
-				password = request.POST.get('password')
+				password = hashers.make_password(request.POST.get('password'))
 				)
 		except:
 			return JsonResponse({'status': 'error', 'Response': 'There was an error creating the user, invalid input'})
@@ -135,4 +130,43 @@ def update_user(request, id):
 		status = {'status': 'error: could not update user'}
 	return JsonResponse({'status': status, 'response':response})
 
+@csrf_exempt
+def create_auth(request):
+	if request.method == 'POST':
+		authenticator = hmac.new(
+			key=settings.SECRET_KEY.encode('utf-8'),
+			msg=os.urandom(32),
+			digestmod='sha256',
+		).hexdigest()
+		user = customer.objects.get(username=request.POST.get('username'))
+		auth = Authenticator(
+			user = user,
+			authenticator = authenticator,
+		)
+		try:
+			auth.save()
+			return JsonResponse({'status':'success', 'user':auth.user.username, 'auth':auth.authenticator,
+								 'timestamp':auth.timestamp})
+		except Exception as e:
+			return JsonResponse({'status': str(e)})
 
+	return JsonResponse({'status': 'Error, must make POST request'})
+
+@csrf_exempt
+def delete_auth(request):
+	if request.method == 'POST':
+		try:
+			del_auth = Authenticator.objects.get(authenticator=request.POST.get('auth'))
+			response = {'user': del_auth.user.username, 'auth':del_auth.authenticator}
+		except ObjectDoesNotExist:
+			return JsonResponse({'status': 'Error, auth doesn\'t exist'})
+
+		del_auth.delete()
+		return JsonResponse({'status':'success', 'response': response})
+	return JsonResponse({'status': 'Error, must make POST request'})
+
+@csrf_exempt
+def get_auth(request):
+	auth_models = Authenticator.objects.all()
+	json = list(map(model_to_dict, auth_models))
+	return JsonResponse(json, safe=False)
