@@ -16,7 +16,7 @@ from django.forms.models import model_to_dict
 def register_user(request):
 	if request.method == 'POST':
 		try:
-			user = customer(
+			user = customer.objects.create(
 				first_name = request.POST.get('first_name'),
 				last_name = request.POST.get('last_name'),
 				username = request.POST.get('username'),
@@ -26,8 +26,9 @@ def register_user(request):
 				phone_number = request.POST.get('phone_number'),
 				password = hashers.make_password(request.POST.get('password'))
 				)
-		except:
-			return JsonResponse({'status': 'error', 'Response': 'There was an error creating the user, invalid input'})
+			user.save()
+		except Exception as e:
+			return JsonResponse({'status': str(e)})
 		return JsonResponse({'status': 'success', 'Response':{'first name': user.first_name,'last name': user.last_name, 'username': user.username, 'email': user.email, 'state':user.state, 'city':user.city, 'phone number': user.phone_number,'id':user.id}})
 	else:
 		return JsonResponse({'status': 'error', 'Response': 'Could not register user'})
