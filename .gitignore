@@ -91,3 +91,7 @@ db.sqlite3
 febay/UserManager/migrations/*
 febay/CommentManager/migrations/*
 febay/ItemManager/migrations/*
+
+febay/UserManager/__pycache__/*
+febay/CommentManager/__pycache__/*
+febay/ItemManager/__pycache__/*
