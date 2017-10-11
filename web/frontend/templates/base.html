@@ -1,5 +1,10 @@
+{% load static  %}
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"
+xmlns:og="http://ogp.me/ns#"
+xmlns:fb="https://www.facebook.com/2008/fbml"
+class="ui-toolkit"
+>
 <head>
 	<meta charset="UTF-8">
 
@@ -11,30 +16,111 @@
 			top: -20px;
 			left: -35px;
 		}
+		.logo-nav {
+			height: auto;
+			width: auto;
+			max-width: 150px;
+			max-height: 150px;
+			padding-top: 0;
+			padding-bottom: 0;
+			align-self: left;
+		}
+		#custom-search-input{
+			border: solid 1px #E4E4E4;
+			border-radius: 6px;
+			background-color: #fff;
+			width: auto;
+			max-width: 45%;
+		}
+
+		#custom-search-input input{
+			border: 0;
+			box-shadow: none;
+		}
+
+		#custom-search-input button{
+			margin: 2px 0 0 0;
+			background: none;
+			box-shadow: none;
+			border: 0;
+			color: #666666;
+			padding: 0 8px 0 10px;
+			border-left: solid 1px #ccc;
+		}
+
+		#custom-search-input button:hover{
+			border: 0;
+			box-shadow: none;
+			border-left: solid 1px #ccc;
+		}
+
+		#custom-search-input .glyphicon-search{
+			font-size: 23px;
+		}
+		.glyphicon {
+			display:block;
+			text-align:center;
+		}
+		.input-lg {
+			font-size: 14px;
+		}
 
 	</style>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/home/"><span class="glyphicon glyphicon glyphicon-home"></span> Febay</a>
+	<script  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+	<div class="page-header" style="margin: 0px 0 0px; padding: 0">
+		<div class="row">
+			<div class="col-md-2">
+				<img class='logo-nav' src="https://image.ibb.co/nRqZDw/febay_logo.png"></a>
 			</div>
-			<ul class="nav navbar-nav navbar-right">
+			<div class="col-md-7" style="padding-top: 13px;">
+				<div id="custom-search-input">
+					<div class="input-group col-md-12">
+						<input type="text" class="form-control input-lg" placeholder="Search For Furniture Items" style="font-size: 14px" 	/>
+						<span class="input-group-btn">
+							<button class="btn btn-info btn-lg" type="button">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</span>
 
-				<li><a><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-1" style="padding-top: 25px; font-size: 14px; text-align: center">
+			<a href="/home/"><span class="glyphicon glyphicon glyphicon-home" style="color: #2DA4C4;font-size: 20px"></span></a></li>
+		</div>
+		<div class="col-md-1" style="padding-top: 25px; font-size: 14px;  text-align: center">
+			<a style="color: #2DA4C4;"><span class="glyphicon glyphicon-user" style="color: #2DA4C4"></span><br>Profile</a>
+		</div>
+		<div class="col-md-1" style="padding-top: 25px; font-size: 14px; text-align: center">
+			<a style="color: #2DA4C4"><span class="glyphicon glyphicon-log-out" style="color: #2DA4C4"></span> <br>Logout</a>
+		</div>
+		</div>
 
-				<li><a><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-			</ul>
+	</div>
+	<nav class="navbar navbar" style="border-left: 0px; border-right: 0px; border-color: #D3D3D3; border-radius: 0; text-align: center">
+		<div class="container-fluid">
+
+
+			<ul class="nav navbar-nav" >
+				<li><a style="color: #2DA4C4">Bedframes & Headboards</a></li>
+				<li><a style="color: #2DA4C4">Dressers & Nightstands</a></li>
+				<li><a style="color: #2DA4C4">TV Room Furniture</a></li>
+				<li><a style="color: #2DA4C4">Bathroom Furiture</a></li>
+				<li><a style="color: #2DA4C4">Dining Furnature</a></li>
+				<li><a style="color: #2DA4C4">Kitchen Accessories</a></li>
+				<li><a style="color: #2DA4C4">Couches & Chairs</a></li>
+				<li><a style="color: #2DA4C4">Miscellaneous</a></li>
 		</div>
 	</nav>
-    {% block head %}{% endblock %}
+	{% block head %}{% endblock %}
 </head>
+
 <body>
-    {% block content %}{% endblock %}
+	{% block content %}{% endblock %}
 </body>
 
 </html>
