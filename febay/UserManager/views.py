@@ -29,9 +29,9 @@ def register_user(request):
 			user.save()
 		except Exception as e:
 			return JsonResponse({'status': str(e)})
-		return JsonResponse({'status': 'success', 'Response':{'first name': user.first_name,'last name': user.last_name, 'username': user.username, 'email': user.email, 'state':user.state, 'city':user.city, 'phone number': user.phone_number,'id':user.id}})
+		return JsonResponse({'status': 'success', 'response':{'first name': user.first_name,'last name': user.last_name, 'username': user.username, 'email': user.email, 'state':user.state, 'city':user.city, 'phone number': user.phone_number,'id':user.id}})
 	else:
-		return JsonResponse({'status': 'error', 'Response': 'Could not register user'})
+		return JsonResponse({'status': 'error', 'response': 'Could not register user'})
 
 @csrf_exempt
 def get_user(request,id):

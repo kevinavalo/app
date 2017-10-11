@@ -58,7 +58,6 @@ class customer(models.Model):
 		('WISCONSIN','WI'),
 		('WYOMING','WY')
 		)
-	# id = models.IntegerField(primary_key=True, default=None)
 	username = models.CharField(max_length=30, unique=True, default=None)
 	first_name = models.CharField(max_length=30, default=None)
 	last_name = models.CharField(max_length=30, default=None)

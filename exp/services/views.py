@@ -57,7 +57,7 @@ def resgisterUser(request):
         resp_json = urllib.request.urlopen(req).read().decode('utf-8')
         resp = json.loads(resp_json)
 
-        user = resp['Response']
+        user = resp['response']
         auth_post_data = {'username':user['username']}
         auth_post_encoded = urllib.parse.urlencode(auth_post_data).encode('utf-8')
         auth_req = urllib.request.Request('http://models-api:8000/api/v1/auth/create/', data=auth_post_encoded, method='POST')

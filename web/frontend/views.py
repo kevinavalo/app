@@ -48,13 +48,12 @@ def register(request):
 						 'email':form.cleaned_data['email'],
 						 'city':form.cleaned_data['city'],
 						 'state':form.cleaned_data['state'],
-						 'phone_number':form.cleaned_data['phone']}
+						 'phone_number':form.cleaned_data['phone_number']}
 			post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
-
-			req = urllib.request.Request('http://exp-api:8000/api/v1/register', data=post_encoded, method='POST')
+			req = urllib.request.Request('http://exp-api:8000/api/v1/register/', data=post_encoded, method='POST')
 			resp_json = urllib.request.urlopen(req).read().decode('utf-8')
 			resp = json.loads(resp_json)
 			return JsonResponse({'status':'success','response':resp})
-		return JsonResponse({'status': 'error', 'response':form.errors})
+		return render(request, 'register.html', {'form':form, 'message':form.errors})
 	else:
 		return render(request, 'register.html', {'form':form})
