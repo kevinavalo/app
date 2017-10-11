@@ -1,12 +1,8 @@
-
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from django import forms
 from django.core.validators import RegexValidator
-from django.db import models
-from django.utils import timezone
-# Create your models here.
-class customer(models.Model):
-	STATE_CHOICES = (
+
+
+STATE_CHOICES = (
 		('ALABAMA','AL'),
 		('ALASKA','AK'),
 		('ARIZONA','AZ'),
@@ -58,20 +54,15 @@ class customer(models.Model):
 		('WISCONSIN','WI'),
 		('WYOMING','WY')
 		)
-	username = models.CharField(max_length=30, unique=True, default=None)
-	first_name = models.CharField(max_length=30, default=None)
-	last_name = models.CharField(max_length=30, default=None)
-	email = models.EmailField(default=None)
-	password = models.CharField(max_length=100,default=None)
-	phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
-	phone_number = models.CharField(validators=[phone_regex], max_length=15, blank=True)
-	city = models.CharField(max_length=22)
-	state = models.CharField(
-    	max_length = 15,
-    	choices = STATE_CHOICES,
-    	)
 
-class Authenticator(models.Model):
-	user = models.ForeignKey(customer)
-	authenticator = models.CharField(max_length=100, primary_key=True)
-	timestamp = models.DateTimeField(default=timezone.now)
+class Registration(forms.Form):
+
+    username = forms.CharField(max_length=30)
+    first_name = forms.CharField(max_length=30)
+    last_name = forms.CharField(max_length=30)
+    password = forms.CharField(widget=forms.PasswordInput)
+    email = forms.EmailField()
+    phone_number = forms.CharField(error_messages={'incomplete': 'Enter a phone number.'},
+                             validators=[RegexValidator(r'^[0-9]+$', 'Enter a valid phone number.')],)
+    city = forms.CharField(max_length=30)
+    state = forms.CharField( widget=forms.Select(choices=STATE_CHOICES))
