@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 align="center">Our Popular Sellers!!!</h1>
+    <div class="well" align="center">
+        <a href="{% url 'home'%}">All items</a>        
+        <div class="table-responsive" align="center">
+        <table class="table" align="center">
+            {% for user in users %}
+                <tr>
+                    <td><a href=""><h3>{{user.username}}</h3></a></td>
+                </tr>
+                <tr>
+                    <td><p>{{user.first_name}} {{user.last_name}}</p></td>
+                </tr>
+            {% endfor %}
+        </table>
+        </div>
+    </div>
+
+{% endblock %}
