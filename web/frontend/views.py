@@ -137,7 +137,6 @@ def createListing(request):
 	    	return JsonResponse({'status':'success', 'response': resp})
 	    else:
 	    	return JsonResponse({'status':'error', 'response':f.errors})
-
     # ...
 
     #WILL HAVE TO CHANGE THIS AFTER CREATING EXP API

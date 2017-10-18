@@ -88,6 +88,7 @@ def logoutUser(request):
         resp = json.loads(resp_json)
         return JsonResponse({'resp':resp})
 
+
 @csrf_exempt
 def createItem(request):
     if request.method == 'POST':
