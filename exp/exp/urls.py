@@ -22,5 +22,6 @@ urlpatterns = [
    	url(r'^api/v1/getListings/$', views.getItemList, name='itemList'),
     url(r'^api/v1/getSorted/$', views.getSortedListings, name='sortedList'),
     url(r'^api/v1/register/$', views.resgisterUser, name='register'),
+    url(r'^api/v1/login/$', views.loginUser, name='login'),
 
 ]

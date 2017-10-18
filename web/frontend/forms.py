@@ -66,3 +66,7 @@ class Registration(forms.Form):
                              validators=[RegexValidator(r'^[0-9]+$', 'Enter a valid phone number.')],)
     city = forms.CharField(max_length=30)
     state = forms.CharField( widget=forms.Select(choices=STATE_CHOICES))
+
+class LoginForm(forms.Form):
+	username = forms.CharField(max_length=30)
+	password = forms.CharField(widget=forms.PasswordInput)
