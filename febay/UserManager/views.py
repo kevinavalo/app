@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from .models import customer, Authenticator
 from django.contrib.auth.decorators import user_passes_test
 from django.http import JsonResponse
+import json
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import hashers
@@ -55,22 +56,29 @@ def get_users(request):
     users_list.append(status)
     return JsonResponse(users_list, safe=False)
 
-# @csrf_exempt
-# def login(request):
-# 	status = {}
-# 	if request.method == 'POST':
-# 		username = request.POST.get('username')
-# 		password = request.POST.get('password')
-# 		user = authenticate(username=username, password=password)
-# 		if user is not None:
-# 			if user.is_active:
-# 				auth_login(request, user)
-# 				status = {'status': 'successful login'}
-# 			else:
-# 				status = {'status': 'inactive user'}
-# 		else:
-# 			status = {'status': 'user not found'}
-# 	return JsonResponse({'response':status})
+@csrf_exempt
+def login(request):
+	if request.method == 'POST':
+		username = request.POST.get('username')
+		password = request.POST.get('password')
+
+		try:
+			user = customer.objects.get(username=username)
+			if user.password == password:
+				create_auth(request)
+				auth = (Authenticator.objects.get(user=user))
+				auth_resp = {
+					'user':auth.user.username,
+					'authenticator':auth.authenticator
+				}
+				return JsonResponse({'status': 'success','response':{'username':user.username},'auth':auth_resp},safe=False)
+			else:
+				return JsonResponse({'status': 'error','response':'Incorrect Password'})
+		except ObjectDoesNotExist:
+			return JsonResponse({'status': 'error','response':'User does not exist'})
+	return JsonResponse({'status': 'error','response':'POST expected, GET found'})
+
+
 
 # @csrf_exempt
 # def logout(request):
@@ -171,3 +179,7 @@ def get_auth(request):
 	auth_models = Authenticator.objects.all()
 	json = list(map(model_to_dict, auth_models))
 	return JsonResponse(json, safe=False)
+
+
+
+
