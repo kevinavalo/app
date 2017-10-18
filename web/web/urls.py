@@ -22,4 +22,6 @@ urlpatterns = [
     url(r'^item_detail/(?P<id>\d+)/$', views.itemDetail, name='itemDetail'),
     url(r'^home/$', views.home, name='home'),
     url(r'^createListing/$', views.createListing, name='createListing'),
+    url(r'^popularUsers/$', views.getPopularUsers, name='getPopularUsers'),
+
 ]

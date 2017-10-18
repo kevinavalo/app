@@ -51,8 +51,10 @@ def get_users(request):
     users = customer.objects.all().values('username','first_name', 'last_name')  # or simply .values() to get all fields
     users_list = list(users)  # important: convert the QuerySet to a list object
     status = {'status': 'success'}
-    users_list.append(status)
-    return JsonResponse(users_list, safe=False)
+    response = {}
+    response['users_list'] = users_list
+    response['status'] = status
+    return JsonResponse(response, safe=False)
 
 # @csrf_exempt
 # def login(request):
