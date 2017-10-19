@@ -95,6 +95,9 @@ class="ui-toolkit"
 		<div class="col-md-1" style="padding-top: 25px; font-size: 14px;  text-align: center">
 			<a style="color: #2DA4C4;"><span class="glyphicon glyphicon-user" style="color: #2DA4C4"></span><br>Profile</a>
 		</div>
+		<div class="col-md-1" style="padding-top: 25px; font-size: 14px;  text-align: center">
+			<a style="color: #2DA4C4;" href="{% url 'createListing' %}"><span class="glyphicon glyphicon-plus" style="color: #2DA4C4"></span><br>New Listing</a>
+		</div>
 		<div class="col-md-1" style="padding-top: 25px; font-size: 14px; text-align: center">
 			<a href='/logout/' style="color: #2DA4C4"><span class="glyphicon glyphicon-log-out" style="color: #2DA4C4"></span> <br>Logout</a>
 		</div>
@@ -105,14 +108,14 @@ class="ui-toolkit"
 		<div class="container-fluid">
 
 			<ul class="nav navbar-nav" >
-				<li><a style="color: #2DA4C4">Bedframes & Headboards</a></li>
-				<li><a style="color: #2DA4C4">Dressers & Nightstands</a></li>
-				<li><a style="color: #2DA4C4">TV Room Furniture</a></li>
-				<li><a style="color: #2DA4C4">Bathroom Furiture</a></li>
-				<li><a style="color: #2DA4C4">Dining Furnature</a></li>
-				<li><a style="color: #2DA4C4">Kitchen Accessories</a></li>
-				<li><a style="color: #2DA4C4">Couches & Chairs</a></li>
-				<li><a style="color: #2DA4C4">Miscellaneous</a></li>
+				<li><a style="color: #2DA4C4" href="{% url 'getItemCategory'%}?category=Bedframes+%26+Headboards">Bedframes & Headboards</a></li>
+				<li><a style="color: #2DA4C4" href="{% url 'getItemCategory'%}?category=Dressers+%26+Nightstands">Dressers & Nightstands</a></li>
+				<li><a style="color: #2DA4C4" href="{% url 'getItemCategory'%}?category=TV+Room+Furniture">TV Room Furniture</a></li>
+				<li><a style="color: #2DA4C4" href="{% url 'getItemCategory'%}?category=Bathroom+Furniture">Bathroom Furiture</a></li>
+				<li><a style="color: #2DA4C4" href="{% url 'getItemCategory'%}?category=Dining+Furniture">Dining Furniture</a></li>
+				<li><a style="color: #2DA4C4" href="{% url 'getItemCategory'%}?category=Kitchen+Accessories">Kitchen Accessories</a></li>
+				<li><a style="color: #2DA4C4" href="{% url 'getItemCategory'%}?category=Couches+%26+Chairs">Couches & Chairs</a></li>
+				<li><a style="color: #2DA4C4" href="{% url 'getItemCategory'%}?category=Miscellaneous">Miscellaneous</a></li>
 		</div>
 	</nav>
 	{% block head %}{% endblock %}

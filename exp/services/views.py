@@ -90,7 +90,7 @@ def logoutUser(request):
 
 def createItem(request):
     if request.method == 'POST':
-        post_data = {'title': request.POST.get('title'), 'description': request.POST.get('description'), 'price': request.POST.get('price'), 'category': request.POST.get('category'), 'owner': 'kev'}
+        post_data = {'title': request.POST.get('title'), 'description': request.POST.get('description'), 'price': request.POST.get('price'), 'category': request.POST.get('category'), 'auth': request.POST.get('auth')}
         post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
 
         req = urllib.request.Request('http://models-api:8000/api/v1/item/create/', data=post_encoded, method='POST')

@@ -105,12 +105,12 @@ def logout(request):
 def createListing(request):
 
     # Try to get the authenticator cookie
-    #auth = request.COOKIES.get('auth')
+    auth = request.COOKIES.get('auth')
 
     # If the authenticator cookie wasn't set...
-    #if not auth:
+    if not auth:
       # Handle user not logged in while trying to create a listing
-     # return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
+     return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
 
     # If we received a GET request instead of a POST request...
     if request.method == 'GET':
@@ -128,6 +128,7 @@ def createListing(request):
 	    		'description': f.cleaned_data['description'],
 	    		'price': f.cleaned_data['price'],
 	    		'category': f.cleaned_data['category']
+	    		'auth': auth
 	    	}
 
 	    	post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
@@ -135,6 +136,8 @@ def createListing(request):
 	    	req = urllib.request.Request('http://exp-api:8000/api/v1/createItem/', data=post_encoded, method='POST')
 	    	resp_json = urllib.request.urlopen(req).read().decode('utf-8')
 	    	resp = json.loads(resp_json)
+	    	if resp and not resp['ok']:
+	    		return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
 	    	return JsonResponse({'status':'success', 'response': resp})
 	    else:
 	    	return JsonResponse({'status':'error', 'response':f.errors})
