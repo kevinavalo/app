@@ -80,3 +80,11 @@ def login(request):
 	response = HttpResponseRedirect('/home')
 	response.set_cookie("auth", auth)
 	return response
+
+def logout(request):
+	req = urllib.request.Request('http://exp-api:8000/api/v1/logout/', method='POST')
+	resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+	resp = json.loads(resp_json)
+	response = HttpResponseRedirect('/home')
+	response.delete_cookie("auth")
+	return response

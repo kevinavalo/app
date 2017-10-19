@@ -79,15 +79,10 @@ def login(request):
 	return JsonResponse({'status': 'error','response':'POST expected, GET found'})
 
 
-
-# @csrf_exempt
-# def logout(request):
-# 	status = {}
-# 	if request.method == 'POST':
-# 		username = request.POST.get('username')
-# 		auth_logout(customer.objects.get(username = username))
-# 		status = {'status': 'sucessfully logged out'}
-# 	return JsonResponse({'response':status})
+@csrf_exempt
+def logout(request):
+	delete_auth_resp = delete_auth(request)
+	return delete_auth_resp
 
 
 @csrf_exempt
@@ -165,7 +160,7 @@ def create_auth(request):
 def delete_auth(request):
 	if request.method == 'POST':
 		try:
-			del_auth = Authenticator.objects.get(authenticator=request.POST.get('auth'))
+			del_auth = Authenticator.objects.get(authenticator=request.COOKIES.get('auth'))
 			response = {'user': del_auth.user.username, 'auth':del_auth.authenticator}
 		except ObjectDoesNotExist:
 			return JsonResponse({'status': 'Error, auth doesn\'t exist'})
