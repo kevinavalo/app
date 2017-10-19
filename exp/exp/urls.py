@@ -22,6 +22,7 @@ urlpatterns = [
    	url(r'^api/v1/getListings/$', views.getItemList, name='itemList'),
     url(r'^api/v1/getSorted/$', views.getSortedListings, name='sortedList'),
     url(r'^api/v1/createItem/$', views.createItem, name='createItem'),
-    url(r'^api/v1/getPopularUsers/$', views.getPopularUsers, name='getPopularUsers')
+    url(r'^api/v1/getPopularUsers/$', views.getPopularUsers, name='getPopularUsers'),
+    url(r'^api/v1/getItemCategory/$', views.getItemCategory, name='getItemCategory')
 
 ]
