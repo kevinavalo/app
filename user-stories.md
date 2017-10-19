@@ -30,6 +30,18 @@
 
 **CITY**
 
+**LOGIN/LOGOUT/AUTH**
+2. As a general user, I would like to be able to log into an account and stay logged in.
+
+*Acceptance Criteria*:
+1. There is a username field, a password field, and a login button on a login page.
+2. When an existing user attempts 
+
+3. As a general user, I would like to be able to log out of my account
+*Acceptance Criteria*:
+1. 
+
+
 ## Buyer
 1. As a buyer, I would like to pay for the item with my credit card.
 
