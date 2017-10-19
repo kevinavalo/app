@@ -3,8 +3,9 @@
     
     <h1 align="center">Items for sale!!!{{request.COOKIES.auth}}</h1>
     <div class="well" align="center">
+        <a href="{% url 'getPopularUsers'%}">Popular Sellers</a>
+<!--         <a href="{% url 'getItemCategory' %}?category=Bedroom">Bedroom Category</a>         -->
 		<div class="table-responsive" align="center">
-
 		<table class="table" align="center">
             {% for item in items %}
                 <tr>

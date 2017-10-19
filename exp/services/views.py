@@ -8,6 +8,9 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from datetime import datetime
+from django.views.decorators.csrf import csrf_exempt
+from collections import OrderedDict
+import operator
 
 # make a GET request and parse the returned JSON
 # note, no timeouts, error handling or all the other things needed to do this for real
@@ -85,3 +88,84 @@ def logoutUser(request):
         resp = json.loads(resp_json)
         return JsonResponse({'resp':resp})
 
+@csrf_exempt
+def createItem(request):
+    if request.method == 'POST':
+        auth = request.POST.get('auth')
+
+        req_auth = urllib.request.Request('http://models-api:8000/api/v1/auth/getUserAuth/' + "?auth=" + auth)
+        resp_json_auth = urllib.request.urlopen(req_auth).read().decode('utf-8')
+        resp_auth = json.loads(resp_json_auth)
+
+        if resp_auth['status']:
+            post_data = {'title': request.POST.get('title'), 'description': request.POST.get('description'), 'price': request.POST.get('price'), 'category': request.POST.get('category'), 'owner': resp_auth['username']}
+            post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
+
+            req = urllib.request.Request('http://models-api:8000/api/v1/item/create/', data=post_encoded, method='POST')
+            resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+            resp = json.loads(resp_json)
+
+            item = resp['item-added']
+            return JsonResponse({'item': item, 'status': True})
+        else:
+            JsonResponse({'status': False})
+    return JsonResponse({'status': 'error'})
+
+#get popular users based on number of items they have listed
+def getPopularUsers(request):
+    if request.method == 'GET':
+        req = urllib.request.Request('http://models-api:8000/api/v1/user/get_users/')
+        resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+        users_list = json.loads(resp_json)['users_list']
+
+        req_item = urllib.request.Request('http://models-api:8000/api/v1/item/get/')
+        resp_item_json = urllib.request.urlopen(req_item).read().decode('utf-8')
+        items_list = json.loads(resp_item_json)['results']
+
+        total_count = {}
+        descending_users = []
+        response = []
+        for user in users_list:
+            total_count[user['username']] = 0
+
+        for user in users_list:
+            for item in items_list:
+                if item['owner'] == user['username']:
+                    total_count[item['owner']] += 1
+
+        d = sorted(total_count.items(), key=operator.itemgetter(1), reverse=True)
+
+        for tup in d:
+            for user in users_list:
+                if user['username'] == tup[0]:
+                    descending_users.append(user)
+
+        if len(descending_users) > 5:
+            for i in range(0,4):
+                response.append(descending_users.get(i))
+        else:
+            response = descending_users
+        return JsonResponse(response, safe=False)
+    return JsonResponse({'status': 'error'})
+
+def getItemCategory(request):
+    if request.method == 'GET':
+        category = request.GET.get('category', '')
+        if category != '':
+            req = urllib.request.Request('http://models-api:8000/api/v1/item/get/')
+            resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+            resp = json.loads(resp_json)['results']
+
+            items = []
+            for item in resp:
+                if item['category'] == category:
+                    items.append(item)
+<<<<<<< HEAD
+
+=======
+>>>>>>> 764e0bf3d735ed1c01cd2bbce6c5e48635041638
+            return JsonResponse({'items': items, 'status': 'success'}, safe=False)
+        else: 
+            return JsonResponse({'status': 'error this is not a valid category'})
+    else:
+        return JsonResponse({'status': 'error, this is not a GET method'})
