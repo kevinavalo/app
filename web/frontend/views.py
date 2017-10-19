@@ -10,7 +10,6 @@ import ast
 from .forms import *
 from django.views.decorators.csrf import csrf_exempt
 
-
 LINK = "http://exp-api:8000/api/v1"
 # Create your views here.
 
@@ -127,7 +126,7 @@ def createListing(request):
 	    		'title': f.cleaned_data['title'],
 	    		'description': f.cleaned_data['description'],
 	    		'price': f.cleaned_data['price'],
-	    		'category': f.cleaned_data['category']
+	    		'category': f.cleaned_data['category'],
 	    		'auth': auth
 	    	}
 

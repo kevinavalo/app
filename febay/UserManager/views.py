@@ -178,7 +178,3 @@ def get_auth(request):
     auth_models = Authenticator.objects.all()
     json = list(map(model_to_dict, auth_models))
     return JsonResponse(json, safe=False)
-
-
-
-
