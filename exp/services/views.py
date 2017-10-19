@@ -92,15 +92,24 @@ def logoutUser(request):
 @csrf_exempt
 def createItem(request):
     if request.method == 'POST':
-        post_data = {'title': request.POST.get('title'), 'description': request.POST.get('description'), 'price': request.POST.get('price'), 'category': request.POST.get('category'), 'auth': request.POST.get('auth')}
-        post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
+        auth = request.POST.get('auth')
 
-        req = urllib.request.Request('http://models-api:8000/api/v1/item/create/', data=post_encoded, method='POST')
-        resp_json = urllib.request.urlopen(req).read().decode('utf-8')
-        resp = json.loads(resp_json)
+        req_auth = urllib.request.Request('http://models-api:8000/api/v1/auth/getUserAuth/' + "?auth=" + auth)
+        resp_json_auth = urllib.request.urlopen(req_auth).read().decode('utf-8')
+        resp_auth = json.loads(resp_json_auth)
 
-        item = resp['item-added']
-        return JsonResponse({'item': item})
+        if resp_auth['status']:
+            post_data = {'title': request.POST.get('title'), 'description': request.POST.get('description'), 'price': request.POST.get('price'), 'category': request.POST.get('category'), 'owner': resp_auth['username']}
+            post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
+
+            req = urllib.request.Request('http://models-api:8000/api/v1/item/create/', data=post_encoded, method='POST')
+            resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+            resp = json.loads(resp_json)
+
+            item = resp['item-added']
+            return JsonResponse({'item': item, 'status': True})
+        else:
+            JsonResponse({'status': False})
     return JsonResponse({'status': 'error'})
 
 #get popular users based on number of items they have listed

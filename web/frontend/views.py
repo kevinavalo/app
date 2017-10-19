@@ -2,7 +2,6 @@ from django.shortcuts import render
 import urllib.request
 import urllib.parse
 import json
-from . import forms
 import ast
 from django.http import JsonResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -65,15 +64,16 @@ def register(request):
 		return render(request, 'register.html', {'form':form})
 
 def login(request):
-	login_form = forms.LoginForm
+	login_form = LoginForm()
 	if request.method == 'GET':
 		return render(request, 'login.html',{'login_form':login_form})
-	login_form = forms.LoginForm(request.POST)
+	login_form = LoginForm(request.POST)
 	if not login_form.is_valid():
 		return render(request, 'login.html', {'login_form':login_form, 'message':login_form.errors})
 	post_data = { 
 		'username':login_form.cleaned_data['username'],
 		'password':login_form.cleaned_data['password']}
+	next = request.GET.get('next') or reverse('home')
 	post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
 	req = urllib.request.Request('http://exp-api:8000/api/v1/login/', data=post_encoded, method='POST')
 	resp_json = urllib.request.urlopen(req).read().decode('utf-8')
@@ -81,23 +81,23 @@ def login(request):
 	if not resp or not resp['resp']:
 		return render(request, 'login.html', {'login_form':login_form, 'message':'User could not be logged in'})
 	auth = resp['resp']['auth']
-	response = HttpResponseRedirect('/home')
+	response = HttpResponseRedirect(next)
 	response.set_cookie("auth", auth)
 	return response
 
 def logout(request):
 	try:
-		authenticator = request.COOKIES['auth']
-		auth = ast.literal_eval(authenticator)['authenticator']
+		authenticator = request.COOKIES.get('auth')
 		post_data = {
-			'auth': auth}
+			'auth': authenticator}
 		post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
 		req = urllib.request.Request('http://exp-api:8000/api/v1/logout/', data=post_encoded, method='POST')
 		resp_json = urllib.request.urlopen(req).read().decode('utf-8')
 		resp = json.loads(resp_json)
+		response = HttpResponseRedirect('/home')
+		response.delete_cookie('auth')
 	except:
-		pass
-	response = HttpResponseRedirect('/home')
+		return JsonResponse({'status': 'in except'})
 	return response
 
 @csrf_exempt
@@ -126,7 +126,7 @@ def createListing(request):
 	    		'title': f.cleaned_data['title'],
 	    		'description': f.cleaned_data['description'],
 	    		'price': f.cleaned_data['price'],
-	    		'category': f.cleaned_data['category']
+	    		'category': f.cleaned_data['category'],
 	    		'auth': auth
 	    	}
 
@@ -135,7 +135,7 @@ def createListing(request):
 	    	req = urllib.request.Request('http://exp-api:8000/api/v1/createItem/', data=post_encoded, method='POST')
 	    	resp_json = urllib.request.urlopen(req).read().decode('utf-8')
 	    	resp = json.loads(resp_json)
-	    	if resp and not resp['ok']:
+	    	if not resp['status']:
 	    		return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
 	    	return JsonResponse({'status':'success', 'response': resp})
 	    else:
