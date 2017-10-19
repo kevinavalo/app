@@ -60,7 +60,7 @@ def resgisterUser(request):
         resp_json = urllib.request.urlopen(req).read().decode('utf-8')
         resp = json.loads(resp_json)
         user = resp['response']
-        auth_post_data = {'username':user['username'], 'password':request.POST.get('password')}
+        auth_post_data = {'username':request.POST.get('username'), 'password':request.POST.get('password')}
         auth_post_encoded = urllib.parse.urlencode(auth_post_data).encode('utf-8')
         auth_req = urllib.request.Request('http://models-api:8000/api/v1/user/login/', data=auth_post_encoded, method='POST')
         resp_json = urllib.request.urlopen(auth_req).read().decode('utf-8')
@@ -160,10 +160,7 @@ def getItemCategory(request):
             for item in resp:
                 if item['category'] == category:
                     items.append(item)
-<<<<<<< HEAD
 
-=======
->>>>>>> 764e0bf3d735ed1c01cd2bbce6c5e48635041638
             return JsonResponse({'items': items, 'status': 'success'}, safe=False)
         else: 
             return JsonResponse({'status': 'error this is not a valid category'})

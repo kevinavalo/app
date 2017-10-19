@@ -70,7 +70,7 @@ def login(request):
                 create_auth(request)
                 auth = (Authenticator.objects.get(user=user))
 
-            return JsonResponse({'status': 'success','auth':auth.authenticator},safe=False)
+                return JsonResponse({'status': 'success','auth':auth.authenticator},safe=False)
             else:
                 return JsonResponse({'status': 'error','response':'Incorrect Password'})
         except ObjectDoesNotExist:
