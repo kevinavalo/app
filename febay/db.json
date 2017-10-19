@@ -261,4 +261,13 @@
         "date_posted": "2017-09-21T05:07:39.020Z"
     }
 }
+//{
+//    "model": "UserManager.Authenticator",
+//    "pk": 1,
+//    "fields": {
+//        "user": 4,
+//        "authenticator": "47930fdsafe593648732fdsa64",
+//        "timestamp": "2017-09-21T05:07:39.020Z"
+//    }
+//}
 ]

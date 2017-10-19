@@ -71,7 +71,7 @@ def login(request):
                     'user':auth.user.username,
                     'authenticator':auth.authenticator
                 }
-                return JsonResponse({'status': 'success','response':{'username':user.password},'auth':auth_resp},safe=False)
+                return JsonResponse({'status': 'success','response':{'username':user.username},'auth':auth_resp},safe=False)
             else:
                 return JsonResponse({'status': 'error','response':'Incorrect Password'})
         except ObjectDoesNotExist:
@@ -144,12 +144,12 @@ def create_auth(request):
             msg=os.urandom(32),
             digestmod='sha256',
         ).hexdigest()
-        user = customer.objects.get(username=request.POST.get('username'))
-        auth = Authenticator(
-            user = user,
-            authenticator = authenticator,
-        )
         try:
+            user = customer.objects.get(username=request.POST.get('username'))
+            auth = Authenticator(
+                user = user,
+                authenticator = authenticator,
+            )
             auth.save()
             return JsonResponse({'status':'success', 'user':auth.user.username, 'auth':auth.authenticator,
                                  'timestamp':auth.timestamp})
