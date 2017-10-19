@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Login</h1>
+{% if logged_in %}
+    <p>You are already logged in!</p>
+    Click <a href="/logout/?next=reverse(login)">here</a> to log out.
+{% else %}
+    <form method="POST"> {% csrf_token %}
+        {{ login_form.as_table }}
+        <button type="submit">Login</button>
+
+    </form>
+{% endif %}
+
+{% endblock %}

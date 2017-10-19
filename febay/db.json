@@ -66,7 +66,7 @@
     "pk": 1,
     "fields": {
         "username": "kev",
-        "password": "kev",
+        "password": "pbkdf2_sha256$30000$AN6MsEcdueLL$PGtX95POLRAahkl80UjkFbHnM9FaV4Y4M1s1P7bDWD0=",
         "first_name": "kevin",
         "last_name": "avalo",
         "email": "kev@avalo.com",
@@ -80,7 +80,7 @@
     "pk": 4,
     "fields": {
         "username": "kat",
-        "password": "kat",
+        "password": "pbkdf2_sha256$30000$fwuByjFcaqMh$qYbnnFr+2oHzkjDr2DLM6kc8ja0K155qq5de/SoI8jI=",
         "first_name": "kat",
         "last_name": "ross",
         "email": "kat@me.com",
@@ -94,7 +94,7 @@
     "pk": 5,
     "fields": {
         "username": "rach",
-        "password": "rach",
+        "password": "pbkdf2_sha256$30000$etbGDYvreET6$CxG48Yd1GFpR4cdVNJPiq6KCDvkzZLN5GBagcysraU0=",
         "first_name": "rachel",
         "last_name": "katz",
         "email": "rach@katz.com",

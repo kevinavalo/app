@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^item_detail/(?P<id>\d+)/$', views.itemDetail, name='itemDetail'),
     url(r'^home/$', views.home, name='home'),
-    url(r'^register/$', views.register, name='register')
-
+    url(r'^register/$', views.register, name='register'),
+    url(r'^login/$', views.login, name='login'),
+    url(r'^logout/$', views.logout, name='logout'),
 ]

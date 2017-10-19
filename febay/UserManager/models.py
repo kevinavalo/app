@@ -71,6 +71,10 @@ class customer(models.Model):
     	choices = STATE_CHOICES,
     	)
 
+	def __str__(self):
+		return self.username
+
+
 class Authenticator(models.Model):
 	user = models.ForeignKey(customer)
 	authenticator = models.CharField(max_length=100, primary_key=True)
