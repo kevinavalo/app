@@ -160,10 +160,7 @@ def getItemCategory(request):
             for item in resp:
                 if item['category'] == category:
                     items.append(item)
-<<<<<<< HEAD
-
-=======
->>>>>>> 764e0bf3d735ed1c01cd2bbce6c5e48635041638
+                    
             return JsonResponse({'items': items, 'status': 'success'}, safe=False)
         else: 
             return JsonResponse({'status': 'error this is not a valid category'})
