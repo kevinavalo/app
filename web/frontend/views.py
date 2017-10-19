@@ -55,7 +55,10 @@ def register(request):
 			req = urllib.request.Request('http://exp-api:8000/api/v1/register/', data=post_encoded, method='POST')
 			resp_json = urllib.request.urlopen(req).read().decode('utf-8')
 			resp = json.loads(resp_json)
-			return JsonResponse({'status':'success','response':resp})
+			auth = resp['auth']['auth']
+			response =  HttpResponseRedirect('/home')
+			response.set_cookie("auth", auth)
+			return response
 		return render(request, 'register.html', {'form':form, 'message':form.errors})
 	else:
 		return render(request, 'register.html', {'form':form})
@@ -83,13 +86,16 @@ def login(request):
 	return response
 
 def logout(request):
-	authenticator = request.COOKIES['auth']
-	auth = ast.literal_eval(authenticator)['authenticator']
-	post_data = {
-		'auth': auth}
-	post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
-	req = urllib.request.Request('http://exp-api:8000/api/v1/logout/', data=post_encoded, method='POST')
-	resp_json = urllib.request.urlopen(req).read().decode('utf-8')
-	resp = json.loads(resp_json)
+	try:
+		authenticator = request.COOKIES['auth']
+		auth = ast.literal_eval(authenticator)['authenticator']
+		post_data = {
+			'auth': auth}
+		post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
+		req = urllib.request.Request('http://exp-api:8000/api/v1/logout/', data=post_encoded, method='POST')
+		resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+		resp = json.loads(resp_json)
+	except:
+		pass
 	response = HttpResponseRedirect('/home')
 	return response
