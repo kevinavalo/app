@@ -16,16 +16,6 @@ class Tests(TestCase):
         items = resp.json()
         self.assertEqual(items['count'], 4)
 
-    def testGetEmptyList(self):
-        c = Client()
-        resp = c.get('/api/v1/item/get/').json()
-        for item in resp['results']:
-            resp_del = c.post('/api/v1/item/delete/'+item+'/', {})
-        new_list = c.get('/api/v1/item/get/').json()
-        self.assertEqual(new_list['count'], 0)
-        self.assertEqual(new_list['results'], {})
-
-
     def testGetFirstItemPass(self):
         c = Client()
         resp_json = c.get('/api/v1/item/get/1/')
@@ -66,7 +56,7 @@ class Tests(TestCase):
         c = Client()
         count = c.get('/api/v1/item/get/').json()['count']
 
-        resp = c.post('/api/v1/item/create/',{'owner':'kevinavalo','title':'Bed Frame',
+        resp = c.post('/api/v1/item/create/',{'owner':'kev','title':'Bed Frame',
                                               'description':'cheap!','category':'bedroom',
                                               'price':'10'})
         new_count = c.get('/api/v1/item/get/').json()['count']
@@ -77,7 +67,7 @@ class Tests(TestCase):
 
     def testCreateItemFail(self):
         c = Client()
-        resp = c.post('/api/v1/item/create/',{'owner':'kevinavalo',
+        resp = c.post('/api/v1/item/create/',{'owner':'kat',
                                               'description':'cheap!','category':'bedroom',
                                               'price':'10'})
         status = json.loads(resp.content.decode())

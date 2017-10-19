@@ -69,7 +69,8 @@ def login(request):
             if hashers.check_password(password, user.password):
                 create_auth(request)
                 auth = (Authenticator.objects.get(user=user))
-                return JsonResponse({'status': 'success','auth':auth.authenticator},safe=False)
+
+            return JsonResponse({'status': 'success','auth':auth.authenticator},safe=False)
             else:
                 return JsonResponse({'status': 'error','response':'Incorrect Password'})
         except ObjectDoesNotExist:
@@ -142,12 +143,12 @@ def create_auth(request):
             msg=os.urandom(32),
             digestmod='sha256',
         ).hexdigest()
-        user = customer.objects.get(username=request.POST.get('username'))
-        auth = Authenticator(
-            user = user,
-            authenticator = authenticator,
-        )
         try:
+            user = customer.objects.get(username=request.POST.get('username'))
+            auth = Authenticator(
+                user = user,
+                authenticator = authenticator,
+            )
             auth.save()
             return JsonResponse({'status':'success', 'user':auth.user.username, 'auth':auth.authenticator,
                                  'timestamp':auth.timestamp})

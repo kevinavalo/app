@@ -29,7 +29,7 @@ def createComment(request):
 			try:
 				item = Item.objects.get(title=itemTitle)
 			except ObjectDoesNotExist:
-				return JsonResponse({'response': 'Item does not exit, or you have entered an invalid item name'})
+				return JsonResponse({'response': 'Item does not exist, or you have entered an invalid item name'})
 			if not item:
 				return JsonResponse({'response': 'Comments must be associated with an item'})
 

@@ -35,7 +35,7 @@ class CommentManagerTestCase(TestCase):
 	def test_create_comment_success(self):
 		preCommentTotalNum = len(Comment.objects.all())
 		comment = {
-			'username': 'kevinavalo',
+			'username': 'kev',
 			'item': 'Chair',
 			'message': 'hello this is a new message'
 		}
@@ -52,7 +52,7 @@ class CommentManagerTestCase(TestCase):
 	def test_create_comment_message_failure(self):
 		preCommentTotalNum = len(Comment.objects.all())
 		comment = {
-			'username': 'kevinavalo',
+			'username': 'kev',
 			'item': 'Chair',
 		}
 
@@ -84,7 +84,7 @@ class CommentManagerTestCase(TestCase):
 	def test_create_comment_item_failure(self):
 		preCommentTotalNum = len(Comment.objects.all())
 		comment = {
-			'username': 'kevinavalo',
+			'username': 'kat',
 			'message': 'hello this is a new message',
 		}
 
@@ -95,7 +95,7 @@ class CommentManagerTestCase(TestCase):
 		postCommentTotalNum = len(Comment.objects.all())
 
 		self.assertEquals(preCommentTotalNum, postCommentTotalNum)
-		self.assertEquals(response['response'], "Item does not exit, or you have entered an invalid item name")
+		self.assertEquals(response['response'], "Item does not exist, or you have entered an invalid item name")
 
 	def test_update_comment_success(self):
 		comment = Comment.objects.get(id=1)
