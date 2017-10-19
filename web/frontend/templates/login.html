@@ -2,11 +2,15 @@
 {% block content %}
 
 <h1>Login</h1>
-<!--{{ message }}-->
-<form method="POST"> {% csrf_token %}
-    {{ login_form.as_table }}
-    <button type="submit">Login</button>
+{% if logged_in %}
+    <p>You are already logged in!</p>
+    Click <a href="/logout/?next=reverse(login)">here</a> to log out.
+{% else %}
+    <form method="POST"> {% csrf_token %}
+        {{ login_form.as_table }}
+        <button type="submit">Login</button>
 
-</form>
+    </form>
+{% endif %}
 
 {% endblock %}

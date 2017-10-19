@@ -71,7 +71,6 @@ def loginUser(request):
         post_data = {'username': request.POST.get('username'),
                      'password':request.POST.get('password')}
         post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
-
         req = urllib.request.Request('http://models-api:8000/api/v1/user/login/', data=post_encoded, method='POST')
         resp_json = urllib.request.urlopen(req).read().decode('utf-8')
         resp = json.loads(resp_json)
@@ -80,7 +79,9 @@ def loginUser(request):
 @csrf_exempt
 def logoutUser(request):
     if request.method == 'POST':
-        req = urllib.request.Request('http://models-api:8000/api/v1/user/logout/', method='POST')
+        post_data = {'auth': request.POST.get('auth')}
+        post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
+        req = urllib.request.Request('http://models-api:8000/api/v1/auth/delete/', data=post_encoded, method='POST')
         resp_json = urllib.request.urlopen(req).read().decode('utf-8')
         resp = json.loads(resp_json)
         return JsonResponse({'resp':resp})
