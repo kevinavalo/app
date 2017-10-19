@@ -175,4 +175,3 @@ def getItemCategory(request):
 		return render(request, 'home.html', {'items': items})
 	else:
 		return home(request)
-    return render(request, 'index.html')
