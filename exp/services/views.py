@@ -137,3 +137,22 @@ def getPopularUsers(request):
             response = descending_users
         return JsonResponse(response, safe=False)
     return JsonResponse({'status': 'error'})
+
+def getItemCategory(request):
+    if request.method == 'GET':
+        category = request.GET.get('category', '')
+        if category != '':
+            req = urllib.request.Request('http://models-api:8000/api/v1/item/get/')
+            resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+            resp = json.loads(resp_json)['results']
+
+            items = []
+            for item in resp:
+                if item['category'] == category:
+                    items.append(item)
+
+            return JsonResponse({'items': items, 'status': 'success'}, safe=False)
+        else: 
+            return JsonResponse({'status': 'error this is not a valid category'})
+    else:
+        return JsonResponse({'status': 'error, this is not a GET method'})

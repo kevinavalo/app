@@ -164,3 +164,19 @@ def getPopularUsers(request):
 	users = json.loads(resp_json)
 
 	return render(request, 'popularUsers.html', { 'users':users })
+
+def getItemCategory(request):
+	if request.method == 'GET':
+		category = request.GET.get('category', '')
+		data = {}
+		data['category'] = category
+		url_values = urllib.parse.urlencode(data)
+		url = 'http://exp-api:8000/api/v1/getItemCategory/'
+		full_url = url + '?' + url_values
+		req = urllib.request.Request(full_url)
+		resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+		items = json.loads(resp_json)['items']
+
+		return render(request, 'home.html', {'items': items})
+	else:
+		return home(request)
