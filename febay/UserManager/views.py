@@ -53,8 +53,10 @@ def get_users(request):
     users = customer.objects.all().values('username','first_name', 'last_name')  # or simply .values() to get all fields
     users_list = list(users)  # important: convert the QuerySet to a list object
     status = {'status': 'success'}
-    users_list.append(status)
-    return JsonResponse(users_list, safe=False)
+    response = {}
+    response['users_list'] = users_list
+    response['status'] = status
+    return JsonResponse(response, safe=False)
 
 @csrf_exempt
 def login(request):
@@ -67,11 +69,8 @@ def login(request):
             if hashers.check_password(password, user.password):
                 create_auth(request)
                 auth = (Authenticator.objects.get(user=user))
-                auth_resp = {
-                    'user':auth.user.username,
-                    'authenticator':auth.authenticator
-                }
-                return JsonResponse({'status': 'success','response':{'username':user.username},'auth':auth_resp},safe=False)
+
+            return JsonResponse({'status': 'success','auth':auth.authenticator},safe=False)
             else:
                 return JsonResponse({'status': 'error','response':'Incorrect Password'})
         except ObjectDoesNotExist:
@@ -163,7 +162,7 @@ def delete_auth(request):
     if request.method == 'POST':
         try:
             del_auth = Authenticator.objects.get(authenticator=request.POST.get('auth'))
-            response = {'user': del_auth.user.username, 'auth':del_auth.authenticator}
+            response = {'user': del_auth.user.username, 'auth':del_auth.authenticator, 'status': 'logged out'}
         except ObjectDoesNotExist:
             return JsonResponse({'status': 'Error, auth doesn\'t exist'})
 
@@ -177,6 +176,14 @@ def get_auth(request):
     json = list(map(model_to_dict, auth_models))
     return JsonResponse(json, safe=False)
 
-
-
-
+def get_user_auth(request):
+	if request.method == 'GET':
+		try:
+			auth = Authenticator.objects.get(authenticator=request.GET.get('auth'))
+		except ObjectDoesNotExist:
+			return JsonResponse({'status': False})
+		username = auth.user.username
+		response = {'username': username, 'status': True, 'auth': auth.authenticator, 'timestamp': auth.timestamp}
+		return JsonResponse(response, safe=False)
+	else:
+		return JsonResponse({'status': 'error'})

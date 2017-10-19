@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^api/v1/user/update/(?P<id>\d*)/$', views.update_user, name='update_user'),
     url(r'^api/v1/auth/create/$', views.create_auth, name='create_auth'),
     url(r'^api/v1/auth/get/$', views.get_auth, name='get_auths'),
-    url(r'^api/v1/auth/delete/$', views.delete_auth, name='delete_auth')
+    url(r'^api/v1/auth/delete/$', views.delete_auth, name='delete_auth'),
+    url(r'^api/v1/auth/getUserAuth/$', views.get_user_auth, name='getUserAuth')
 
 ]
