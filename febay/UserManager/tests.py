@@ -170,4 +170,16 @@ class UserManagerTestCase(TestCase):
 	def test_get_auths(self):
 		url = self.client.get(reverse('get_auths'))
 		response = json.loads(url.content.decode('utf-8'))
-		self.assertEqual(len(response), 1)
+		self.assertEqual(len(response), 0)
+
+	def test_delete_auth(self):
+		url = self.client.post(reverse('create_auth'), {'username': 'kat'})
+		response = json.loads(url.content.decode('utf-8'))
+		url = self.client.post(reverse('delete_auth'), {'auth':response['auth']})
+		response = json.loads(url.content.decode('utf-8'))
+		self.assertEqual(response['status'], 'success')
+
+	def test_delete_invalid_auth(self):
+		url = self.client.post(reverse('delete_auth'), {'auth':'79832kjflds'})
+		response = json.loads(url.content.decode('utf-8'))
+		self.assertEqual(response['status'], 'Error, auth doesn\'t exist')
