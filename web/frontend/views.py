@@ -65,7 +65,6 @@ def home(request):
 
 
 def register(request):
-<<<<<<< c3b25addd87cda19a16c250b13fd81cddea9ee73
     form = Registration
     if request.method == 'POST':
         form = Registration(request.POST)
@@ -119,8 +118,7 @@ def login(request):
 def logout(request):
     try:
         authenticator = request.COOKIES['auth']
-        post_data = {
-            'auth': authenticator}
+        post_data = {'auth': authenticator}
         post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
         req = urllib.request.Request('http://exp-api:8000/api/v1/logout/', data=post_encoded, method='POST')
         resp_json = urllib.request.urlopen(req).read().decode('utf-8')
@@ -171,7 +169,10 @@ def createListing(request):
 
 	    	if not resp['status']:
 	    		if resp['response']:
-	    			return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
+	    			response = HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
+	    			response.delete_cookie('auth')
+	    			response.delete_cookie('user')	    			
+	    			return response
 	    		else:
 	    			return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
 	    	return home(request)
