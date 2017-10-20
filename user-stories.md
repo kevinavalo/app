@@ -35,11 +35,19 @@
 
 *Acceptance Criteria*:
 1. There is a username field, a password field, and a login button on a login page.
-2. When an existing user attempts 
+2. When an existing user attempts to login with a correct password, there is a unique authenticator created in the database and an auth cookie is created.
+3. When an existing user attempts to login with an incorrect password, they are brought back to the login page with corresponding errors.
+4. When a non-existing user attempts to login, they are brought back to the login page with corresponding errors.
+5. When the user is brought to a different page while still logged in, he/she remains logged in.
+6. When the user is logged in, he/she is prevented from logging in as any other user.
+7. When the user is logged in, if he/she navigates away from the web application and later returns (before the expiration of the authenticator), he/she is still logged in.
 
 3. As a general user, I would like to be able to log out of my account
 *Acceptance Criteria*:
-1. 
+1. A user can only logout when he/she is currently logged in, meaning the button is only visible to users that are logged in, and logout is restricted to logged in users using a login_required decorator.
+2. When a user logs out his/her authenticator is deleted from the database table.
+3. When a user logs out his/her authenticator cookie is deleted.
+4. When a user logs our he/she is redirected to the login page.
 
 
 ## Buyer
