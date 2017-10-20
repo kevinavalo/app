@@ -40,9 +40,9 @@ def home(request):
 	return render(request, 'home.html', {'items':items})
 
 def register(request):
-	form = forms.Registration
+	form = Registration()
 	if request.method == 'POST':
-		form = forms.Registration(request.POST)
+		form = Registration(request.POST)
 		if form.is_valid():
 			post_data = {'username':form.cleaned_data['username'],
 						 'password':form.cleaned_data['password'],
@@ -136,9 +136,13 @@ def createListing(request):
 	    	req = urllib.request.Request('http://exp-api:8000/api/v1/createItem/', data=post_encoded, method='POST')
 	    	resp_json = urllib.request.urlopen(req).read().decode('utf-8')
 	    	resp = json.loads(resp_json)
+
 	    	if not resp['status']:
-	    		return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
-	    	return JsonResponse({'status':'success', 'response': resp})
+	    		if resp['response']:
+	    			return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
+	    		else:
+	    			return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
+	    	return home(request)
 	    else:
 	    	return JsonResponse({'status':'error', 'response':f.errors})
     # ...

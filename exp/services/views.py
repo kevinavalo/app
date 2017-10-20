@@ -107,8 +107,10 @@ def createItem(request):
 
             item = resp['item-added']
             return JsonResponse({'item': item, 'status': True})
+        elif resp_auth['response'] == 'Authenticator is expired':
+            return JsonResponse({'status': False, 'response': 'Authenticator is expired'})
         else:
-            JsonResponse({'status': False})
+            return JsonResponse({'status': False})
     return JsonResponse({'status': 'error'})
 
 #get popular users based on number of items they have listed
@@ -160,10 +162,7 @@ def getItemCategory(request):
             for item in resp:
                 if item['category'] == category:
                     items.append(item)
-<<<<<<< HEAD
 
-=======
->>>>>>> 764e0bf3d735ed1c01cd2bbce6c5e48635041638
             return JsonResponse({'items': items, 'status': 'success'}, safe=False)
         else: 
             return JsonResponse({'status': 'error this is not a valid category'})
