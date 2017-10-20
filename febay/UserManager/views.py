@@ -186,7 +186,7 @@ def get_user_auth(request):
 			return JsonResponse({'status': False})
 		username = auth.user.username
 		timestamp = auth.timestamp
-		if (timezone.now() - timestamp) < timedelta(1):
+		if (timezone.now() - timestamp) > timedelta(1):
 			auth.delete()
 			return JsonResponse({'status': False, 'response': 'Authenticator is expired'}, safe=False)
 		response = {'username': username, 'status': True, 'auth': auth.authenticator, 'timestamp': auth.timestamp}

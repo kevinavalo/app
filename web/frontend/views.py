@@ -65,6 +65,7 @@ def home(request):
 
 
 def register(request):
+<<<<<<< HEAD
     form = Registration
     if request.method == 'POST':
         form = Registration(request.POST)
@@ -88,6 +89,31 @@ def register(request):
         return render(request, 'register.html', {'form': form, 'message': form.errors})
     else:
         return render(request, 'register.html', {'form': form})
+=======
+	form = Registration()
+	if request.method == 'POST':
+		form = Registration(request.POST)
+		if form.is_valid():
+			post_data = {'username':form.cleaned_data['username'],
+						 'password':form.cleaned_data['password'],
+						 'first_name':form.cleaned_data['first_name'],
+						 'last_name':form.cleaned_data['last_name'],
+						 'email':form.cleaned_data['email'],
+						 'city':form.cleaned_data['city'],
+						 'state':form.cleaned_data['state'],
+						 'phone_number':form.cleaned_data['phone_number']}
+			post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
+			req = urllib.request.Request('http://exp-api:8000/api/v1/register/', data=post_encoded, method='POST')
+			resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+			resp = json.loads(resp_json)
+			auth = resp['auth']['auth']
+			response =  HttpResponseRedirect('/home')
+			response.set_cookie("auth", auth)
+			return response
+		return render(request, 'register.html', {'form':form, 'message':form.errors})
+	else:
+		return render(request, 'register.html', {'form':form})
+>>>>>>> aa2aa297f9738f4e1de78060b12838a8e7f57a3f
 
 def login(request):
     login_form = LoginForm()
