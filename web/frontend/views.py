@@ -65,9 +65,9 @@ def home(request):
 
 
 def register(request):
-    form = forms.Registration
+    form = Registration
     if request.method == 'POST':
-        form = forms.Registration(request.POST)
+        form = Registration(request.POST)
         if form.is_valid():
             post_data = {'username': form.cleaned_data['username'],
                          'password': form.cleaned_data['password'],
