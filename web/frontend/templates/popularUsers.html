@@ -7,7 +7,7 @@
         <table class="table" align="center">
             {% for user in users %}
                 <tr>
-                    <td><a href=""><h3>{{user.username}}</h3></a></td>
+                    <td><a href="/getProfile/{{user.id}}"><h3>{{user.username}}</h3></a></td>
                 </tr>
                 <tr>
                     <td><p>{{user.first_name}} {{user.last_name}}</p></td>

@@ -40,9 +40,9 @@ def get_user(request,id):
     if request.method == 'GET':
         try:
             user = customer.objects.get(id = id)
-            response[user.username] = {'first name': user.first_name,'last name': user.last_name,
+            response[user.username] = {'first_name': user.first_name,'last_name': user.last_name,
             'username': user.username, 'email': user.email, 'state':user.state,
-            'city':user.city, 'phone number': user.phone_number,'id':user.id}
+            'city':user.city, 'phone_number': user.phone_number,'id':user.id}
             response['status'] = 'success'
         except ObjectDoesNotExist:
             response['status'] = 'error: user does not exist'
@@ -50,7 +50,7 @@ def get_user(request,id):
 
 @csrf_exempt
 def get_users(request):
-    users = customer.objects.all().values('username','first_name', 'last_name')  # or simply .values() to get all fields
+    users = customer.objects.all().values('username','first_name', 'last_name','id')  # or simply .values() to get all fields
     users_list = list(users)  # important: convert the QuerySet to a list object
     status = {'status': 'success'}
     response = {}
