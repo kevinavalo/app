@@ -20,11 +20,13 @@ from frontend import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^item_detail/(?P<id>\d+)/$', views.itemDetail, name='itemDetail'),
-    url(r'^home/$', views.home, name='home'),
+    url(r'^$', views.home, name='home'),
     url(r'^register/$', views.register, name='register'),
     url(r'^login/$', views.login, name='login'),
     url(r'^logout/$', views.logout, name='logout'),
     url(r'^createListing/$', views.createListing, name='createListing'),
     url(r'^popularUsers/$', views.getPopularUsers, name='getPopularUsers'),
-    url(r'^getItemCategory/$', views.getItemCategory, name='getItemCategory')
+    url(r'^getItemCategory/$', views.getItemCategory, name='getItemCategory'),
+    url(r'^getProfile/(?P<id>\d+)/$', views.profile, name='profile'),
+
 ]

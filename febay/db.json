@@ -221,7 +221,7 @@
         "title": "Desk",
         "description": "new",
         "price": 5.99,
-        "category": "furniture",
+        "category": "Miscellaneous",
         "date_posted": "2017-09-21T05:06:50.199Z"
     }
 },
@@ -233,7 +233,7 @@
         "title": "Chair",
         "description": "new",
         "price": 5.99,
-        "category": "furniture",
+        "category": "Couches & Chairs",
         "date_posted": "2017-09-21T05:07:10.759Z"
     }
 },
@@ -245,7 +245,7 @@
         "title": "Bed frame",
         "description": "new",
         "price": 5.99,
-        "category": "furniture",
+        "category": "Bedframes & Headboards",
         "date_posted": "2017-09-21T05:07:29.196Z"
     }
 },
@@ -255,7 +255,7 @@
     "fields": {
         "owner": 1,
         "title": "Couch",
-        "description": "new",
+        "description": "Couches & Chairs",
         "price": 5.99,
         "category": "furniture",
         "date_posted": "2017-09-21T05:07:39.020Z"

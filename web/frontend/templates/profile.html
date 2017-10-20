@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if message %}
+        <h3>{{message}}</h3>
+    {% else %}
+    <h1 align="center">{{info.username}}'s Profile</h1>
+    <div class="well" align="center">
+		<div class="table-responsive" align="center">
+		<table class="table" align="center">
+            <tr>
+                <td><h2>{{info.first_name}} {{info.last_name}}</h2></td>
+            </tr>
+            <tr>
+                <td><h4>Email: {{info.email}}</h4></td>
+                <td><h4>Phone: {{info.phone_number}}</h4></td>
+            </tr>
+            <tr>
+                <td><h4>{{info.city}}, {{info.state}}</h4></td>
+            </tr>
+
+		</table>
+		</div>
+	</div>
+    {% endif %}
+
+{% endblock %}

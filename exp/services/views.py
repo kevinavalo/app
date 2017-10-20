@@ -22,6 +22,17 @@ def getItemList(request):
 
     return JsonResponse(resp)
 
+def getItemDetail(request, id):
+    if request.method == 'GET':
+        req = urllib.request.Request('http://models-api:8000/api/v1/item/get/'+id+'/')
+        resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+        resp = json.loads(resp_json)
+        del resp['status']
+        com = urllib.request.Request('http://models-api:8000/api/v1/comment/getList/item/'+id+'/')
+        com_json =json.loads(urllib.request.urlopen(com).read().decode('utf-8'))
+        final_resp = {'item':resp, 'comments':com_json}
+        return JsonResponse(final_resp)
+
 def getSortedListings(request):
     req = urllib.request.Request('http://models-api:8000/api/v1/item/get/')
     resp_json = urllib.request.urlopen(req).read().decode('utf-8')
@@ -31,6 +42,19 @@ def getSortedListings(request):
     items = json.dumps(items)
     return JsonResponse(items, safe=False)
 
+@csrf_exempt
+def comment(request):
+    if request.method == 'POST':
+        post_data = {'message': request.POST.get('message'),
+                     'username':request.POST.get('username'),
+                     'item': request.POST.get('item')}
+        post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
+
+        req = urllib.request.Request('http://models-api:8000/api/v1/comment/create/', data=post_encoded, method='POST')
+        resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+        resp = json.loads(resp_json)
+        return JsonResponse(resp)
+    return JsonResponse({'error':'could not comment'})
     # return JsonResponse(resp)
     # req = urllib.request.Request('http://models-api:8000/api/v1/item/get/')
     # resp_json = urllib.request.urlopen(req).read().decode('utf-8')
@@ -166,3 +190,15 @@ def getItemCategory(request):
             return JsonResponse({'status': 'error this is not a valid category'})
     else:
         return JsonResponse({'status': 'error, this is not a GET method'})
+
+@csrf_exempt
+def getProfile(request, id):
+    if request.method == 'GET':
+        req = urllib.request.Request('http://models-api:8000/api/v1/user/get/'+id+'/')
+        resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+        resp = json.loads(resp_json)
+        del resp['status']
+        info = {}
+        for key in resp:
+            info = resp[key]
+        return JsonResponse(info)

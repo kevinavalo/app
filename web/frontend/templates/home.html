@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
     
-    <h1 align="center">Items for sale!!!{{request.COOKIES.auth}}</h1>
+    <h1 align="center">Welcome {{request.COOKIES.user}}!!!</h1>
+    <h1 align="center">Items for sale</h1>
     <div class="well" align="center">
         <a href="{% url 'getPopularUsers'%}">Popular Sellers</a>
 <!--         <a href="{% url 'getItemCategory' %}?category=Bedroom">Bedroom Category</a>         -->

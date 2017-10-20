@@ -76,7 +76,7 @@ class="ui-toolkit"
 			<div class="col-md-2">
 				<img class='logo-nav' src="https://image.ibb.co/nRqZDw/febay_logo.png"></a>
 			</div>
-			<div class="col-md-7" style="padding-top: 13px;">
+			<div class="col-md-6" style="padding-top: 13px;">
 				<div id="custom-search-input">
 					<div class="input-group col-md-12">
 						<input type="text" class="form-control input-lg" placeholder="Search For Furniture Items" style="font-size: 14px" 	/>
@@ -90,17 +90,23 @@ class="ui-toolkit"
 				</div>
 			</div>
 			<div class="col-md-1" style="padding-top: 25px; font-size: 14px; text-align: center">
-			<a href="/home/"><span class="glyphicon glyphicon glyphicon-home" style="color: #2DA4C4;font-size: 20px"></span></a></li>
+			<a href="/"><span class="glyphicon glyphicon glyphicon-home" style="color: #2DA4C4;font-size: 20px"></span></a></li>
 		</div>
 		<div class="col-md-1" style="padding-top: 25px; font-size: 14px;  text-align: center">
-			<a style="color: #2DA4C4;"><span class="glyphicon glyphicon-user" style="color: #2DA4C4"></span><br>Profile</a>
+			<a style="color: #2DA4C4;" href="{% url 'getPopularUsers' %}"><span class="glyphicon glyphicon-user" style="color: #2DA4C4"></span><br>Users</a>
 		</div>
 		<div class="col-md-1" style="padding-top: 25px; font-size: 14px;  text-align: center">
 			<a style="color: #2DA4C4;" href="{% url 'createListing' %}"><span class="glyphicon glyphicon-plus" style="color: #2DA4C4"></span><br>New Listing</a>
 		</div>
-		<div class="col-md-1" style="padding-top: 25px; font-size: 14px; text-align: center">
-			<a href='/logout/' style="color: #2DA4C4"><span class="glyphicon glyphicon-log-out" style="color: #2DA4C4"></span> <br>Logout</a>
-		</div>
+		{%	if request.COOKIES.user %}
+			<div class="col-md-1" style="padding-top: 25px; font-size: 14px; text-align: center">
+				<a href='/logout/' style="color: #2DA4C4"><span class="glyphicon glyphicon-log-out" style="color: #2DA4C4"></span> <br>Logout</a>
+			</div>
+		{% else %}
+			<div class="col-md-1" style="padding-top: 25px; font-size: 14px; text-align: center">
+				<a href='/login/' style="color: #2DA4C4"><span class="glyphicon glyphicon-log-in" style="color: #2DA4C4"></span> <br>Login</a>
+			</div>
+		{% endif %}
 		</div>
 
 	</div>

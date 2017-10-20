@@ -26,5 +26,9 @@ urlpatterns = [
     url(r'^api/v1/logout/$', views.logoutUser, name='logout'),
     url(r'^api/v1/createItem/$', views.createItem, name='createItem'),
     url(r'^api/v1/getPopularUsers/$', views.getPopularUsers, name='getPopularUsers'),
-    url(r'^api/v1/getItemCategory/$', views.getItemCategory, name='getItemCategory')
+    url(r'^api/v1/getItemCategory/$', views.getItemCategory, name='getItemCategory'),
+    url(r'^api/v1/getProfile/(?P<id>\d+)/$', views.getProfile, name='getProfile'),
+    url(r'^api/v1/getItemDetail/(?P<id>\d+)/$', views.getItemDetail, name='getItemDetail'),
+    url(r'^api/v1/comment/$', views.comment, name='comment')
+
 ]
