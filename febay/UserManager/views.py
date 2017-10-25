@@ -11,6 +11,8 @@ import os
 import hmac
 from febay import settings
 from django.forms.models import model_to_dict
+from datetime import datetime, timedelta
+from django.utils import timezone
 # import django settings file
 
 @csrf_exempt
@@ -185,6 +187,10 @@ def get_user_auth(request):
 		except ObjectDoesNotExist:
 			return JsonResponse({'status': False})
 		username = auth.user.username
+		timestamp = auth.timestamp
+		if (timezone.now() - timestamp) > timedelta(1):
+			auth.delete()
+			return JsonResponse({'status': False, 'response': 'Authenticator is expired'}, safe=False)
 		response = {'username': username, 'status': True, 'auth': auth.authenticator, 'timestamp': auth.timestamp}
 		return JsonResponse(response, safe=False)
 	else:

@@ -91,7 +91,6 @@ def register(request):
     else:
         return render(request, 'register.html', {'form': form})
 
-
 def login(request):
     login_form = LoginForm()
     if request.method == 'GET':
@@ -121,8 +120,7 @@ def login(request):
 def logout(request):
     try:
         authenticator = request.COOKIES['auth']
-        post_data = {
-            'auth': authenticator}
+        post_data = {'auth': authenticator}
         post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
         req = urllib.request.Request('http://exp-api:8000/api/v1/logout/', data=post_encoded, method='POST')
         resp_json = urllib.request.urlopen(req).read().decode('utf-8')
@@ -156,34 +154,41 @@ def createListing(request):
     f = CreateListingForm(request.POST)
 
     if request.method == 'POST':
-        if f.is_valid():
-            post_data = {
-                'title': f.cleaned_data['title'],
-                'description': f.cleaned_data['description'],
-                'price': f.cleaned_data['price'],
-                'category': f.cleaned_data['category'],
-                'auth': auth
-            }
+	    if f.is_valid():
+	    	post_data = {
+	    		'title': f.cleaned_data['title'],
+	    		'description': f.cleaned_data['description'],
+	    		'price': f.cleaned_data['price'],
+	    		'category': f.cleaned_data['category'],
+	    		'auth': auth
+	    	}
 
-            post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
+	    	post_encoded = urllib.parse.urlencode(post_data).encode('utf-8')
 
-            req = urllib.request.Request('http://exp-api:8000/api/v1/createItem/', data=post_encoded, method='POST')
-            resp_json = urllib.request.urlopen(req).read().decode('utf-8')
-            resp = json.loads(resp_json)
-            if not resp['status']:
-                return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
-            return JsonResponse({'status': 'success', 'response': resp})
-        else:
-            return JsonResponse({'status': 'error', 'response': f.errors})
-            # ...
+	    	req = urllib.request.Request('http://exp-api:8000/api/v1/createItem/', data=post_encoded, method='POST')
+	    	resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+	    	resp = json.loads(resp_json)
 
-            # WILL HAVE TO CHANGE THIS AFTER CREATING EXP API
-            # Send validated information to our experience layer
-            # resp = create_listing_exp_api(auth, ...)
+	    	if not resp['status']:
+	    		if resp['response']:
+	    			response = HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
+	    			response.delete_cookie('auth')
+	    			response.delete_cookie('user')	    			
+	    			return response
+	    		else:
+	    			return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
+	    	return home(request)
+	    else:
+	    	return JsonResponse({'status':'error', 'response':f.errors})
+    # ...
 
-            # Check if the experience layer said they gave us incorrect information
-            # if resp and not resp['ok']:
-            # if resp['error'] == exp_srvc_errors.E_UNKNOWN_AUTH:
+    #WILL HAVE TO CHANGE THIS AFTER CREATING EXP API
+    # Send validated information to our experience layer
+    #resp = create_listing_exp_api(auth, ...)
+
+    # Check if the experience layer said they gave us incorrect information
+    #if resp and not resp['ok']:
+        #if resp['error'] == exp_srvc_errors.E_UNKNOWN_AUTH:
             # Experience layer reports that the user had an invalid authenticator --
             #   treat like user not logged in
             # return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
@@ -225,4 +230,3 @@ def profile(request, id):
         if not info:
             return render(request, 'profile.html', {'message':'user does not exist'})
         return render(request, 'profile.html', {'info': (info)})
-
