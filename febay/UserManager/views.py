@@ -16,6 +16,8 @@ from django.forms.models import model_to_dict
 @csrf_exempt
 def register_user(request):
     if request.method == 'POST':
+        if customer.objects.filter(username=request.POST.get('username')):
+            return JsonResponse({'status':'error','response':'username taken'})
         try:
             user = customer.objects.create(
                 first_name = request.POST.get('first_name'),

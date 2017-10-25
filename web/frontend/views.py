@@ -81,6 +81,8 @@ def register(request):
             req = urllib.request.Request('http://exp-api:8000/api/v1/register/', data=post_encoded, method='POST')
             resp_json = urllib.request.urlopen(req).read().decode('utf-8')
             resp = json.loads(resp_json)
+            if resp['response'] == 'username taken':
+                return render(request, 'register.html', {'form': form, 'message': 'username taken'})
             auth = resp['auth']['auth']
             response = HttpResponseRedirect('/home')
             response.set_cookie("auth", auth)
