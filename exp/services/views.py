@@ -6,12 +6,12 @@ import urllib.parse
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-
+from kafka import KafkaProducer
 from datetime import datetime
 from django.views.decorators.csrf import csrf_exempt
 from collections import OrderedDict
 import operator
-
+producer = KafkaProducer(bootstrap_servers='kafka:9092')
 # make a GET request and parse the returned JSON
 # note, no timeouts, error handling or all the other things needed to do this for real
 def getItemList(request):
@@ -130,6 +130,7 @@ def createItem(request):
             resp = json.loads(resp_json)
 
             item = resp['item-added']
+            producer.send('new-listings-topic', json.dumps(item).encode('utf-8'))
             return JsonResponse({'item': item, 'status': True})
         elif resp_auth['response'] == 'Authenticator is expired':
             return JsonResponse({'status': False, 'response': 'Authenticator is expired'})
