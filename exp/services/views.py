@@ -83,6 +83,8 @@ def resgisterUser(request):
         req = urllib.request.Request('http://models-api:8000/api/v1/user/register/', data=post_encoded, method='POST')
         resp_json = urllib.request.urlopen(req).read().decode('utf-8')
         resp = json.loads(resp_json)
+        if resp['response'] == 'username taken':
+            return JsonResponse({'response':'username taken'})
         user = resp['response']
         auth_post_data = {'username':request.POST.get('username'), 'password':request.POST.get('password')}
         auth_post_encoded = urllib.parse.urlencode(auth_post_data).encode('utf-8')
