@@ -1,7 +1,7 @@
+import time
 import json
 from kafka import KafkaConsumer
-import time
-# from elasticsearch import Elasticsearch
+from elasticsearch import Elasticsearch
 
 consumer = None
 es = None
