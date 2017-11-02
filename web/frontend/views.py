@@ -84,7 +84,7 @@ def register(request):
             if resp['response'] == 'username taken':
                 return render(request, 'register.html', {'form': form, 'message': 'username taken'})
             auth = resp['auth']['auth']
-            response = HttpResponseRedirect('/home')
+            response = HttpResponseRedirect(reverse('home'))
             response.set_cookie("auth", auth)
             return response
         return render(request, 'register.html', {'form': form, 'message': form.errors})

@@ -91,7 +91,7 @@ def resgisterUser(request):
         auth_req = urllib.request.Request('http://models-api:8000/api/v1/user/login/', data=auth_post_encoded, method='POST')
         resp_json = urllib.request.urlopen(auth_req).read().decode('utf-8')
         auth_resp = json.loads(resp_json)
-        return JsonResponse({'user':resp,'auth':auth_resp})
+        return JsonResponse({'user':resp,'auth':auth_resp, 'response': 'success'})
 
 @csrf_exempt
 def loginUser(request):
@@ -171,7 +171,7 @@ def getPopularUsers(request):
 
         if len(descending_users) > 5:
             for i in range(0,4):
-                response.append(descending_users.get(i))
+                response.append(descending_users[i])
         else:
             response = descending_users
         return JsonResponse(response, safe=False)
