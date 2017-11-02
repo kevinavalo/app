@@ -2,7 +2,11 @@
 {% block content %}
 
 <h1>Sign Up</h1>
-<!--{{ message }}-->
+{% if message %}
+<div class="alert alert-danger">
+  <strong>{{ message }}</strong>
+</div>
+{% endif %}
 <form method="POST"> {% csrf_token %}
     {{ form.as_table }}
     <button type="submit">Submit</button>

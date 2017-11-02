@@ -110,7 +110,7 @@ def login(request):
     req = urllib.request.Request('http://exp-api:8000/api/v1/login/', data=post_encoded, method='POST')
     resp_json = urllib.request.urlopen(req).read().decode('utf-8')
     resp = json.loads(resp_json)
-    if not resp or not resp['resp']:
+    if not resp or not resp['resp'] or resp['resp']['status']=='error':
         return render(request, 'login.html', {'login_form': login_form, 'message': 'User could not be logged in'})
     auth = resp['resp']['auth']
     response = HttpResponseRedirect(next)
