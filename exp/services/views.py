@@ -210,12 +210,13 @@ def getProfile(request, id):
         return JsonResponse(info)
 
 def searchItems(request):
+    global es
     if request.method == 'GET':
         query = request.GET.get('query', '')
         resp = es.search(index='listing_index', body={'query': {'query_string': {'query': query}}, 'size': 10})
         items = []
         for resp in resp['hits']['hits']:
             items.append(resp['_source'])
-        return JsonResponse({'status': 'success', 'items': items})
+        return JsonResponse({'status': 'success', 'items': items}, safe=False)
     else:
         return JsonResponse({'status': 'error, not a GET request'})

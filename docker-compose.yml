@@ -40,6 +40,7 @@ exp:
    links:
       - models:models-api
       - kafka:kafka
+      - es:es
    ports:
       - "8002:8000"
    volumes:
@@ -54,4 +55,4 @@ web:
       - "8000:8000"
    volumes:
       - ./web:/app
-   command: "mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"
+   command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"
