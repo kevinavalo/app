@@ -10,8 +10,10 @@ from kafka import KafkaProducer
 from datetime import datetime
 from django.views.decorators.csrf import csrf_exempt
 from collections import OrderedDict
+from elasticsearch import Elasticsearch
 import operator
 producer = KafkaProducer(bootstrap_servers='kafka:9092')
+es = Elasticsearch(['es'])
 # make a GET request and parse the returned JSON
 # note, no timeouts, error handling or all the other things needed to do this for real
 def getItemList(request):
@@ -206,3 +208,14 @@ def getProfile(request, id):
         for key in resp:
             info = resp[key]
         return JsonResponse(info)
+
+def searchItems(request):
+    if request.method == 'GET':
+        query = request.GET.get('query', '')
+        resp = es.search(index='listing_index', body={'query': {'query_string': {'query': query}}, 'size': 10})
+        items = []
+        for resp in resp['hits']['hits']:
+            items.append(resp['_source'])
+        return JsonResponse({'status': 'success', 'items': items})
+    else:
+        return JsonResponse({'status': 'error, not a GET request'})

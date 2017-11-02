@@ -28,5 +28,6 @@ urlpatterns = [
     url(r'^popularUsers/$', views.getPopularUsers, name='getPopularUsers'),
     url(r'^getItemCategory/$', views.getItemCategory, name='getItemCategory'),
     url(r'^getProfile/(?P<id>\d+)/$', views.profile, name='profile'),
+    url(r'^searchItems/$', views.searchItems, name='searchItems'),
 
 ]

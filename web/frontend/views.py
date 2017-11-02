@@ -230,3 +230,18 @@ def profile(request, id):
         if not info:
             return render(request, 'profile.html', {'message':'user does not exist'})
         return render(request, 'profile.html', {'info': (info)})
+
+def searchItems(request):
+    if request.method == 'GET':
+        query = request.GET.getlist('itemSearch')
+        data = {}
+        data['query'] = query
+        url_values = urllib.parse.urlencode(data)
+        url = 'http://exp-api:8000/api/v1/searchItems'
+        full_url = url + '?' + url_values
+        req = urllib.request.Request(full_url)
+        resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+        items = json.loads(resp_json)['items']
+        return  JsonResponse(items)
+    else:
+        return home(request)

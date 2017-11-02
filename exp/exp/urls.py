@@ -29,6 +29,6 @@ urlpatterns = [
     url(r'^api/v1/getItemCategory/$', views.getItemCategory, name='getItemCategory'),
     url(r'^api/v1/getProfile/(?P<id>\d+)/$', views.getProfile, name='getProfile'),
     url(r'^api/v1/getItemDetail/(?P<id>\d+)/$', views.getItemDetail, name='getItemDetail'),
-    url(r'^api/v1/comment/$', views.comment, name='comment')
-
+    url(r'^api/v1/comment/$', views.comment, name='comment'),
+    url(r'^api/v1/searchItems/$', views.searchItems, name='searchItems'),
 ]
