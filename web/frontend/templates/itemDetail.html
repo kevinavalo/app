@@ -5,13 +5,13 @@
 			<table class="table" style="border:5px double gray">
 			<tr><th><h3>{{item.title}}</h3></th></tr>
 			<tr><td><h3>{{item.category}}</h3></td>
-				<td><h3>{{item.price}}</h3></td>
+				<td><h3>${{item.price}}</h3></td>
 			</tr>
 			<tr><td><h4>{{item.description}}</h4></td></tr>
 			</table>
 
 
-			<table width="100%" style="border:4px double gray">
+			<table width="100%" style="border:4px double gray;">
 				<h4>Comments</h4>
 				{% for comment in comments %}
 						<tr><th><h5>{{comment.user}}:</h5></th></tr>
