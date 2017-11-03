@@ -31,4 +31,6 @@ urlpatterns = [
     url(r'^api/v1/getItemDetail/(?P<id>\d+)/$', views.getItemDetail, name='getItemDetail'),
     url(r'^api/v1/comment/$', views.comment, name='comment'),
     url(r'^api/v1/searchItems/$', views.searchItems, name='searchItems'),
+    url(r'^api/v1/getAuth/$', views.getAuth, name='getAuth'),
+
 ]

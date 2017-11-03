@@ -9,8 +9,9 @@
 </div>
 {% endif %}
 {% if logged_in %}
-    <p>You are already logged in!</p>
+    <p align="center">You are already logged in!
     Click <a href="/logout/">here</a> to log out.
+        </p>
 {% else %}
     <div align="center" style="width:60%; margin-left:20%">
     <form method="POST"> {% csrf_token %}

@@ -2,13 +2,14 @@
 {% block content %}
 <h1 align="center">Sign Up</h1>
 
-<div align="left" style="padding-left:20%; width:100%">
-    <br>
+
 {% if message %}
 <div class="alert alert-danger">
   <strong>{{ message }}</strong>
 </div>
 {% endif %}
+<div align="left" style="padding-left:20%; width:100%">
+    <br>
 <form method="POST"> {% csrf_token %}
     <div class="row">
         <div class="col-md-2 form-group">

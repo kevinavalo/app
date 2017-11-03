@@ -220,3 +220,11 @@ def searchItems(request):
         return JsonResponse({'status': 'success', 'items': items}, safe=False)
     else:
         return JsonResponse({'status': 'error, not a GET request'})
+
+
+def getAuth(request):
+    auth = request.GET.get('auth')
+    req = urllib.request.Request('http://models-api:8000/api/v1/auth/getUserAuth/' + "?auth=" + auth)
+    resp = urllib.request.urlopen(req).read().decode('utf-8')
+    json_resp = json.loads(resp)
+    return JsonResponse(json_resp['status'] == True, safe=False)

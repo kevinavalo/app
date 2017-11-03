@@ -140,12 +140,16 @@ def logout(request):
 def createListing(request):
     # Try to get the authenticator cookie
     auth = request.COOKIES.get('auth')
-
     # If the authenticator cookie wasn't set...
     if not auth:
         # Handle user not logged in while trying to create a listing
         return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
-
+    # check if the authenticator is valid, if not, login
+    else:
+        resp = requests.get('http://exp-api:8000/api/v1/getAuth', params={'auth': auth})
+        exists = json.loads(resp.text)
+        if exists is not True:
+            return HttpResponseRedirect(reverse("login") + "?next=" + reverse("createListing"))
     # If we received a GET request instead of a POST request...
     if request.method == 'GET':
         # Return to form page
