@@ -3,6 +3,11 @@
 
 <h1 align="center">Login</h1>
 <br>
+{% if message %}
+<div class="alert alert-danger">
+  <strong>{{ message }}</strong>
+</div>
+{% endif %}
 {% if logged_in %}
     <p>You are already logged in!</p>
     Click <a href="/logout/">here</a> to log out.
