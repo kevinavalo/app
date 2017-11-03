@@ -2,7 +2,7 @@
 {% block content %}
     
     <h1 align="center">Welcome {{request.COOKIES.user}}!!!</h1>
-    <h1 align="center">Items for sale</h1>
+    <h1 align="center">Search Results</h1>
     <div class="well" align="center">
         <a href="{% url 'getPopularUsers'%}">Popular Sellers</a>
 <!--         <a href="{% url 'getItemCategory' %}?category=Bedroom">Bedroom Category</a>         -->
@@ -11,7 +11,7 @@
             {% for item in items %}
                 <tr>
                     <td><a href="/item_detail/{{item.id}}"><h3>{{item.title}}</h3></a></td>
-                    <td><h3>${{item.price}}</h3></td>
+                    <td><h3>{{item.price}}</h3></td>
                 </tr>
                 <tr>
                     <td><p>{{item.description}}</p></td>

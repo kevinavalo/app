@@ -63,7 +63,7 @@ class UserManagerTestCase(TestCase):
 		response = json.loads(url.content.decode('utf-8'))
 
 		self.assertEquals(response['status'], 'success')
-		self.assertEquals(response[user.username]['first name'], user.first_name)
+		self.assertEquals(response[user.username]['first_name'], user.first_name)
 		self.assertEquals(response[user.username]['username'], user.username)
 
 	def test_get_user_failure(self):

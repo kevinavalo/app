@@ -6,12 +6,14 @@ import urllib.parse
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-
+from kafka import KafkaProducer
 from datetime import datetime
 from django.views.decorators.csrf import csrf_exempt
 from collections import OrderedDict
+from elasticsearch import Elasticsearch
 import operator
-
+producer = KafkaProducer(bootstrap_servers='kafka:9092')
+es = Elasticsearch(['es'])
 # make a GET request and parse the returned JSON
 # note, no timeouts, error handling or all the other things needed to do this for real
 def getItemList(request):
@@ -91,7 +93,7 @@ def resgisterUser(request):
         auth_req = urllib.request.Request('http://models-api:8000/api/v1/user/login/', data=auth_post_encoded, method='POST')
         resp_json = urllib.request.urlopen(auth_req).read().decode('utf-8')
         auth_resp = json.loads(resp_json)
-        return JsonResponse({'user':resp,'auth':auth_resp})
+        return JsonResponse({'user':resp,'auth':auth_resp, 'response': 'success'})
 
 @csrf_exempt
 def loginUser(request):
@@ -132,6 +134,7 @@ def createItem(request):
             resp = json.loads(resp_json)
 
             item = resp['item-added']
+            producer.send('new-listings-topic', json.dumps(item).encode('utf-8'))
             return JsonResponse({'item': item, 'status': True})
         elif resp_auth['response'] == 'Authenticator is expired':
             return JsonResponse({'status': False, 'response': 'Authenticator is expired'})
@@ -170,7 +173,7 @@ def getPopularUsers(request):
 
         if len(descending_users) > 5:
             for i in range(0,4):
-                response.append(descending_users.get(i))
+                response.append(descending_users[i])
         else:
             response = descending_users
         return JsonResponse(response, safe=False)
@@ -205,3 +208,23 @@ def getProfile(request, id):
         for key in resp:
             info = resp[key]
         return JsonResponse(info)
+
+def searchItems(request):
+    global es
+    if request.method == 'GET':
+        query = request.GET.get('query', '')
+        resp = es.search(index='listing_index', body={'query': {'query_string': {'query': query}}, 'size': 10})
+        items = []
+        for resp in resp['hits']['hits']:
+            items.append(resp['_source'])
+        return JsonResponse({'status': 'success', 'items': items}, safe=False)
+    else:
+        return JsonResponse({'status': 'error, not a GET request'})
+
+
+def getAuth(request):
+    auth = request.GET.get('auth')
+    req = urllib.request.Request('http://models-api:8000/api/v1/auth/getUserAuth/' + "?auth=" + auth)
+    resp = urllib.request.urlopen(req).read().decode('utf-8')
+    json_resp = json.loads(resp)
+    return JsonResponse(json_resp['status'] == True, safe=False)

@@ -1,12 +1,77 @@
 {% extends 'base.html' %}
 {% block content %}
+<h1 align="center">Sign Up</h1>
 
-<h1>Sign Up</h1>
-<!--{{ message }}-->
+
+{% if message %}
+<div class="alert alert-danger">
+  <strong>{{ message }}</strong>
+</div>
+{% endif %}
+<div align="left" style="padding-left:20%; width:100%">
+    <br>
 <form method="POST"> {% csrf_token %}
-    {{ form.as_table }}
-    <button type="submit">Submit</button>
-
+    <div class="row">
+        <div class="col-md-2 form-group">
+            <label for="id_username">{{ form.username.label}}</label>
+        </div>
+        <div class="col-md-3 form-group">
+            {{ form.username }}
+        </div>
+        <div class="col-md-2 form-group">
+            <label for="id_password">{{ form.password.label}}</label>
+        </div>
+        <div class="col-md-3 form-group">
+            {{ form.password }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 form-group">
+            <label for="id_first_name">{{ form.first_name.label }}</label>
+        </div>
+        <div class="col-md-3 form-group">
+            {{ form.first_name }}
+        </div>
+        <div class="col-md-2 form-group">
+            <label for="id_last_name">{{ form.last_name.label }}</label>
+        </div>
+        <div class="col-md-3 form-group">
+            {{ form.last_name }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 form-group">
+            <label for="id_email">{{ form.email.label }}</label>
+        </div>
+        <div class="col-md-3 form-group">
+            {{ form.email }}
+        </div>
+        <div class="col-md-2 form-group">
+            <label for="id_phone_number">{{ form.phone_number.label }}</label>
+        </div>
+        <div class="col-md-3 form-group">
+            {{ form.phone_number }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 form-group">
+            <label for="id_city">{{ form.city.label }}</label>
+        </div>
+        <div class="col-md-3 form-group">
+            {{ form.city }}
+        </div>
+        <div class="col-md-2 form-group">
+            <label for="id_state">{{ form.state.label }}</label>
+        </div>
+        <div class="col-md-3 form-group">
+            {{ form.state }}
+        </div>
+    </div>
+    <br>
+    <div align="center">
+    <button type="submit">Register</button>
+    </div>
 </form>
+</div>
 
 {% endblock %}
