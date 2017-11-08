@@ -19,4 +19,3 @@ before_install:
   - export DJANGO_SETTINGS_MODULE="febay.settings"
   - export PYTHONPATH="$HOME/builds/kevinavalo/app"
   - mysql -e 'CREATE DATABASE cs4501;'
-  - python febay/manage.py syncdb --noinput
