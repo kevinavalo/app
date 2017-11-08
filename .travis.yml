@@ -7,19 +7,20 @@ script:
   - python febay/manage.py test
 
 install:
-  - pip install -q Django==1.11.6
-  - pip install -q mysqlclient==1.3.12
-
-services:
-  - docker
-  - mysql
-
-sudo: required
-
-before_install:
+  - docker pull tp33/django
+  - docker pull mysql:5.7.14
+  - docker run --name mysql -d mysql:5.7.14
+  - docker-compose up
   - export DJANGO_SETTINGS_MODULE="febay.settings"
   - export PYTHONPATH="$HOME/builds/kevinavalo/app"
 
+
+services:
+  - docker
+
+sudo: false
+
+
 before_script:
-  - mysql -e 'CREATE DATABASE cs4501;'
-  - mysql -e "grant all on cs4501.* to 'www'@'localhost';"
+  - docker exec -it mysql 'CREATE DATABASE cs4501;'
+  - docker exec -it mysql "grant all on cs4501.* to 'www'@'localhost';"
