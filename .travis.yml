@@ -19,3 +19,4 @@ before_install:
   - export DJANGO_SETTINGS_MODULE="febay.settings"
   - export PYTHONPATH="$HOME/builds/kevinavalo/app"
   - mysql -e 'CREATE DATABASE cs4501;'
+  - mysql -e 'grant all on cs4501.* to 'www'@'%';'
