@@ -16,4 +16,6 @@ services:
 sudo: false
 
 before_install:
-- mysql -e 'CREATE DATABASE cs4501;'
+  - export DJANGO_SETTINGS_MODULE=febay/febay/settings.py
+  - export PYTHONPATH=$HOME/builds/kevinavalo/app
+  - mysql -e 'CREATE DATABASE cs4501;'
