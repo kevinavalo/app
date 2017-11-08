@@ -22,4 +22,4 @@ before_install:
 
 before_script:
   - mysql -e 'CREATE DATABASE cs4501;'
-  - mysql -e 'grant all on cs4501.* to 'www'@'localhost';'
+  - mysql -e "grant all on cs4501.* to 'www'@'localhost';"
