@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import sys
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -86,12 +88,21 @@ DATABASES = {
           }
       }
 
-# DATABASES = {
-#      'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+if 'TRAVIS' in os.environ:
+    DATABASES = {
+        'default':{
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'cs4501',
+            'USER': 'www',
+            'PASSWORD': '$3cureUS',
+            'HOST':'localhost'
+        }
+    }
+
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+    DATABASES['default']['NAME'] = os.path.join(BASE_DIR, 'db.sqlite3')
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

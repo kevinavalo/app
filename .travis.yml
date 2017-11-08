@@ -1,0 +1,19 @@
+language: python
+
+python:
+  - "3.5"
+
+install:
+  - pip install -q Django==1.11.6
+  - pip install -q mysqlclient==1.3.12
+
+script:
+  - python febay/manage.py test
+
+services:
+  - mysql
+
+sudo: false
+
+before_install:
+- mysql -e 'CREATE DATABASE cs4501;'
