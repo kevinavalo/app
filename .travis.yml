@@ -4,7 +4,7 @@ python:
   - "3.5"
 
 script:
-  - python febay/manage.py test
+  - docker exec -it models python manage.py test
 
 install:
   - docker-compose up
