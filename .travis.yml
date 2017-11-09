@@ -4,7 +4,7 @@ python:
   - "3.5"
 
 script:
-  - docker-compose up
+  - docker-compose up -d
   - docker exec -it models python manage.py test
 
 
