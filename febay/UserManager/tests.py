@@ -53,8 +53,7 @@ class UserManagerTestCase(TestCase):
 		preUserTotal = len(customer.objects.all())
 		url = self.client.post(reverse('registration'), newUser)
 		response = json.loads(url.content.decode('utf-8'))
-
-		self.assertEquals(response['status'], '(1048, "Column \'username\' cannot be null")')
+		self.assertTrue('cannot be null' in response['status'])
 
 	def test_get_user_success(self):
 		user = customer.objects.get(id=1)
