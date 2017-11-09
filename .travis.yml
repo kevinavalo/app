@@ -5,7 +5,7 @@ python:
 
 script:
   - docker-compose up -d
-  - docker exec -it models python manage.py test
+  - docker exec -it app_models_1 python manage.py test
 
 
 services:
