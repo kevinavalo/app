@@ -56,3 +56,11 @@ web:
    volumes:
       - ./web:/app
    command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"
+
+haproxy:
+  image: haproxy
+  container_name: haproxy
+  volumes:
+    - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+  ports:
+    - "0513:0513"
