@@ -83,6 +83,7 @@ class RegisterTests(unittest.TestCase):
         feed_found = re.search(r'Welcome', result)
         self.assertEqual(sign_up_found,None)
         self.assertNotEqual(feed_found, None)
+        self.driver.find_element_by_id('logout').click()
 
 
     def test_duplicate_uname_register(self):
