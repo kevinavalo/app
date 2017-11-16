@@ -58,6 +58,12 @@
 
 ## Browser
 1. As a browser, I would like to search within a specific category of item as to narrow my search.
+*Acceptance Criteria*:
+1. When a user creates an item, the relevant information is sent by a kafka producer to a kafka topic
+2. After a user creates an item, the relevant information can be consumed by a kafka consumer from the kafka topic
+3. After the relevant information to the item is consumed by the kafka consumer, it is sent into the Elastic Search (ES) in order to create an index in the ES API as a 'listing_index' item
+4. When the user searches for an item, the keyword is searched in the 'listing_index' index group, and the relevant item information is retreived
 2. As a browser, I would like to organize my search by price, either descending or ascending, so that I can scan for items within my desired price range.
 3. As a browser, I would like the ability to comment on listings so that I can elicit more information from the seller or express my opinions.
 4. As a browser, I would like to delete my comments in case I accidentally posted a comment, or no longer wish for it to be on the post.
+5. As a browser, I would like to be able to clear my search in case I want to view all items again

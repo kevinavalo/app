@@ -1,3 +1,21 @@
+selenium-chrome:
+  image: selenium/standalone-chrome
+  container_name: selenium-chrome
+  links:
+    - web:web
+  ports:
+    - "4444:4444"
+
+selenium-test:
+  image: tp33/django
+  container_name: selenium-test
+  links:
+    - selenium-chrome:selenium-chrome
+    - web:web
+  volumes:
+    - ./selenium:/app
+  command: bash -c "pip install selenium && python /app/integrationtests.py"
+
 kafka:
    image: spotify/kafka
    container_name: kafka
@@ -55,7 +73,7 @@ web:
       - "8006:8000"
    volumes:
       - ./web:/app
-   command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"
+   command: bash -c "pip install selenium && pip install requests && mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"
 
 web2:
    image: tp33/django
