@@ -1,0 +1,28 @@
+language: python
+
+python:
+  - "3.5"
+
+script:
+  - docker-compose up -d
+  - docker ps -a
+  - sleep 20
+  - docker exec -it app_models_1 python manage.py test
+
+
+services:
+  - docker
+
+sudo: false
+
+before_install:
+  - export DJANGO_SETTINGS_MODULE="febay.settings"
+  - export PYTHONPATH="$HOME/builds/kevinavalo/app"
+  - docker pull tp33/django
+  - docker pull mysql:5.7.14
+  - mkdir ~/cs4501
+  - mkdir ~/cs4501/app
+  - mkdir ~/cs4501/db
+  - docker run --name mysql -d -e MYSQL\_ROOT\_PASSWORD='$3cureUS' -v ~/cs4501/db:/var/lib/mysql mysql:5.7.14
+  - sleep 20
+  - docker run -it --name mysql-cmdline --link mysql:db mysql:5.7.14 mysql -uroot -p'$3cureUS' -h db -e "create user 'www'@'%' identified by '\$3cureUS'; CREATE DATABASE cs4501; grant all on test_cs4501.* to 'www'@'%'; grant all on cs4501.* to 'www'@'%';"
