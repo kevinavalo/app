@@ -57,9 +57,22 @@ web:
       - ./web:/app
    command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"
 
+web2:
+   image: tp33/django
+   links:
+      - exp:exp-api
+   ports:
+      - "8003:8000"
+   volumes:
+      - ./web:/app
+   command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"
+
 haproxy:
   image: haproxy
   container_name: haproxy
+  links:
+    - web:web
+    - web2:web2
   volumes:
     - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
   ports:
