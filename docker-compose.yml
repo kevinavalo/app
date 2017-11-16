@@ -52,7 +52,7 @@ web:
    links:
       - exp:exp-api
    ports:
-      - "8000:8000"
+      - "8006:8000"
    volumes:
       - ./web:/app
    command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"
@@ -76,4 +76,4 @@ haproxy:
   volumes:
     - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
   ports:
-    - "0513:0513"
+    - "8000:8000"
