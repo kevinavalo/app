@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <p class="alert alert-warning"> {{ message }}</p>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <h1 align="center">Welcome {{request.COOKIES.user}}!!!</h1>
     <h1 align="center">Items for sale</h1>
     <div class="well" align="center">

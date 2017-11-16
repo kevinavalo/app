@@ -6,6 +6,7 @@ from . import forms
 from django.http import JsonResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.template import loader
+from django.contrib import messages
 import ast
 from .forms import *
 from django.views.decorators.csrf import csrf_exempt
@@ -62,7 +63,7 @@ def home(request):
     # for item in resp:
     # 	items.append(item)
 
-    return render(request, 'home.html', {'items': items})
+    return render(request, 'home.html', {'items': items, 'messageExists': True})
 
 
 def register(request):
@@ -252,8 +253,14 @@ def searchItems(request):
         # full_url = url + '?' + data
         # req = urllib.request.Request(full_url)
         # resp_json = urllib.request.urlopen(req).read().decode('utf-8')
-        items = json.loads(resp_json)['items']
+        if json.loads(resp_json)['itemsExist']:
+            items = json.loads(resp_json)['items']
+            return render(request, 'searchResults.html', {'items': items})
+        else:
+            messages.error(request, 'No items exist, create an item before searching.')
+            response = HttpResponseRedirect(reverse('home'))
+            return response
 
-        return render(request, 'searchResults.html', {'items': items})
+            
     else:
         return home(request)
