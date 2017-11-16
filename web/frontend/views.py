@@ -87,6 +87,7 @@ def register(request):
             auth = resp['auth']['auth']
             response = HttpResponseRedirect(reverse('home'))
             response.set_cookie("auth", auth)
+            response.set_cookie("user", form.cleaned_data['username'])
             return response
         return render(request, 'register.html', {'form': form, 'message': form.errors})
     else:
