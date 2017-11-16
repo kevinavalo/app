@@ -213,11 +213,14 @@ def searchItems(request):
     global es
     if request.method == 'GET':
         query = request.GET.get('query', '')
-        resp = es.search(index='listing_index', body={'query': {'query_string': {'query': query}}, 'size': 10})
-        items = []
-        for resp in resp['hits']['hits']:
-            items.append(resp['_source'])
-        return JsonResponse({'status': 'success', 'items': items}, safe=False)
+        try:    
+            resp = es.search(index='listing_index', body={'query': {'query_string': {'query': query}}, 'size': 10})
+            items = []
+            for resp in resp['hits']['hits']:
+                items.append(resp['_source'])
+            return JsonResponse({'status': 'success', 'items': items, 'itemsExist': True}, safe=False)
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'error': str(e), 'itemsExist':False})
     else:
         return JsonResponse({'status': 'error, not a GET request'})
 
