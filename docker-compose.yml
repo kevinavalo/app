@@ -47,3 +47,100 @@ spark-worker:
     - 8081:8081
   volumes:
     - ./data:/tmp/data
+    
+selenium-chrome:
+  image: selenium/standalone-chrome
+  container_name: selenium-chrome
+  links:
+    - web:web
+  ports:
+    - "4444:4444"
+
+selenium-test:
+  image: tp33/django
+  container_name: selenium-test
+  links:
+    - selenium-chrome:selenium-chrome
+    - web:web
+  volumes:
+    - ./selenium:/app
+  command: bash -c "pip install selenium && python /app/integrationtests.py"
+
+kafka:
+   image: spotify/kafka
+   container_name: kafka
+   environment:
+      ADVERTISED_HOST: kafka
+      ADVERTISED_PORT: 9092
+   hostname: kafka
+   
+es:
+   image: elasticsearch:2.0
+   container_name: es
+   ports:
+      - "9200:9200"
+
+batch:
+   image: tp33/django
+   container_name: batch
+   volumes:
+      - ./batch:/app
+   links:
+      - kafka:kafka
+      - es:es
+   command: bash -c "python /app/kafkaconsumer.py"
+
+models:
+    image: tp33/django
+    external_links:
+      -  mysql:db
+    volumes:
+      - ./febay:/app
+    ports:
+      - "8001:8000"
+    command: bash -c "python /app/manage.py makemigrations UserManager && python /app/manage.py makemigrations ItemManager && python /app/manage.py makemigrations CommentManager && python /app/manage.py migrate && python /app/manage.py loaddata /app/db.json && mod_wsgi-express start-server --working-directory /app --reload-on-changes /app/febay/wsgi.py"
+
+exp:
+   image: tp33/django
+   external_links:
+      -  mysql:db
+   links:
+      - models:models-api
+      - kafka:kafka
+      - es:es
+   ports:
+      - "8002:8000"
+   volumes:
+      - ./exp:/app
+   command: "mod_wsgi-express start-server --reload-on-changes /app/exp/wsgi.py"
+
+web:
+   image: tp33/django
+   links:
+      - exp:exp-api
+   ports:
+      - "8006:8000"
+   volumes:
+      - ./web:/app
+   command: bash -c "pip install selenium && pip install requests && mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"
+
+web2:
+   image: tp33/django
+   links:
+      - exp:exp-api
+   ports:
+      - "8003:8000"
+   volumes:
+      - ./web:/app
+   command: bash -c "pip install requests && mod_wsgi-express start-server --reload-on-changes /app/web/wsgi.py"
+
+haproxy:
+  image: haproxy
+  container_name: haproxy
+  links:
+    - web:web
+    - web2:web2
+  volumes:
+    - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+  ports:
+    - "8000:8000"
