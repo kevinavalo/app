@@ -47,7 +47,7 @@ spark-worker:
     - 8081:8081
   volumes:
     - ./data:/tmp/data
-    
+
 selenium-chrome:
   image: selenium/standalone-chrome
   container_name: selenium-chrome
@@ -89,6 +89,17 @@ batch:
       - kafka:kafka
       - es:es
    command: bash -c "python /app/kafkaconsumer.py"
+
+batch2:
+   image: tp33/django
+   container_name: batch2
+   volumes:
+      - ./batch2:/app
+      - ./data:/app2
+   links:
+      - kafka:kafka
+      - es:es
+   command: bash -c "python /app/kafkaconsumer_recommendations.py"
 
 models:
     image: tp33/django

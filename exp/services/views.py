@@ -13,7 +13,6 @@ from collections import OrderedDict
 from elasticsearch import Elasticsearch
 import operator
 producer = KafkaProducer(bootstrap_servers='kafka:9092')
-spark_producer = KafkaProducer(bootstrap_servers='kafka:9092')
 es = Elasticsearch(['es'])
 # make a GET request and parse the returned JSON
 # note, no timeouts, error handling or all the other things needed to do this for real
@@ -40,12 +39,10 @@ def getItemDetail(request, id):
         com = urllib.request.Request('http://models-api:8000/api/v1/comment/getList/item/'+id+'/')
         com_json =json.loads(urllib.request.urlopen(com).read().decode('utf-8'))
 
-
-        recom_pair = {
-            'item_id': id,
-            'username': resp_auth['username'],
-        }
-        producer.send('recommendation-topic', json.dumps(recom_pair).encode('utf-8'))
+        if (resp_auth['status'] is True):
+            recom_pair = { 'item_id': str(id), 'username': resp_auth['username']}
+            print(recom_pair)
+            producer.send('recommendation-topic', json.dumps(recom_pair).encode('utf-8'))
         final_resp = {'item':resp, 'comments':com_json}
 
         return JsonResponse(final_resp)
