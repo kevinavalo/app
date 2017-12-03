@@ -18,8 +18,14 @@ LINK = "http://exp-api:8000/api/v1"
 # Create your views here.
 
 def itemDetail(request, id):
-    req = urllib.request.Request('http://exp-api:8000/api/v1/getItemDetail/' + id)
-    resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+    auth = request.COOKIES.get('auth')
+    if not auth:
+        auth = ''
+
+    url = 'http://exp-api:8000/api/v1/getItemDetail/' + id
+    req = requests.get(url, params={'auth': auth})
+    #req = urllib.request.Request('http://exp-api:8000/api/v1/getItemDetail/' + id)
+    resp_json = req.text
     resp = json.loads(resp_json)
     item = {}
     for key in resp['item'][id]:
