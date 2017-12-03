@@ -19,3 +19,6 @@ class Item(models.Model):
     def __str__(self):
         return self.title
 
+class Recommendation(models.Model):
+	item_id = models.IntegerField(default=1)
+	recommended_items = models.CharField(max_length=300,default='')

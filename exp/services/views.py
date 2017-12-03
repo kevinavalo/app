@@ -13,6 +13,7 @@ from collections import OrderedDict
 from elasticsearch import Elasticsearch
 import operator
 producer = KafkaProducer(bootstrap_servers='kafka:9092')
+spark_producer = KafkaProducer(bootstrap_servers='kafka:9092')
 es = Elasticsearch(['es'])
 # make a GET request and parse the returned JSON
 # note, no timeouts, error handling or all the other things needed to do this for real
@@ -26,6 +27,7 @@ def getItemList(request):
 
 def getItemDetail(request, id):
     if request.method == 'GET':
+        
         req = urllib.request.Request('http://models-api:8000/api/v1/item/get/'+id+'/')
         resp_json = urllib.request.urlopen(req).read().decode('utf-8')
         resp = json.loads(resp_json)
