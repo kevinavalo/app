@@ -11,22 +11,33 @@
 			</table>
 
 
-			<table width="100%" style="border:4px double gray;">
-				<h4>Comments</h4>
-				{% for comment in comments %}
-						<tr><th><h5>{{comment.user}}:</h5></th></tr>
-						<tr><td><p>{{comment.message}}</p></td></tr>
-						<tr style="border-bottom:3px dashed gray"><td><p>{{comment.date_posted}}</p></td></tr>
-				{% endfor %}
-			</table>
+			<div class="row">
+				<div class="col-md-6">
+					<table width="100%" style="border:4px double gray;">
+						<h4>Comments</h4>
+						{% for comment in comments %}
+								<tr><th><h5>{{comment.user}}:</h5></th></tr>
+								<tr><td><p>{{comment.message}}</p></td></tr>
+								<tr style="border-bottom:3px dashed gray"><td><p>{{comment.date_posted}}</p></td></tr>
+						{% endfor %}
+					</table>
 
-			<form method="POST"> {% csrf_token %}
-				{{form.comment.label_tag}}
-				<br>
-				{{form.comment}}
-				<br>
-				<button type="submit">Comment</button>
-			</form>
+					<form method="POST"> {% csrf_token %}
+						{{form.comment.label_tag}}
+						<br>
+						{{form.comment}}
+						<br>
+						<button type="submit">Comment</button>
+					</form>
+				</div>
+				<div class="col-md-6">
+					<table width="100%" style="border:4px double gray;">
+						<h4>Recommendations</h4>
+						{% for rec in rec_list %}
+						<tr><th><h5><a href="/item_detail/{{rec.id}}">{{rec.title}}</a></h5></th></tr>
+						{% endfor %}
+					</table>
+				</div>
 
 		</div>
 

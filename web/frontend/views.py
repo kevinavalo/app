@@ -30,12 +30,12 @@ def itemDetail(request, id):
     for key in resp['item'][id]:
         item[key] = resp['item'][id][key]
 
-    rec_url = 'http://exp-api:8000/api/v1/getRecs/'+id+'/'
-    rec_req = requests.get(url)
-    rec_resp_json = json.loads(req.text)
+    rec_req = urllib.request.Request('http://exp-api:8000/api/v1/getRecs/'+id)
+    rec_resp_json = urllib.request.urlopen(rec_req).read().decode('utf-8')
+    recs = json.loads(rec_resp_json)
     rec_list = []
-    if rec_resp_json['status'] == 'success':
-        for rec in rec_resp_json:
+    if recs['status'] == 'success':
+        for rec in recs['items']:
             rec_list.append(rec)
 
     comment_list = []

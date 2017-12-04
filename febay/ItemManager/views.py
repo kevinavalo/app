@@ -45,7 +45,7 @@ def getRecs(request, id):
         response['items']=[]
         for thing in recoms:
             item = Item.objects.get(id=thing)
-            response['items'].append({'id':item.id, 'name':item.title})
+            response['items'].append({'id':item.id, 'title':item.title})
         response['status'] = 'success'
     except Exception as e:
         response['status'] = str(e)

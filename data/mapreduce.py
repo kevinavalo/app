@@ -52,6 +52,7 @@ while True:
 
 	db.commit()
 
-	time.sleep(120)
 	sc.stop()
+	time.sleep(120)
+
 
