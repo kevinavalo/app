@@ -67,3 +67,10 @@
 3. As a browser, I would like the ability to comment on listings so that I can elicit more information from the seller or express my opinions.
 4. As a browser, I would like to delete my comments in case I accidentally posted a comment, or no longer wish for it to be on the post.
 5. As a browser, I would like to be able to clear my search in case I want to view all items again
+
+2. As a browser, I would like to be recommended additional items to view based off of the current item I'm viewing
+*Acceptance Criteria*:
+1. When I view an item, other items that at least three other people have viewed together with the item I'm viewing should appear on the page as links
+2. When I click on one of the recommended links, I should be brought that item's detail page and I should see other recommended items for this current item
+3. The amount of times an item is clicked should only count distinct users
+4. The recommendations should be updated every 2 minutes continuously
