@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^api/v1/item/create/', create),
     url(r'^api/v1/item/update/(?P<id>\d*)/$', update),
     url(r'^api/v1/item/delete/(?P<id>\d*)/$', delete),
-
+    url(r'^api/v1/rec/get/(?P<id>\d*)/$', getRecs),
 ]
