@@ -42,13 +42,17 @@ while True:
 			except KeyError as e:
 				recom_dict[page[0]] = str(page[1])
 
-
+	to_write = ''
 	for key, value in recom_dict.items():
+		print("HELLO I LOVE KEV------------------------------------------------------------------")
 		val = value.encode('UTF-8')
-		k = int(key)
-		query = 'INSERT INTO ItemManager_recommendation (item_id, recommended_items) VALUES (%d, \'%s\');' % (k, val)
+		query = 'INSERT INTO ItemManager_recommendation (item_id, recommended_items) VALUES (%d, \'%s\');' % (int(key), val)
 		cur.execute(query)
-		print(key, value, 'inserted?')
+		to_write += (key + '\t' + val + '\n')
+	
+	with open("/tmp/data/output.log","w") as f:
+		f.write(to_write)
+		f.close()
 
 	db.commit()
 
