@@ -225,7 +225,7 @@ def searchItems(request):
     global es
     if request.method == 'GET':
         query = request.GET.get('query', '')
-        try:    
+        try:
             resp = es.search(index='listing_index', body={'query': {'query_string': {'query': query}}, 'size': 10})
             items = []
             for resp in resp['hits']['hits']:
@@ -243,3 +243,10 @@ def getAuth(request):
     resp = urllib.request.urlopen(req).read().decode('utf-8')
     json_resp = json.loads(resp)
     return JsonResponse(json_resp['status'] == True, safe=False)
+
+def getRecs(request, id):
+    if request.method == 'GET':
+        req = urllib.request.Request('http://models-api:8000/api/v1/rec/get/'+id+'/')
+        resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+        resp = json.loads(resp_json)
+        return JsonResponse(resp)

@@ -24,16 +24,21 @@ def itemDetail(request, id):
 
     url = 'http://exp-api:8000/api/v1/getItemDetail/' + id
     req = requests.get(url, params={'auth': auth})
-    #req = urllib.request.Request('http://exp-api:8000/api/v1/getItemDetail/' + id)
     resp_json = req.text
     resp = json.loads(resp_json)
     item = {}
     for key in resp['item'][id]:
         item[key] = resp['item'][id][key]
-    # item = json.loads(resp['item'][id])
-    # return JsonResponse(type(item), safe=False)
-    comment_list = []
 
+    rec_url = 'http://exp-api:8000/api/v1/getRecs/'+id+'/'
+    rec_req = requests.get(url)
+    rec_resp_json = json.loads(req.text)
+    rec_list = []
+    if rec_resp_json['status'] == 'success':
+        for rec in rec_resp_json:
+            rec_list.append(rec)
+
+    comment_list = []
     if resp['comments']['status'] != 'error':
 
         for comment in resp['comments']['response']:
@@ -54,7 +59,7 @@ def itemDetail(request, id):
                 return HttpResponseRedirect('/item_detail/' + id)
         except Exception as e:
             return JsonResponse({'status': str(e)})
-    return render(request, 'itemDetail.html', {'item': (item), 'comments': (comment_list), 'form': form})
+    return render(request, 'itemDetail.html', {'item': (item), 'comments': (comment_list), 'form': form, 'rec_list':rec_list})
 
 
 def home(request):

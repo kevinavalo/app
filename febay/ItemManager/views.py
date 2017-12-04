@@ -37,6 +37,20 @@ def getItem(request, id):
         return JsonResponse({'status': str(e)})
     return JsonResponse(response)
 
+def getRecs(request, id):
+    response = {}
+    try:
+        items = Recommendation.objects.get(item_id=id)
+        recoms = items.recommended_items.split(" ")
+        response['items']=[]
+        for thing in recoms:
+            item = Item.objects.get(id=thing)
+            response['items'].append({'id':item.id, 'name':item.title})
+        response['status'] = 'success'
+    except Exception as e:
+        response['status'] = str(e)
+    return JsonResponse(response)
+
 @csrf_exempt
 def create(request):
     response = {}
