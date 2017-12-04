@@ -68,7 +68,7 @@
 3. As a browser, I would like the ability to comment on listings so that I can elicit more information from the seller or express my opinions.
 4. As a browser, I would like to delete my comments in case I accidentally posted a comment, or no longer wish for it to be on the post.
 5. As a browser, I would like to be able to clear my search in case I want to view all items again
-
+-----
 2. As a browser, I would like to be recommended additional items to view based off of the current item I'm viewing
 
 *Acceptance Criteria*:
