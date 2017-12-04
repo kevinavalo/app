@@ -58,6 +58,7 @@
 
 ## Browser
 1. As a browser, I would like to search within a specific category of item as to narrow my search.
+
 *Acceptance Criteria*:
 1. When a user creates an item, the relevant information is sent by a kafka producer to a kafka topic
 2. After a user creates an item, the relevant information can be consumed by a kafka consumer from the kafka topic
@@ -69,6 +70,7 @@
 5. As a browser, I would like to be able to clear my search in case I want to view all items again
 
 2. As a browser, I would like to be recommended additional items to view based off of the current item I'm viewing
+
 *Acceptance Criteria*:
 1. When I view an item, other items that at least three other people have viewed together with the item I'm viewing should appear on the page as links
 2. When I click on one of the recommended links, I should be brought that item's detail page and I should see other recommended items for this current item
