@@ -2,7 +2,7 @@ spark-master:
   image: gettyimages/spark
   external_links:
       -  mysql:db
-  command: bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
+  command: bash -c "bin/spark-class org.apache.spark.deploy.master.Master -h spark-master"
   container_name: spark-master
   hostname: spark-master
   environment:
