@@ -59,11 +59,14 @@ while True:
 			try:
 				if str(page[1]) not in recom_dict[page[0]] and str(page[0]) != str(page[1]): 
 					recom_dict[page[0]] += ' '+str(page[1])
+			except KeyError as e:
+				recom_dict[page[0]] = str(page[1])
+			try:
 				if str(page[0]) not in recom_dict[page[1]] and str(page[0]) != str(page[1]):
 					recom_dict[page[1]] += ' '+str(page[0])
 			except KeyError as e:
-				recom_dict[page[0]] = str(page[1])
 				recom_dict[page[1]] = str(page[0])
+
 
 	print("recom_dict--------------:", recom_dict)
 	to_write = ''
