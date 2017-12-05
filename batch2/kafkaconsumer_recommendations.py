@@ -11,7 +11,7 @@ while consumer == None:
 
 for message in consumer:
 	body = json.loads((message.value).decode('utf-8'))
-	with open("/app2/recommendations.log","a") as rec:
+	with open("/app2/recommendations.txt","a") as rec:
 		# print("Hey I got here")
 		# rec.write('HELLO')
 		rec.write(body['username'] + '\t' + body['item_id'] + '\n')
