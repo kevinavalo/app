@@ -1,0 +1,304 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$xYsYp67F0QJE$v1amI87+mM4vq9L4OCR56URAo2fdKFz+IvB3ELvEXEc=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "kevinavalo",
+        "first_name": "Kevin",
+        "last_name": "Avalo",
+        "email": "kevinavalo@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-09-21T03:51:43.428Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$cQyoWt9wM72a$YLS6jAx26dqVKuCE6OBNp2+Fa2z0KQQ5hD8iZkcycoM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "katz",
+        "first_name": "Rachel",
+        "last_name": "Katz",
+        "email": "katz@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-09-21T04:32:03.600Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$iIIlSIZnAmuH$lSa6/rv2wVoToCCb1nWF9kLkcuVEgjzogHAEIF7h67M=",
+        "last_login": "2017-09-21T04:44:10.322Z",
+        "is_superuser": false,
+        "username": "ross",
+        "first_name": "Kat",
+        "last_name": "Ross",
+        "email": "ross@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-09-21T04:32:27.885Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "zemk725palmvv5pm40801t9nzpoy5wvc",
+    "fields": {
+        "session_data": "N2EzNDdkZTc3ODM3MmE3MmMyNzY3MDEyNTBhZWQ3ZTVjMDNjOTY4ZDp7fQ==",
+        "expire_date": "2017-10-05T04:44:10.311Z"
+    }
+},
+{
+    "model": "ItemManager.item",
+    "pk": 1,
+    "fields": {
+        "owner": 1,
+        "title": "Desk",
+        "description": "new",
+        "price": 5.99,
+        "category": "Miscellaneous",
+        "date_posted": "2017-09-21T05:06:50.199Z"
+    }
+},
+{
+    "model": "ItemManager.item",
+    "pk": 2,
+    "fields": {
+        "owner": 5,
+        "title": "Chair",
+        "description": "new",
+        "price": 5.99,
+        "category": "Couches & Chairs",
+        "date_posted": "2017-09-21T05:07:10.759Z"
+    }
+},
+{
+    "model": "ItemManager.item",
+    "pk": 4,
+    "fields": {
+        "owner": 4,
+        "title": "Bed frame",
+        "description": "new",
+        "price": 5.99,
+        "category": "Bedframes & Headboards",
+        "date_posted": "2017-09-21T05:07:29.196Z"
+    }
+},
+{
+    "model": "ItemManager.item",
+    "pk": 5,
+    "fields": {
+        "owner": 1,
+        "title": "Couch",
+        "description": "Couches & Chairs",
+        "price": 5.99,
+        "category": "furniture",
+        "date_posted": "2017-09-21T05:07:39.020Z"
+    }
+},
+{
+    "model": "ItemManager.recommendation",
+    "pk": 13,
+    "fields": {
+        "item_id": 1,
+        "recommended_items": "4 5 2"
+    }
+},
+{
+    "model": "ItemManager.recommendation",
+    "pk": 14,
+    "fields": {
+        "item_id": 2,
+        "recommended_items": "1 4 5"
+    }
+},
+{
+    "model": "ItemManager.recommendation",
+    "pk": 15,
+    "fields": {
+        "item_id": 5,
+        "recommended_items": "1 4 2"
+    }
+},
+{
+    "model": "ItemManager.recommendation",
+    "pk": 16,
+    "fields": {
+        "item_id": 4,
+        "recommended_items": "5 1 2"
+    }
+},
+{
+    "model": "UserManager.customer",
+    "pk": 1,
+    "fields": {
+        "username": "kev",
+        "first_name": "kevin",
+        "last_name": "avalo",
+        "email": "kev@avalo.com",
+        "password": "pbkdf2_sha256$30000$AN6MsEcdueLL$PGtX95POLRAahkl80UjkFbHnM9FaV4Y4M1s1P7bDWD0=",
+        "phone_number": "7039459905",
+        "city": "Charlottesville",
+        "state": "VA"
+    }
+},
+{
+    "model": "UserManager.customer",
+    "pk": 4,
+    "fields": {
+        "username": "kat",
+        "first_name": "kat",
+        "last_name": "ross",
+        "email": "kat@me.com",
+        "password": "pbkdf2_sha256$30000$fwuByjFcaqMh$qYbnnFr+2oHzkjDr2DLM6kc8ja0K155qq5de/SoI8jI=",
+        "phone_number": "7039459903",
+        "city": "Charlottesville",
+        "state": "VA"
+    }
+},
+{
+    "model": "UserManager.customer",
+    "pk": 5,
+    "fields": {
+        "username": "rach",
+        "first_name": "rachel",
+        "last_name": "katz",
+        "email": "rach@katz.com",
+        "password": "pbkdf2_sha256$30000$etbGDYvreET6$CxG48Yd1GFpR4cdVNJPiq6KCDvkzZLN5GBagcysraU0=",
+        "phone_number": "7039459902",
+        "city": "Charlottesville",
+        "state": "VA"
+    }
+},
+{
+    "model": "UserManager.authenticator",
+    "pk": "8e89d862f4797df2880688670e4f0891c7bc88df886b7aeabc1a0bdde2ecf1a3",
+    "fields": {
+        "user": 5,
+        "timestamp": "2017-12-04T06:04:05.724Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "item": 2,
+        "message": "wow, nice chair!",
+        "date_posted": "2017-09-21T05:19:29.463Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "item": 2,
+        "message": "wow, nice chair!",
+        "date_posted": "2017-09-21T05:22:55.439Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "item": 2,
+        "message": "wow, nice chair!",
+        "date_posted": "2017-09-21T05:23:31.104Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "item": 2,
+        "message": "is it still available?",
+        "date_posted": "2017-09-21T05:25:32.219Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 5,
+    "fields": {
+        "user": 1,
+        "item": 2,
+        "message": "wow, nice chair!",
+        "date_posted": "2017-09-21T05:26:31.280Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 6,
+    "fields": {
+        "user": 1,
+        "item": 2,
+        "message": "wow, nice chair!",
+        "date_posted": "2017-09-21T05:26:49.351Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 7,
+    "fields": {
+        "user": 1,
+        "item": 2,
+        "message": "wow, nice chair!",
+        "date_posted": "2017-09-21T05:27:36.246Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 9,
+    "fields": {
+        "user": 4,
+        "item": 5,
+        "message": "cool couch!",
+        "date_posted": "2017-09-21T05:28:22.174Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 10,
+    "fields": {
+        "user": 5,
+        "item": 5,
+        "message": "nice!",
+        "date_posted": "2017-09-21T05:28:32.648Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 11,
+    "fields": {
+        "user": 5,
+        "item": 4,
+        "message": "ugly frame",
+        "date_posted": "2017-09-21T05:28:58.775Z"
+    }
+},
+{
+    "model": "CommentManager.comment",
+    "pk": 12,
+    "fields": {
+        "user": 1,
+        "item": 4,
+        "message": "omg",
+        "date_posted": "2017-09-21T05:29:07.475Z"
+    }
+}
+]

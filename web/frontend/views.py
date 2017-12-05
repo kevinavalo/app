@@ -18,16 +18,27 @@ LINK = "http://exp-api:8000/api/v1"
 # Create your views here.
 
 def itemDetail(request, id):
-    req = urllib.request.Request('http://exp-api:8000/api/v1/getItemDetail/' + id)
-    resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+    auth = request.COOKIES.get('auth')
+    if not auth:
+        auth = ''
+
+    url = 'http://exp-api:8000/api/v1/getItemDetail/' + id
+    req = requests.get(url, params={'auth': auth})
+    resp_json = req.text
     resp = json.loads(resp_json)
     item = {}
     for key in resp['item'][id]:
         item[key] = resp['item'][id][key]
-    # item = json.loads(resp['item'][id])
-    # return JsonResponse(type(item), safe=False)
-    comment_list = []
 
+    rec_req = urllib.request.Request('http://exp-api:8000/api/v1/getRecs/'+id)
+    rec_resp_json = urllib.request.urlopen(rec_req).read().decode('utf-8')
+    recs = json.loads(rec_resp_json)
+    rec_list = []
+    if recs['status'] == 'success':
+        for rec in recs['items']:
+            rec_list.append(rec)
+
+    comment_list = []
     if resp['comments']['status'] != 'error':
 
         for comment in resp['comments']['response']:
@@ -48,7 +59,7 @@ def itemDetail(request, id):
                 return HttpResponseRedirect('/item_detail/' + id)
         except Exception as e:
             return JsonResponse({'status': str(e)})
-    return render(request, 'itemDetail.html', {'item': (item), 'comments': (comment_list), 'form': form})
+    return render(request, 'itemDetail.html', {'item': (item), 'comments': (comment_list), 'form': form, 'rec_list':rec_list})
 
 
 def home(request):

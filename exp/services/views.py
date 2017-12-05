@@ -26,13 +26,25 @@ def getItemList(request):
 
 def getItemDetail(request, id):
     if request.method == 'GET':
+        
+        auth = request.GET.get('auth')
+        req_auth = urllib.request.Request('http://models-api:8000/api/v1/auth/getUserAuth/' + "?auth=" + auth)
+        resp_json_auth = urllib.request.urlopen(req_auth).read().decode('utf-8')
+        resp_auth = json.loads(resp_json_auth)
+
         req = urllib.request.Request('http://models-api:8000/api/v1/item/get/'+id+'/')
         resp_json = urllib.request.urlopen(req).read().decode('utf-8')
         resp = json.loads(resp_json)
         del resp['status']
         com = urllib.request.Request('http://models-api:8000/api/v1/comment/getList/item/'+id+'/')
         com_json =json.loads(urllib.request.urlopen(com).read().decode('utf-8'))
+
+        if (resp_auth['status'] is True):
+            recom_pair = { 'item_id': str(id), 'username': resp_auth['username']}
+            print(recom_pair)
+            producer.send('recommendation-topic', json.dumps(recom_pair).encode('utf-8'))
         final_resp = {'item':resp, 'comments':com_json}
+
         return JsonResponse(final_resp)
 
 def getSortedListings(request):
@@ -213,7 +225,7 @@ def searchItems(request):
     global es
     if request.method == 'GET':
         query = request.GET.get('query', '')
-        try:    
+        try:
             resp = es.search(index='listing_index', body={'query': {'query_string': {'query': query}}, 'size': 10})
             items = []
             for resp in resp['hits']['hits']:
@@ -231,3 +243,10 @@ def getAuth(request):
     resp = urllib.request.urlopen(req).read().decode('utf-8')
     json_resp = json.loads(resp)
     return JsonResponse(json_resp['status'] == True, safe=False)
+
+def getRecs(request, id):
+    if request.method == 'GET':
+        req = urllib.request.Request('http://models-api:8000/api/v1/rec/get/'+id+'/')
+        resp_json = urllib.request.urlopen(req).read().decode('utf-8')
+        resp = json.loads(resp_json)
+        return JsonResponse(resp)

@@ -2,13 +2,15 @@
 from __future__ import unicode_literals
 
 from django.test import TestCase, Client
+from django.urls import reverse
+from ItemManager.models import Item, Recommendation
 import json
 
 # Create your tests here.
 
 class Tests(TestCase):
 
-    fixtures = ['db.json']
+    fixtures = ['test.json']
 
     def testGetListItemPass(self):
         c = Client()
@@ -91,3 +93,21 @@ class Tests(TestCase):
         self.assertEqual(status,'Item matching query does not exist.' )
         self.assertEqual(count, new_count)
 
+    def testGetRecommendationsPass(self):
+        c = Client()
+        items = Recommendation.objects.get(item_id=5)
+        recoms = items.recommended_items.split(" ")
+        item_list=[]
+        for thing in recoms:
+            item = Item.objects.get(id=thing)
+            item_list.append({'id':item.id, 'title':item.title})
+    
+        response = c.get('/api/v1/rec/get/5/').json()
+        recs = response['items']
+        self.assertEqual(recs, item_list)
+
+    def testGetRecommendationsFail(self):
+        c = Client()
+        resp = c.get('/api/v1/rec/get/13/')
+        status = json.loads(resp.content.decode('utf-8'))['status']
+        self.assertEqual(status, 'Recommendation matching query does not exist.')
